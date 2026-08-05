@@ -24,15 +24,15 @@ export default function Careers() {
     const body = encodeURIComponent(
       `Hello Allianz Utilities team,\n\nI would like to apply for the ${roleTitle} position.\n\nName:\nPhone:\nLinkedIn / Portfolio:\nWhy I'm a fit:\n\n`
     );
-    window.location.href = `mailto:kenya@allianzutilities.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@aul.co.ke?subject=${subject}&body=${body}`;
   };
 
   return (
     <div>
       <PageHero
         eyebrow="Careers"
-        heading={"Build the systems\nEast Africa drinks from."}
-        body="We're growing across Kenya, Rwanda and Ethiopia. Join engineers who take a project from design to commissioning to years of operation."
+        heading={"Build the Future of\nWater with Us"}
+        body="At Allianz Utilities, we believe our greatest strength is our people. Every project we undertake is driven by passionate engineers, technicians, project managers, and support professionals who are committed to delivering innovative and sustainable water and wastewater solutions across East Africa. If you're looking for an opportunity to grow your career while making a meaningful impact on communities, industries, and the environment, we'd love to hear from you."
         image="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1600&auto=format&fit=crop"
       />
 
@@ -51,7 +51,7 @@ export default function Careers() {
 
       <section className="bg-[var(--color-foam-2)] py-20 md:py-24">
         <div className="mx-auto max-w-5xl px-5 md:px-8">
-          <SectionHeading eyebrow="Open Roles" heading="Current openings." />
+          <SectionHeading eyebrow="Openings" heading="Current Opportunities" />
           <div className="mt-10 divide-y divide-black/5 rounded-2xl border border-black/5 bg-white">
             {openRoles.map((r) => (
               <div key={r.title} className="flex flex-col gap-4 p-6 sm:flex-row sm:items-center sm:justify-between">

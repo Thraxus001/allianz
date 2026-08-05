@@ -42,22 +42,20 @@ export default function HeroCarousel() {
           <img
             src={s.image}
             alt=""
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover opacity-55"
             loading={i === 0 ? "eager" : "lazy"}
           />
         </div>
       ))}
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
+      {/* Gradient Hue Overlay for Text Visibility */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 z-[1]" />
 
-      <div className="relative z-10 flex h-full max-w-7xl flex-col justify-end px-5 pb-24 pt-32 mx-auto md:px-8 md:pb-32">
-        <span key={`eyebrow-${index}`} className="eyebrow text-[var(--color-leaf)] animate-[fadein_0.6s_ease]">
-          {slide.eyebrow}
-        </span>
+      <div className="relative z-10 flex h-full max-w-7xl flex-col justify-end px-5 pb-24 pt-44 mx-auto md:px-8 md:pb-32 lg:pt-48">
+        
         <h1
           key={`heading-${index}`}
-          className="mt-4 whitespace-pre-line font-display text-5xl font-bold leading-[0.92] tracking-tight text-white sm:text-6xl md:text-7xl"
+          className="mt-4 whitespace-pre-line font-display text-5xl font-bold leading-[0.92] tracking-tight text-[var(--color-leaf)] sm:text-6xl md:text-7xl"
         >
           {slide.heading}
         </h1>

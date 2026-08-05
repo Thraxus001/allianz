@@ -11,7 +11,7 @@ type Props = {
 export default function TechCard({ name, subtitle, image, slug }: Props) {
   return (
     <NavLink
-      to={`/products-and-services/${slug}`}
+      to={`/products/${slug}`}
       className="group relative flex h-72 flex-col justify-end overflow-hidden rounded-2xl"
     >
       <img

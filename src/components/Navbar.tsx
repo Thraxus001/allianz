@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Logo from "./Logo";
-import { products } from "../data/content";
+import { products, services } from "../data/content";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [desktopProductsOpen, setDesktopProductsOpen] = useState(false);
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -21,6 +23,7 @@ export default function Navbar() {
   useEffect(() => {
     setMobileOpen(false);
     setMobileProductsOpen(false);
+    setMobileServicesOpen(false);
   }, [location.pathname]);
 
   const linkBase =
@@ -35,7 +38,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-        <NavLink to="/" className="shrink-0">
+        <NavLink to="/" className="">
           <Logo dark={!scrolled} />
         </NavLink>
 
@@ -63,36 +66,40 @@ export default function Navbar() {
             What We Do
           </NavLink>
 
+          {/* Products Dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setDesktopProductsOpen(true)}
             onMouseLeave={() => setDesktopProductsOpen(false)}
           >
             <NavLink
-              to="/products-and-services"
+              to="/products"
               className={({ isActive }) =>
                 `${linkBase} flex items-center gap-1 ${
                   scrolled ? "text-[var(--color-ink)]" : "text-white"
                 } ${isActive ? "text-[var(--color-current)]" : ""}`
               }
             >
-              Products &amp; Services
-              <ChevronDown size={14} className={desktopProductsOpen ? "rotate-180 transition-transform" : "transition-transform"} />
+              Products
+              <ChevronDown
+                size={14}
+                className={desktopProductsOpen ? "rotate-180 transition-transform" : "transition-transform"}
+              />
             </NavLink>
 
             {desktopProductsOpen && (
               <div className="absolute left-1/2 top-full w-80 -translate-x-1/2 pt-3">
                 <div className="overflow-hidden rounded-xl border border-black/5 bg-white shadow-xl">
                   <NavLink
-                    to="/products-and-services"
+                    to="/products"
                     className="block border-b border-black/5 bg-[var(--color-foam-2)] px-4 py-3 text-sm font-semibold text-[var(--color-current)]"
                   >
-                    All Products &amp; Services
+                    All Products
                   </NavLink>
                   {products.map((p) => (
                     <NavLink
                       key={p.slug}
-                      to={`/products-and-services/${p.slug}`}
+                      to={`/products/${p.slug}`}
                       className="block px-4 py-2.5 text-sm text-[var(--color-ink)] hover:bg-[var(--color-foam-2)] hover:text-[var(--color-current)]"
                     >
                       {p.navLabel}
@@ -102,6 +109,83 @@ export default function Navbar() {
               </div>
             )}
           </div>
+
+          {/* Services Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setDesktopServicesOpen(true)}
+            onMouseLeave={() => setDesktopServicesOpen(false)}
+          >
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                `${linkBase} flex items-center gap-1 ${
+                  scrolled ? "text-[var(--color-ink)]" : "text-white"
+                } ${isActive ? "text-[var(--color-current)]" : ""}`
+              }
+            >
+              Services
+              <ChevronDown
+                size={14}
+                className={desktopServicesOpen ? "rotate-180 transition-transform" : "transition-transform"}
+              />
+            </NavLink>
+
+            {desktopServicesOpen && (
+              <div className="absolute left-1/2 top-full w-80 -translate-x-1/2 pt-3">
+                <div className="overflow-hidden rounded-xl border border-black/5 bg-white shadow-xl">
+                  <NavLink
+                    to="/services"
+                    className="block border-b border-black/5 bg-[var(--color-foam-2)] px-4 py-3 text-sm font-semibold text-[var(--color-current)]"
+                  >
+                    All Services
+                  </NavLink>
+                  {services.map((s) => (
+                    <NavLink
+                      key={s.slug}
+                      to={`/services/${s.slug}`}
+                      className="block px-4 py-2.5 text-sm text-[var(--color-ink)] hover:bg-[var(--color-foam-2)] hover:text-[var(--color-current)]"
+                    >
+                      {s.navLabel}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              `${linkBase} ${scrolled ? "text-[var(--color-ink)]" : "text-white"} ${
+                isActive ? "text-[var(--color-current)]" : ""
+              }`
+            }
+          >
+            Projects
+          </NavLink>
+
+          <NavLink
+            to="/clients"
+            className={({ isActive }) =>
+              `${linkBase} ${scrolled ? "text-[var(--color-ink)]" : "text-white"} ${
+                isActive ? "text-[var(--color-current)]" : ""
+              }`
+            }
+          >
+            Clients
+          </NavLink>
+
+          <NavLink
+            to="/faqs"
+            className={({ isActive }) =>
+              `${linkBase} ${scrolled ? "text-[var(--color-ink)]" : "text-white"} ${
+                isActive ? "text-[var(--color-current)]" : ""
+              }`
+            }
+          >
+            FAQs
+          </NavLink>
 
           <NavLink
             to="/careers"
@@ -135,23 +219,24 @@ export default function Navbar() {
       {/* Mobile panel */}
       <div
         className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out ${
-          mobileOpen ? "max-h-[26rem]" : "max-h-0"
+          mobileOpen ? "max-h-[36rem]" : "max-h-0"
         } bg-[var(--color-foam)] border-t border-black/5`}
       >
-        <div className="flex flex-col gap-1 px-5 py-4">
-          <NavLink to="/" end className="rounded-lg px-3 py-2.5 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-foam-2)]">
+        <div className="flex flex-col gap-1 px-5 py-4 max-h-[30rem] overflow-y-auto">
+          <NavLink to="/" end className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-foam-2)]">
             Home
           </NavLink>
-          <NavLink to="/what-we-do" className="rounded-lg px-3 py-2.5 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-foam-2)]">
+          <NavLink to="/what-we-do" className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-foam-2)]">
             What We Do
           </NavLink>
 
+          {/* Mobile Products Accordion */}
           <button
-            className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-foam-2)]"
+            className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-foam-2)]"
             onClick={() => setMobileProductsOpen((v) => !v)}
             aria-expanded={mobileProductsOpen}
           >
-            Products &amp; Services
+            Products
             <ChevronDown size={16} className={mobileProductsOpen ? "rotate-180 transition-transform" : "transition-transform"} />
           </button>
           <div
@@ -159,21 +244,58 @@ export default function Navbar() {
               mobileProductsOpen ? "max-h-96" : "max-h-0"
             }`}
           >
-            <NavLink to="/products-and-services" className="block rounded-lg px-3 py-2 text-sm font-semibold text-[var(--color-current)]">
-              All Products &amp; Services
+            <NavLink to="/products" className="block rounded-lg px-3 py-1.5 text-sm font-semibold text-[var(--color-current)]">
+              All Products
             </NavLink>
             {products.map((p) => (
               <NavLink
                 key={p.slug}
-                to={`/products-and-services/${p.slug}`}
-                className="block rounded-lg px-3 py-2 text-sm text-[var(--color-ink)]/80 hover:bg-[var(--color-foam-2)]"
+                to={`/products/${p.slug}`}
+                className="block rounded-lg px-3 py-1.5 text-sm text-[var(--color-ink)]/80 hover:bg-[var(--color-foam-2)]"
               >
                 {p.navLabel}
               </NavLink>
             ))}
           </div>
 
-          <NavLink to="/careers" className="rounded-lg px-3 py-2.5 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-foam-2)]">
+          {/* Mobile Services Accordion */}
+          <button
+            className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-foam-2)]"
+            onClick={() => setMobileServicesOpen((v) => !v)}
+            aria-expanded={mobileServicesOpen}
+          >
+            Services
+            <ChevronDown size={16} className={mobileServicesOpen ? "rotate-180 transition-transform" : "transition-transform"} />
+          </button>
+          <div
+            className={`overflow-hidden pl-3 transition-[max-height] duration-300 ${
+              mobileServicesOpen ? "max-h-96" : "max-h-0"
+            }`}
+          >
+            <NavLink to="/services" className="block rounded-lg px-3 py-1.5 text-sm font-semibold text-[var(--color-current)]">
+              All Services
+            </NavLink>
+            {services.map((s) => (
+              <NavLink
+                key={s.slug}
+                to={`/services/${s.slug}`}
+                className="block rounded-lg px-3 py-1.5 text-sm text-[var(--color-ink)]/80 hover:bg-[var(--color-foam-2)]"
+              >
+                {s.navLabel}
+              </NavLink>
+            ))}
+          </div>
+
+          <NavLink to="/projects" className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-foam-2)]">
+            Projects
+          </NavLink>
+          <NavLink to="/clients" className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-foam-2)]">
+            Clients
+          </NavLink>
+          <NavLink to="/faqs" className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-foam-2)]">
+            FAQs
+          </NavLink>
+          <NavLink to="/careers" className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-foam-2)]">
             Careers
           </NavLink>
           <NavLink

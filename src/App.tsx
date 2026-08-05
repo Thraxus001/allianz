@@ -9,6 +9,11 @@ import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import ProductsIndex from "./pages/products/ProductsIndex";
 import ProductDetail from "./pages/products/ProductDetail";
+import ServicesIndex from "./pages/products/ServicesIndex";
+import ServiceDetail from "./pages/products/ServiceDetail";
+import FAQs from "./pages/FAQs";
+import Clients from "./pages/Clients";
+import Projects from "./pages/Projects";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -40,8 +45,13 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/what-we-do" element={<WhatWeDo />} />
-            <Route path="/products-and-services" element={<ProductsIndex />} />
-            <Route path="/products-and-services/:slug" element={<ProductDetail />} />
+            <Route path="/products" element={<ProductsIndex />} />
+            <Route path="/products/:slug" element={<ProductDetail />} />
+            <Route path="/services" element={<ServicesIndex />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/clients" element={<Clients />} />
+            <Route path="/faqs" element={<FAQs />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

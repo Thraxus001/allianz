@@ -12,6 +12,7 @@ type FormState = {
   company: string;
   interest: string;
   message: string;
+  consent: boolean;
 };
 
 const initialState: FormState = {
@@ -21,25 +22,28 @@ const initialState: FormState = {
   company: "",
   interest: "General Enquiry",
   message: "",
+  consent: false,
 };
 
 const interestOptions = [
   "General Enquiry",
-  "Waste Water Treatment Plant",
-  "Reverse Osmosis System",
-  "Ultrafiltration Plant",
-  "Effluent Treatment Plant",
-  "Package MBBR Waste Water Treatment",
-  "Package SBR Waste Water Treatment",
-  "Package Waste Water Treatment",
-  "Operations & Maintenance (O&M / AMC)",
+  "Aqua Reverse Osmosis (RO)",
+  "Aqua Ultra Filtration (UF) Systems",
+  "Aqua Ion Exchange Systems",
+  "Biokleen Sequencing Batch Reactors (SBR)",
+  "Biokleen Moving Bed Biofilm Reactors (MBBR)",
+  "Biokleen Membrane Bioreactors (MBR)",
+  "Operation & Maintenance (O&M)",
+  "Annual Maintenance Contracts (AMC)",
+  "Training on Water & Wastewater Management",
+  "Retrofitting & Upgrading",
 ];
-
-const RECIPIENT = "kenya@allianzutilities.com";
 
 export default function Contact() {
   const [form, setForm] = useState<FormState>(initialState);
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
 
   const update = (key: keyof FormState) => (
@@ -52,29 +56,48 @@ export default function Contact() {
     if (!form.email.trim()) next.email = "An email address helps us reply.";
     else if (!/^\S+@\S+\.\S+$/.test(form.email)) next.email = "That email looks incomplete.";
     if (!form.message.trim()) next.message = "Let us know what you need.";
+    if (!form.consent) next.consent = "You must consent to the data capture to submit.";
     setErrors(next);
     return Object.keys(next).length === 0;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
-    const subject = encodeURIComponent(`Website Enquiry — ${form.interest}`);
-    const bodyLines = [
-      `Name: ${form.name}`,
-      `Email: ${form.email}`,
-      form.phone ? `Phone: ${form.phone}` : null,
-      form.company ? `Company / Organisation: ${form.company}` : null,
-      `Area of Interest: ${form.interest}`,
-      "",
-      "Message:",
-      form.message,
-    ].filter(Boolean);
-    const body = encodeURIComponent(bodyLines.join("\n"));
+    setIsSubmitting(true);
+    setSubmitError(null);
 
-    window.location.href = `mailto:${RECIPIENT}?subject=${subject}&body=${body}`;
-    setSent(true);
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3001/api/contact";
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          company: form.company,
+          interest: form.interest,
+          message: form.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit enquiry. Please check your credentials or connection.");
+      }
+
+      setSent(true);
+    } catch (err: any) {
+      console.error("Submission error:", err);
+      setSubmitError(err.message || "Failed to send message. Please check your network connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -82,7 +105,7 @@ export default function Contact() {
       <PageHero
         eyebrow="Contact Us"
         heading={"Let's talk about\nyour water."}
-        body="Reach the office nearest you, or send a message directly — it opens in your email app, ready to send."
+        body="Reach the office nearest you, or send a message directly to our team — your data is processed securely."
         image="https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=1600&auto=format&fit=crop"
       />
 
@@ -145,21 +168,10 @@ export default function Contact() {
               <div className="mt-8 flex flex-col items-start gap-3 rounded-2xl border border-[var(--color-leaf)]/30 bg-[var(--color-foam-2)] p-6">
                 <CheckCircle2 className="text-[var(--color-leaf-2)]" size={28} />
                 <p className="font-display text-xl font-bold text-[var(--color-deepwater)]">
-                  Your email app should be open now.
+                  Your message has been sent!
                 </p>
                 <p className="text-sm text-[var(--color-ink)]/70">
-                  Finish and send the message from there. Didn't open?{" "}
-                  <button
-                    onClick={handleSubmit}
-                    className="font-semibold text-[var(--color-current)] underline underline-offset-2"
-                  >
-                    Try again
-                  </button>{" "}
-                  or email us directly at{" "}
-                  <a href={`mailto:${RECIPIENT}`} className="font-semibold text-[var(--color-current)] underline underline-offset-2">
-                    {RECIPIENT}
-                  </a>
-                  .
+                  We have successfully received your enquiry. Our team will review your details and get back to you shortly at <span className="font-semibold text-[var(--color-deepwater)]">{form.email}</span>.
                 </p>
                 <button
                   onClick={() => {
@@ -235,14 +247,39 @@ export default function Contact() {
                   />
                 </Field>
 
+                {/* Disclaimer / Data Consent */}
+                <div className="flex flex-col gap-1.5 py-1">
+                  <label className="flex items-start gap-3 cursor-pointer select-none">
+                    <input
+                      type="checkbox"
+                      checked={form.consent}
+                      onChange={(e) => setForm((f) => ({ ...f, consent: e.target.checked }))}
+                      className="mt-1 h-4 w-4 rounded border-black/15 text-[var(--color-current)] focus:ring-[var(--color-current)] cursor-pointer"
+                    />
+                    <span className="text-sm text-[var(--color-ink)]/70">
+                      I consent to having Allianz Utilities capture and store my submitted details for reference and communication purposes.
+                    </span>
+                  </label>
+                  {errors.consent && (
+                    <span className="text-xs text-red-500 pl-7">{errors.consent}</span>
+                  )}
+                </div>
+
+                {submitError && (
+                  <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+                    {submitError}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--color-current)] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-current-2)] sm:w-auto"
+                  disabled={isSubmitting}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--color-current)] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-current-2)] sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message <Send size={16} />
+                  {isSubmitting ? "Sending..." : "Send Message"} <Send size={16} />
                 </button>
                 <p className="text-xs text-[var(--color-ink)]/50">
-                  This opens your default email app with the message pre-filled — nothing is stored or sent from this site.
+                  Your message is sent securely to our webmail backend. We will capture and reference your details solely for our communication with you.
                 </p>
               </form>
             )}

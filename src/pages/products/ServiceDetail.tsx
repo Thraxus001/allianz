@@ -3,35 +3,35 @@ import { ArrowUpRight, Check } from "lucide-react";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 import ContourDivider from "../../components/ContourDivider";
-import { products } from "../../data/content";
+import { services } from "../../data/content";
 
-export default function ProductDetail() {
+export default function ServiceDetail() {
   const { slug } = useParams();
-  const product = products.find((p) => p.slug === slug);
+  const service = services.find((s) => s.slug === slug);
 
-  if (!product) return <Navigate to="/products" replace />;
+  if (!service) return <Navigate to="/services" replace />;
 
-  const others = products.filter((p) => p.slug !== product.slug).slice(0, 3);
+  const others = services.filter((s) => s.slug !== service.slug).slice(0, 3);
 
   return (
     <div>
       <PageHero
-        eyebrow="Products"
-        heading={product.title}
-        body={product.tagline}
-        image={product.heroImage}
+        eyebrow="Services"
+        heading={service.title}
+        body={service.tagline}
+        image={service.heroImage}
       />
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
         <h1 className="mb-8 font-display text-4xl font-extrabold uppercase tracking-tight text-[var(--color-secondary)] md:text-5xl">
-          {product.title}
+          {service.title}
         </h1>
         <div className="grid gap-14 md:grid-cols-[1.2fr_1fr]">
           <div>
-            <SectionHeading eyebrow="Overview" heading="Technology." body={product.intro} />
+            <SectionHeading eyebrow="Service Overview" heading="How we work." body={service.intro} />
 
             <div className="mt-12 space-y-8">
-              {product.process.map((step, i) => (
+              {service.process.map((step, i) => (
                 <div key={step.title} className="flex gap-5">
                   <span className="font-mono text-sm text-[var(--color-current)]">
                     {String(i + 1).padStart(2, "0")}
@@ -45,19 +45,13 @@ export default function ProductDetail() {
                 </div>
               ))}
             </div>
-
-            {product.specNote && (
-              <div className="mt-10 rounded-xl border border-[var(--color-current)]/20 bg-[var(--color-foam-2)] p-5 font-mono text-xs leading-relaxed text-[var(--color-current)]">
-                {product.specNote}
-              </div>
-            )}
           </div>
 
           <aside className="space-y-8">
             <div className="rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
-              <p className="eyebrow text-[var(--color-current)]">Key Features</p>
+              <p className="eyebrow text-[var(--color-current)]">Key Benefits</p>
               <ul className="mt-4 space-y-3">
-                {product.highlights.map((h) => (
+                {service.highlights.map((h) => (
                   <li key={h} className="flex gap-2.5 text-sm leading-relaxed text-[var(--color-ink)]/80">
                     <Check size={16} className="mt-0.5 shrink-0 text-[var(--color-leaf-2)]" />
                     {h}
@@ -67,9 +61,9 @@ export default function ProductDetail() {
             </div>
 
             <div className="rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
-              <p className="eyebrow text-[var(--color-current)]">Applications</p>
+              <p className="eyebrow text-[var(--color-current)]">Where we do the service</p>
               <div className="mt-4 flex flex-wrap gap-2">
-                {product.applications.map((a) => (
+                {service.applications.map((a) => (
                   <span
                     key={a}
                     className="rounded-full bg-[var(--color-foam-2)] px-3 py-1.5 text-xs font-medium text-[var(--color-deepwater)]"
@@ -81,15 +75,15 @@ export default function ProductDetail() {
             </div>
 
             <div className="rounded-2xl bg-[var(--color-deepwater)] p-6">
-              <p className="font-display text-xl font-bold text-white">Need this sized for your site?</p>
+              <p className="font-display text-xl font-bold text-white">Need a custom O&amp;M or service contract?</p>
               <p className="mt-2 text-sm text-white/70">
-                Send us your flows and target parameters — we'll come back with a proposal.
+                Get in touch with our engineers today to design an operating plan that fits your facility.
               </p>
               <NavLink
                 to="/contact"
                 className="mt-5 inline-flex items-center gap-2 rounded-full bg-[var(--color-leaf)] px-5 py-2.5 text-sm font-semibold text-[var(--color-deepwater)] transition-transform hover:scale-105"
               >
-                Request A Quote <ArrowUpRight size={16} />
+                Get In Touch <ArrowUpRight size={16} />
               </NavLink>
             </div>
           </aside>
@@ -99,16 +93,16 @@ export default function ProductDetail() {
       <ContourDivider from="var(--color-foam)" to="var(--color-foam-2)" />
       <section className="bg-[var(--color-foam-2)] py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <SectionHeading eyebrow="Related" heading="Other solutions." />
+          <SectionHeading eyebrow="Related" heading="Other services we offer." />
           <div className="mt-10 grid gap-5 sm:grid-cols-3">
-            {others.map((p) => (
+            {others.map((s) => (
               <NavLink
-                key={p.slug}
-                to={`/products/${p.slug}`}
+                key={s.slug}
+                to={`/services/${s.slug}`}
                 className="group rounded-2xl border border-black/5 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
               >
-                <h3 className="font-display text-lg font-bold text-[var(--color-deepwater)]">{p.title}</h3>
-                <p className="mt-1.5 text-sm text-[var(--color-ink)]/70">{p.tagline}</p>
+                <h3 className="font-display text-lg font-bold text-[var(--color-deepwater)]">{s.title}</h3>
+                <p className="mt-1.5 text-sm text-[var(--color-ink)]/70">{s.tagline}</p>
                 <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-[var(--color-current)]">
                   View details <ArrowUpRight size={13} />
                 </span>

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { ArrowUpRight, ShieldCheck, GraduationCap, Wrench, Sparkles } from "lucide-react";
 import SectionHeading from "../components/SectionHeading";
 import ContourDivider from "../components/ContourDivider";
-import PageHero from "../components/PageHero";
+import HeroCarousel from "../components/HeroCarousel";
 
 const steps = [
   {
@@ -49,28 +49,22 @@ const service_pillars = [
 export default function WhatWeDo() {
   return (
     <div>
-      <PageHero
-        eyebrow="What We Do"
-        heading={"Consultancy through\ncommissioning — and after."}
-        body="Allianz Utilities designs, builds and operates water treatment, wastewater treatment and HVAC systems across East Africa, backed by SFC Umwelttechnik's engineering technologies."
-        image="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?q=80&w=1600&auto=format&fit=crop"
-      />
+      <HeroCarousel />
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
         <SectionHeading eyebrow="Our Process" heading="How a project moves." />
-        <div className="mt-14 grid gap-8 md:grid-cols-4">
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           {steps.map((s, i) => (
-            <div key={s.title} className="relative">
-              <p className="font-mono text-sm text-[var(--color-current)]">
-                {String(i + 1).padStart(2, "0")}
-              </p>
-              <h3 className="mt-3 font-display text-2xl font-bold text-[var(--color-deepwater)]">
-                {s.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">{s.body}</p>
-              {i < steps.length - 1 && (
-                <div className="mt-6 hidden h-px w-full bg-gradient-to-r from-[var(--color-current)]/40 to-transparent md:block" />
-              )}
+            <div key={s.title} className="relative rounded-2xl border border-[var(--color-leaf)]/20 bg-[var(--color-leaf)]/10 p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <span className="font-mono text-xs font-bold uppercase tracking-wider text-[var(--color-leaf-2)] bg-[var(--color-leaf)]/20 px-2.5 py-1 rounded-md">
+                  Step {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-4 font-display text-2xl font-bold text-[var(--color-deepwater)]">
+                  {s.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">{s.body}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -98,10 +92,10 @@ export default function WhatWeDo() {
           See the technologies behind the process.
         </h2>
         <NavLink
-          to="/products-and-services"
+          to="/products"
           className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--color-current)] px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-105"
         >
-          Browse Products &amp; Services <ArrowUpRight size={16} />
+          Browse Products <ArrowUpRight size={16} />
         </NavLink>
       </section>
     </div>

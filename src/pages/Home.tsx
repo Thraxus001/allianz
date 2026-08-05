@@ -1,41 +1,54 @@
 import { NavLink } from "react-router-dom";
-import { Droplets, Wind, Wrench, ClipboardCheck, ArrowUpRight } from "lucide-react";
-import HeroCarousel from "../components/HeroCarousel";
+import { ArrowUpRight, Eye, Target, Award, Check, Leaf } from "lucide-react";
+import VideoHero from "../components/VideoHero";
 import SectionHeading from "../components/SectionHeading";
-import ContourDivider from "../components/ContourDivider";
 import TechCard from "../components/TechCard";
 import { technologies } from "../data/content";
-import aboutImg from "../assets/about.png";
+import aboutImg from "../assets/waterhand.jpg";
+import designImg from "../assets/design.jpg";
+import ctechLogo from "../assets/ctech.png";
 
-const stats = [
-  { value: "1,500+", label: "Reference plants worldwide" },
-  { value: "600,000", label: "m³/day, largest C-TECH™ install" },
-  { value: "99.9999%", label: "Pathogen removal, C-MEM™ UF" },
-  { value: "3", label: "East African countries served" },
-];
-
-const services = [
-  { icon: Droplets, title: "Water & wastewater treatment", body: "From borehole to reuse — design, build and commission municipal and industrial plants." },
-  { icon: Wind, title: "HVAC systems", body: "Climate and air-handling systems engineered alongside your process needs." },
-  { icon: Wrench, title: "Spares & OEM parts", body: "Fast-track delivery of genuine replacement components and treatment chemicals." },
-  { icon: ClipboardCheck, title: "AMC & O&M", body: "Annual maintenance contracts and full-scope operations, staffed on-site." },
+const valuesList = [
+  "Integrity",
+  "Excellence",
+  "Innovation",
+  "Reliability",
+  "Sustainability",
+  "Customer focus",
 ];
 
 export default function Home() {
   return (
     <div>
-      <HeroCarousel />
+      <VideoHero />
 
-      {/* Welcome to Allianz */}
+      {/* Welcome / Intro */}
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-        <div className="grid gap-12 md:grid-cols-2 md:items-center">
-          <div>
-            <SectionHeading
-              eyebrow="Welcome to Allianz Utilities (EA) Ltd"
-              heading={"Water is life\nmatter and matrix."}
-              body="Allianz Utilities is an East African engineering company headquartered in Nairobi, Kenya, operating on a national and international scale. We design, engineer and manage water treatment plants, wastewater treatment plants, HVAC systems and related utilities — backed by energy-efficient equipment and engineers who add value at every step, from consultancy through execution."
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+          {/* New Left Image takes prominent position */}
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:aspect-[3/4] lg:col-span-5 order-2 lg:order-1">
+            <img
+              src={aboutImg}
+              alt="Allianz Utilities design and engineering plans"
+              className="h-full w-full object-cover"
             />
-            <div className="mt-8 flex flex-wrap gap-4">
+          </div>
+          
+          {/* Welcome Text + Reduced Original Image & Slogan */}
+          <div className="lg:col-span-7 order-1 lg:order-2">
+            <div className="flex flex-col text-left items-start">
+              <h1 className="mt-3 font-display text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-[var(--color-secondary)] md:text-5xl lg:text-6xl">
+                Welcome to Allianz Utilities
+              </h1>
+              <span className="eyebrow text-[var(--color-current)]">
+                Proven technology. Reliable water.
+              </span>
+              
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-[var(--color-ink)]/70">
+                At Allianz Utilities, we combine proven technology and expertise to deliver clean, reliable water — for every home, business, and industry we serve. From water treatment and wastewater plants to HVAC and utility services, we help clients achieve sustainable solutions tailored to their needs.
+              </p>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-4">
               <NavLink
                 to="/what-we-do"
                 className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-deepwater)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-current)]"
@@ -43,50 +56,26 @@ export default function Home() {
                 What We Do <ArrowUpRight size={16} />
               </NavLink>
             </div>
-          </div>
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:aspect-[3/4]">
-            <img
-              src={aboutImg}
-              alt="Coastal water landscape in East Africa"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
 
-      {/* Stats strip */}
-      <section className="bg-[var(--color-deepwater)] py-14">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-5 md:grid-cols-4 md:px-8">
-          {stats.map((s) => (
-            <div key={s.label}>
-              <p className="font-display text-4xl font-bold text-[var(--color-leaf)] md:text-5xl">{s.value}</p>
-              <p className="mt-1 text-sm text-white/70">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-      <ContourDivider from="var(--color-deepwater)" to="var(--color-foam)" />
-
-      {/* About / mission */}
-      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-        <SectionHeading
-          eyebrow="Our Mission"
-          heading="Clean water for the world."
-          body="Water is our most valuable resource — essential for life, health and economic development. As climate change, industrialization and population growth put pressure on supply, we build systems that deliver top water quality, reduce ecological footprint and help preserve natural resources, for municipalities, industries, households and agriculture alike."
-        />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map(({ icon: Icon, title, body }) => (
-            <div
-              key={title}
-              className="group rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--color-foam-2)] text-[var(--color-current)] transition-colors group-hover:bg-[var(--color-current)] group-hover:text-white">
-                <Icon size={20} />
+            {/* Reduced Image + Slogan */}
+            <div className="mt-10 flex flex-col sm:flex-row items-center gap-5 border-t border-black/5 pt-8">
+              <div className="h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-black/5 shadow-sm">
+                <img
+                  src={designImg}
+                  alt="Coastal water landscape in East Africa"
+                  className="h-full w-full object-cover"
+                />
               </div>
-              <h3 className="mt-4 font-display text-xl font-bold text-[var(--color-deepwater)]">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">{body}</p>
+              <div className="text-center sm:text-left">
+                <p className="font-display text-xl italic font-bold tracking-tight text-[var(--color-deepwater)] leading-tight">
+                  "Treat your today, save your tomorrow."
+                </p>
+                <p className="mt-1 text-xs text-[var(--color-ink)]/50">
+                  Our commitment to water sustainability and resource conservation.
+                </p>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
@@ -96,10 +85,10 @@ export default function Home() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading eyebrow="Our Technologies" heading="Engineered systems, proven worldwide." />
             <NavLink
-              to="/products-and-services"
+              to="/products"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-current)] hover:underline"
             >
-              View all products &amp; services <ArrowUpRight size={16} />
+              View all products <ArrowUpRight size={16} />
             </NavLink>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -110,14 +99,127 @@ export default function Home() {
         </div>
       </section>
 
+      {/* What we do & Vision / Mission / Values */}
+      <section className="bg-white border-y border-black/5 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <SectionHeading
+            eyebrow="What We Do"
+            heading="End-to-end utility engineering."
+            body="We design, engineer, and manage a wide range of utility systems, including water treatment plants, wastewater treatment plants, HVAC systems, and related engineering solutions. Our approach covers the full project cycle, ensuring every solution is efficient, effective, and built for lasting value."
+          />
+
+          <div className="mt-14 grid gap-8 md:grid-cols-3">
+            {/* Vision */}
+            <div className="rounded-2xl bg-[var(--color-surface-light)] p-6 border border-black/5">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[var(--color-current)] shadow-sm">
+                <Eye size={20} />
+              </div>
+              <h3 className="mt-4 font-display text-xl font-bold text-[var(--color-deepwater)]">Our Vision</h3>
+              <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink)]/70">
+                To be the trusted partner of choice in Africa for sustainable engineering solutions that support clean water, effective wastewater management and efficient utility operations.
+              </p>
+            </div>
+
+            {/* Mission */}
+            <div className="rounded-2xl bg-[var(--color-surface-light)] p-6 border border-black/5">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[var(--color-current)] shadow-sm">
+                <Target size={20} />
+              </div>
+              <h3 className="mt-4 font-display text-xl font-bold text-[var(--color-deepwater)]">Our Mission</h3>
+              <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink)]/70">
+                To provide innovative, efficient and dependable engineering services that meet client needs and promote sustainable infrastructure performance.
+              </p>
+            </div>
+
+            {/* Values */}
+            <div className="rounded-2xl bg-[var(--color-surface-light)] p-6 border border-black/5">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[var(--color-current)] shadow-sm">
+                <Award size={20} />
+              </div>
+              <h3 className="mt-4 font-display text-xl font-bold text-[var(--color-deepwater)]">Our Values</h3>
+              <ul className="mt-3 grid grid-cols-2 gap-x-2 gap-y-2.5">
+                {valuesList.map((val) => (
+                  <li key={val} className="flex items-center gap-1.5 text-sm text-[var(--color-ink)]/80">
+                    <Check size={16} className="text-[var(--color-secondary)] shrink-0" />
+                    {val}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      {/* Partners Section */}
+      <section className="bg-[var(--color-foam-2)]/60 border-t border-black/5 py-20 md:py-24">
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <div className="text-center max-w-2xl mx-auto">
+            <SectionHeading 
+              eyebrow="Our Partners" 
+              heading="Technology & Innovation Partners" 
+              body="We collaborate with global leaders in water treatment and environmental engineering to integrate world-class systems and components."
+            />
+          </div>
+
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
+            {/* SFC Umwelttechnik */}
+            <div className="flex flex-col items-center p-8 rounded-2xl border border-black/5 bg-white shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="flex h-20 w-44 items-center justify-center rounded-xl bg-white p-3 border border-black/5 shadow-inner">
+                <img
+                  src={ctechLogo}
+                  alt="SFC Umwelttechnik / C-Tech Logo"
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+              <h3 className="mt-6 font-display text-xl font-bold text-[var(--color-deepwater)] text-center">SFC</h3>
+              <p className="mt-2 text-center text-sm leading-relaxed text-[var(--color-ink)]/70 flex-1">
+                A pioneer in advanced Sequencing Batch Reactor (SBR) biological wastewater treatment systems, delivering high-efficiency and cost-effective C-Tech™ sanitation systems globally.
+              </p>
+              <a
+                href="https://www.sfc-umwelttechnik.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-[var(--color-foam-2)] px-4 py-2 text-xs font-semibold text-[var(--color-deepwater)] hover:bg-[var(--color-leaf)] hover:text-white transition-colors"
+              >
+                Visit SFC Website <ArrowUpRight size={14} />
+              </a>
+            </div>
+
+            {/* WTE Group */}
+            <div className="flex flex-col items-center p-8 rounded-2xl border border-black/5 bg-white shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="flex h-20 w-44 items-center justify-center rounded-xl bg-[var(--color-foam-2)] p-3 border border-black/5">
+                <div className="flex items-center gap-2 text-[var(--color-deepwater)] font-display font-black text-3xl tracking-tighter">
+                  <Leaf className="text-[var(--color-secondary)] fill-[var(--color-secondary)]/20" size={24} />
+                  <span>WTE</span>
+                </div>
+              </div>
+              <h3 className="mt-6 font-display text-xl font-bold text-[var(--color-deepwater)] text-center">WTE Group</h3>
+              <p className="mt-2 text-center text-sm leading-relaxed text-[var(--color-ink)]/70 flex-1">
+                A leading European water infrastructure group, planning, building, and operating advanced wastewater treatment plants and utility energy recovery facilities.
+              </p>
+              <a
+                href="https://wteinfra.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-[var(--color-foam-2)] px-4 py-2 text-xs font-semibold text-[var(--color-deepwater)] hover:bg-[var(--color-leaf)] hover:text-white transition-colors"
+              >
+                Visit WTE Website <ArrowUpRight size={14} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="relative overflow-hidden bg-[var(--color-current)] py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center md:px-8">
           <h2 className="font-display text-4xl font-bold text-white md:text-5xl">
-            Have a water challenge worth solving?
+            Let’s build your solution
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/85">
-            Tell us about your site, your flows and your compliance targets — our engineers will come back with a design that fits.
+          <p className="mx-auto mt-4 max-w-xl text-white/85 text-sm leading-relaxed md:text-base">
+            At Allianz Utilities, we provide dependable water, wastewater, HVAC, operation and maintenance services backed by experienced professionals who ensure every project is handled with care, quality, and technical excellence.
           </p>
           <NavLink
             to="/contact"
