@@ -5,7 +5,6 @@ import SectionHeading from "../components/SectionHeading";
 import TechCard from "../components/TechCard";
 import { technologies } from "../data/content";
 import aboutImg from "../assets/waterhand.jpg";
-import designImg from "../assets/design.jpg";
 import sfcLogo from "../assets/sfc logo.jpeg";
 import wteLogo from "../assets/wte logo.jpeg";
 import handImg from "../assets/hand.jpg";

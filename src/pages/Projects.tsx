@@ -1,17 +1,12 @@
 import { useState } from "react";
 import { ArrowUpRight, Calendar, MapPin, Gauge } from "lucide-react";
-import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
 import HeroCarousel from "../components/ProjectsCarousel";
 
 // Local image assets
-import heroImg from "../assets/design.jpg";
 import reverseImg from "../assets/reverse.jpeg";
 import ultrafiltrationImg from "../assets/ultrafiltration.png";
-import maintenanceImg from "../assets/maintenance.jpeg";
 import effluentImg from "../assets/effluent.png";
-import membraneImg from "../assets/Aqua-membrane.jpg";
-import sbrImg from "../assets/sbr.png";
 import central from "../assets/Central HVAC.avif";
 import borehole from "../assets/borehole.jpg";
 import residential from "../assets/residential.png";

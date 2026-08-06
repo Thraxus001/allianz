@@ -218,11 +218,11 @@ export default function Navbar() {
 
       {/* Mobile panel */}
       <div
-        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out ${
-          mobileOpen ? "max-h-[36rem]" : "max-h-0"
+        className={`md:hidden overflow-y-auto transition-[max-height] duration-300 ease-in-out ${
+          mobileOpen ? "max-h-[85vh]" : "max-h-0"
         } bg-[var(--color-foam)] border-t border-black/5`}
       >
-        <div className="flex flex-col gap-1 px-5 py-4 max-h-[30rem] overflow-y-auto">
+        <div className="flex flex-col gap-1 px-5 py-4">
           <NavLink to="/" end className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-foam-2)]">
             Home
           </NavLink>
@@ -241,7 +241,7 @@ export default function Navbar() {
           </button>
           <div
             className={`overflow-hidden pl-3 transition-[max-height] duration-300 ${
-              mobileProductsOpen ? "max-h-96" : "max-h-0"
+              mobileProductsOpen ? "max-h-[500px]" : "max-h-0"
             }`}
           >
             <NavLink to="/products" className="block rounded-lg px-3 py-1.5 text-sm font-semibold text-[var(--color-current)]">
@@ -269,7 +269,7 @@ export default function Navbar() {
           </button>
           <div
             className={`overflow-hidden pl-3 transition-[max-height] duration-300 ${
-              mobileServicesOpen ? "max-h-96" : "max-h-0"
+              mobileServicesOpen ? "max-h-[300px]" : "max-h-0"
             }`}
           >
             <NavLink to="/services" className="block rounded-lg px-3 py-1.5 text-sm font-semibold text-[var(--color-current)]">

@@ -8,7 +8,6 @@ import mbbr from "../assets/mbbr.jpeg";
 //import productsImg from "../assets/productss.jpeg";
 //import qrCodeImg from "../assets/qrcode.jpg";
 import reverse from "../assets/reverse.jpeg";
-import sbr from "../assets/sbr.png";
 import ultrafiltration from "../assets/ultrafiltration.png";
 import wastewater from "../assets/wastewater.png";
 import design from "../assets/design.jpg";

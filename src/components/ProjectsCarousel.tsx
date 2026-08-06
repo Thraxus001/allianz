@@ -5,7 +5,6 @@ import ContourDivider from "./ContourDivider";
 // Local image assets matching the projects page
 import reverseImg from "../assets/reverse.jpeg";
 import ultrafiltrationImg from "../assets/ultrafiltration.png";
-import maintenanceImg from "../assets/maintenance.jpeg";
 import effluentImg from "../assets/effluent.png";
 import central from "../assets/Central HVAC.avif";
 
