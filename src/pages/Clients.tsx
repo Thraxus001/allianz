@@ -3,98 +3,118 @@ import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
 
 // Local image assets
-import heroImg from "../assets/productss.jpeg";
-import mbbrImg from "../assets/mbbr.jpeg";
-import reverseImg from "../assets/reverse.jpeg";
-import sbrImg from "../assets/sbr.png";
-import effluentImg from "../assets/effluent.png";
-import maintenanceImg from "../assets/maintenance.jpeg";
-import ultrafiltrationImg from "../assets/ultrafiltration.png";
+import heroImg from "../assets/clientts.png";
 import logoImg from "../assets/logo.jpg";
+
+// Client Logos
+import uonLogo from "../assets/uon_logo.svg";
+import tworiversLogo from "../assets/tworivers_logo.svg";
+import sabisLogo from "../assets/sabis_logo.svg";
+import ciataLogo from "../assets/ciata_logo.svg";
+import rosslynLogo from "../assets/rosslyn_logo.png";
+import biovaxLogo from "../assets/biovax_logo.webp";
+import weetabixLogo from "../assets/weetabix_logo.svg";
+import lifecareLogo from "../assets/lifecare_logo.jpg";
 
 // Client industries / case profiles
 const clientCases = [
   {
-    name: "Serena Hotels & Lodges",
-    sector: "Hospitality & Eco-Tourism",
-    location: "Masai Mara & Amboseli, Kenya",
-    solution: "Biokleen MBR Wastewater Recycling Package",
-    description: "Designed and installed off-grid biological membrane bioreactor (MBR) plants for premium wildlife lodges. The treated water exceeds NEMA standards and is fully recycled for landscape irrigation, with zero environmental footprint in sensitive ecosystems.",
-    image: mbbrImg
-  },
-  {
-    name: "MediLab Diagnostic Centre",
-    sector: "Healthcare & Laboratory Services",
+    name: "University of Nairobi (UoN)",
+    sector: "Higher Education & Research",
     location: "Nairobi, Kenya",
-    solution: "Aqua Reverse Osmosis (RO) Purification",
-    description: "Sized and commissioned a multi-stage Reverse Osmosis system with UV sterilization to supply high-purity water for clinical testing, dialysis equipment, and chemical analyzer lines, backed by monthly scheduled preventative maintenance.",
-    image: reverseImg
+    solution: "Borehole Filtration & Water Treatment Plant",
+    description: "Designed and installed a high-capacity reverse osmosis and sand filtration system for the main campus, supplying safe, treated water to administrative offices, science laboratories, and student residences.",
+    image: uonLogo
   },
   {
-    name: "Nairobi Green Heights",
-    sector: "Residential Real Estate",
-    location: "Nairobi, Kenya",
-    solution: "Biokleen SBR Sewerage Treatment Plant",
-    description: "Engineered and deployed a sequencing batch reactor (SBR) treatment plant for a high-density 120-unit residential complex. The compact system was retrofitted into the basement, eliminating odors and recycling greywater directly to lawns.",
-    image: sbrImg
+    name: "Two Rivers Mall",
+    sector: "Commercial Real Estate & Retail",
+    location: "Ruaka, Nairobi",
+    solution: "Central HVAC & Water Utility Management",
+    description: "Provides full-scale HVAC operations and comprehensive maintenance of water supply, biological recycling systems, and borehole filtration for East Africa's largest retail and commercial complex.",
+    image: tworiversLogo
   },
   {
-    name: "East African Breweries Ltd",
+    name: "Sabis International School",
+    sector: "K-12 Education & Institutional",
+    location: "Runda, Nairobi",
+    solution: "Biokleen Biological Wastewater Treatment Plant",
+    description: "Deployed a zero-odor biological wastewater recycling system for the campus. The treated water meets stringent standards and is used for maintaining the institution's sports fields and garden landscaping.",
+    image: sabisLogo
+  },
+  {
+    name: "Ciata City Mall",
+    sector: "Retail & Commercial Real Estate",
+    location: "Kiambu Road, Nairobi",
+    solution: "Water Filtration & Borehole Softening Plant",
+    description: "Engineered and implemented a central water purification and automatic hardness-removal softening plant to protect commercial building infrastructure and ensure reliable water quality for all retail outlets.",
+    image: ciataLogo
+  },
+  {
+    name: "Rosslyn Academy",
+    sector: "K-12 Education & International School",
+    location: "Gigiri, Nairobi",
+    solution: "SBR Wastewater Treatment & Water Supply O&M",
+    description: "Manages the design, installation, and daily operations of their biological sequencing batch reactor wastewater plant, supporting the school's sustainability initiatives by recycling greywater.",
+    image: rosslynLogo
+  },
+  {
+    name: "Kenya BioVax Institute (BioVax)",
+    sector: "Pharmaceutical & Vaccine Manufacturing",
+    location: "Embakasi, Nairobi",
+    solution: "High-Purity Ultrafiltration & RO System",
+    description: "Sized and commissioned a double-pass Reverse Osmosis system with UV sterilization to supply high-purity water for clinical product formulation and laboratory testing processes.",
+    image: biovaxLogo
+  },
+  {
+    name: "Weetabix East Africa",
     sector: "Food & Beverage Manufacturing",
-    location: "Kisumu, Kenya",
+    location: "Nairobi, Kenya",
     solution: "Effluent Treatment Plant (ETP) Upgrade",
-    description: "Retrofitted biological aeration basins and updated mechanical filtration pumps in their existing industrial effluent plant. The upgrade restored full regulatory compliance, expanded hydraulic capacity, and lowered monthly utility energy costs.",
-    image: effluentImg
+    description: "Upgraded the biological treatment and aeration systems at their main processing facility. Improved NEMA compliance, optimized hydraulic capacity, and lowered monthly utility energy costs.",
+    image: weetabixLogo
   },
   {
-    name: "The Hub Mall",
-    sector: "Commercial Real Estate",
-    location: "Karen, Nairobi",
-    solution: "HVAC & Comprehensive Utility O&M",
-    description: "Provides full-time, on-site utility engineers managing central water distribution, borehole filtration, HVAC water chillers, and chemical dosing routines to ensure consistent comfort and water safety for over 80 shopping outlets.",
-    image: maintenanceImg
-  },
-  {
-    name: "FlowerTech Horticulture",
-    sector: "Agricultural Irrigation",
-    location: "Naivasha, Kenya",
-    solution: "Aqua Ion Exchange & Ultrafiltration System",
-    description: "Engineered a dual-stage borehole treatment plant featuring automatic iron-manganese exchange softeners and ultrafiltration membranes to protect greenhouse drip-feed systems from scaling and organic clogging.",
-    image: ultrafiltrationImg
+    name: "Lifecare Kenya",
+    sector: "Healthcare & Medical Laboratory",
+    location: "Nairobi, Kenya",
+    solution: "Biological Wastewater Treatment & Water Supply O&M",
+    description: "Provides ongoing operations and maintenance of their biological wastewater treatment plant, ensuring compliance with environmental regulations and maintaining high-quality water supply for laboratory and clinical operations.",
+    image: lifecareLogo
   }
 ];
 
 // Client Testimonials
 const clientReviews = [
   {
-    quote: "Allianz Utilities designed and installed a high-purity water system that exceeds our stringent lab guidelines. Their monthly preventative maintenance gives us complete peace of mind, and their technical response is rapid and highly professional.",
+    quote: "Allianz Utilities designed and installed a high-purity water system that exceeds our stringent pharmaceutical guidelines. Their technical response is rapid and highly professional, ensuring our vaccine lines have consistent water quality.",
     author: "Dr. Michael Mwangi",
     role: "Director of Operations",
-    company: "MediLab Diagnostic Centre",
+    company: "Kenya BioVax Institute",
     photo: logoImg,
     rating: 5
   },
   {
-    quote: "The biological SBR wastewater plant handles our daily sewage load with zero odor, recycling water directly to our landscaping. Our residents are extremely pleased, and it has lowered our water purchase bill by over 40%. Highly recommend their O&M package.",
+    quote: "The biological wastewater plant handles our campus sewage load with zero odor, recycling water directly to our sports fields. It has lowered our water bill significantly and aligns perfectly with our campus sustainability goals.",
     author: "Sarah Ndwiga",
-    role: "Estate Manager",
-    company: "Nairobi Green Heights",
+    role: "Estate & Facilities Manager",
+    company: "Sabis International School",
     photo: logoImg,
     rating: 5
   },
   {
-    quote: "Their eco-lodge MBR wastewater recycling solution was completed on-schedule and integrates perfectly into our environmental policy. The recycled water quality is excellent, allowing us to keep our lawns green even in dry seasons.",
+    quote: "Their biological wastewater recycling solution was completed on schedule and integrates perfectly into our green campus initiative. The recycled water quality is excellent, allowing us to keep our landscaping green all year round.",
     author: "Jean-Luc Rugamba",
-    role: "Director of Projects",
-    company: "Serena Hotels & Lodges",
+    role: "Director of Facilities",
+    company: "Rosslyn Academy",
     photo: logoImg,
     rating: 5
   },
   {
-    quote: "Retrofitting our biological basins with Allianz decreased our operating costs and restored complete NEMA compliance. Their team showed exceptional engineering knowledge and completed the upgrade with minimal downtime to our production.",
+    quote: "Retrofitting our biological basins with Allianz decreased our operating costs and restored complete NEMA compliance. Their team showed exceptional engineering knowledge and completed the upgrade with minimal downtime to production.",
     author: "Anil Patel",
     role: "Technical Director",
-    company: "East African Breweries Ltd",
+    company: "Weetabix East Africa",
     photo: logoImg,
     rating: 5
   }
@@ -123,8 +143,8 @@ export default function Clients() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {clientCases.map((c) => (
             <div key={c.name} className="flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm hover:shadow-md transition-shadow">
-              <div className="relative h-48 w-full overflow-hidden">
-                <img src={c.image} alt={c.name} className="h-full w-full object-cover" />
+              <div className="relative h-48 w-full bg-[var(--color-foam-2)]/30 flex items-center justify-center p-8 border-b border-black/5">
+                <img src={c.image} alt={c.name} className="max-h-full max-w-full object-contain" />
                 <span className="absolute bottom-3 left-3 rounded-full bg-[var(--color-deepwater)] px-3 py-1 text-xs font-semibold text-white">
                   {c.sector}
                 </span>

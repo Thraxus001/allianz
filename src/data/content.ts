@@ -12,6 +12,8 @@ import sbr from "../assets/sbr.png";
 import ultrafiltration from "../assets/ultrafiltration.png";
 import wastewater from "../assets/wastewater.png";
 import design from "../assets/design.jpg";
+import training from "../assets/training.jpg";
+import ctech from "../assets/ctech.webp";
 
 export type Product = {
   slug: string;
@@ -44,7 +46,7 @@ export const products: Product[] = [
     navLabel: "C-Tech SBR",
     title: "C-Tech SBR (Sequencing Batch Reactor)",
     tagline: "Intelligent Cyclic Activated Sludge Wastewater Treatment.",
-    heroImage: sbr,
+    heroImage: ctech,
     intro:
       "C-Tech SBR biological systems treat wastewater in timed cycles within a single reactor. Combining aeration, settling, and decanting into a single basin, this technology offers superior nutrient removal and high-efficiency operations for domestic and industrial effluents.\n\nWe design compact, energy-efficient SBR systems that consistently achieve high treatment standards while minimizing operating costs.",
     highlights: [
@@ -75,7 +77,7 @@ export const products: Product[] = [
     navLabel: "C-Mem SBR",
     title: "C-Mem SBR (Membrane Bioreactor)",
     tagline: "Advanced Wastewater Recycling with Membrane Technology.",
-    heroImage: Aquamembrane,
+    heroImage: ultrafiltration,
     intro:
       "C-Mem SBR systems combine biological treatment with ultrafiltration membrane separation. By utilizing hollow-fiber membranes directly within or after the reactor, the system filters out all suspended solids, bacteria, and pathogens, yielding extremely high-quality effluent suitable for unrestricted recycling.\n\nWe supply advanced membrane technology that delivers outstanding water quality, reduced footprint, and reliable long-term operation.",
     highlights: [
@@ -386,7 +388,7 @@ export const services: Service[] = [
     navLabel: "Training on Water Management",
     title: "Training on Water & Wastewater Management",
     tagline: "Empowering Your Team Through Knowledge.",
-    heroImage: reverse,
+    heroImage: training,
     intro:
       "Technology performs best when operated by knowledgeable people. Our comprehensive training programs equip operators, technicians, facility managers, and maintenance teams with the practical skills needed to operate, monitor, troubleshoot, and maintain water and wastewater treatment systems safely and efficiently.\n\nTraining programs can be customized to suit industries, hospitals, institutions, municipalities, and commercial facilities.\n\nOur hands on training is delivered by experienced engineers who combine industry best practices with practical field experience, ensuring your team gains the confidence and competence to manage treatment systems effectively.",
     highlights: [
@@ -511,7 +513,7 @@ export const technologies = [
   {
     name: "CTECH SBR",
     subtitle: "Moving bed biofilm reactor",
-    image: mbbr,
+    image: ctech,
     slug: "package-mbbr-waste-water-treatment",
   },
 ];

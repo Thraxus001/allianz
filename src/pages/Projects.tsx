@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowUpRight, Calendar, MapPin, Gauge } from "lucide-react";
 import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
+import HeroCarousel from "../components/ProjectsCarousel";
 
 // Local image assets
 import heroImg from "../assets/design.jpg";
@@ -11,14 +12,17 @@ import maintenanceImg from "../assets/maintenance.jpeg";
 import effluentImg from "../assets/effluent.png";
 import membraneImg from "../assets/Aqua-membrane.jpg";
 import sbrImg from "../assets/sbr.png";
+import central from "../assets/Central HVAC.avif";
+import borehole from "../assets/borehole.jpg";
+import residential from "../assets/residential.png";
 
 // Implemented Projects List
 const projectsList = [
   {
     title: "50,000 LPH Brackish Water Reverse Osmosis System",
-    client: "MediLab Diagnostic Centre",
+    client: "Kenya BioVax Institute (BioVax)",
     category: "Water Treatment",
-    location: "Nairobi, Kenya",
+    location: "Embakasi, Nairobi, Kenya",
     year: "2025",
     capacity: "50,000 Litres Per Hour",
     metricLabel: "Water Purity",
@@ -28,9 +32,9 @@ const projectsList = [
   },
   {
     title: "150 m³/day Biokleen MBR Wastewater Recycling Plant",
-    client: "Serena Hotels & Lodges",
+    client: "Sabis International School",
     category: "Wastewater Treatment",
-    location: "Masai Mara, Kenya",
+    location: "Runda, Nairobi, Kenya",
     year: "2024",
     capacity: "150,000 Litres Per Day",
     metricLabel: "BOD Reduction",
@@ -40,21 +44,21 @@ const projectsList = [
   },
   {
     title: "Central HVAC Chilled Water System (400 Tons)",
-    client: "The Hub Mall",
+    client: "Two Rivers Mall",
     category: "HVAC & Utilities",
-    location: "Karen, Nairobi, Kenya",
+    location: "Ruaka, Nairobi, Kenya",
     year: "2024",
     capacity: "400 Tons Cooling Load",
     metricLabel: "Uptime Rate",
     metricValue: "99.98%",
     description: "Mechanical layout and piping installation of twin centrifugal chillers, central air handling units, and cooling towers, integrated with full borehole pre-filtration to prevent scaling.",
-    image: maintenanceImg
+    image: central
   },
   {
     title: "100 m³/day Industrial Effluent treatment plant upgrade",
-    client: "East African Breweries Ltd",
+    client: "Weetabix East Africa",
     category: "Wastewater Treatment",
-    location: "Kisumu, Kenya",
+    location: "Nairobi, Kenya",
     year: "2025",
     capacity: "100,000 Litres Per Day",
     metricLabel: "NEMA Compliance",
@@ -64,27 +68,27 @@ const projectsList = [
   },
   {
     title: "Automated Borehole Softening & Ultrafiltration Plant",
-    client: "FlowerTech Horticulture",
+    client: "University of Nairobi (UoN)",
     category: "Water Treatment",
-    location: "Naivasha, Kenya",
+    location: "Nairobi, Kenya",
     year: "2023",
     capacity: "25,000 Litres Per Hour",
     metricLabel: "Hardness Removal",
     metricValue: "95%",
     description: "Borehole filtration plant containing automatic iron-manganese exchange softeners, sand filtration, and ultrafiltration membranes to protect crop drip irrigation systems from calcium scaling.",
-    image: membraneImg
+    image: borehole
   },
   {
     title: "80 m³/day Residential SBR Sewerage Treatment Plant",
-    client: "Nairobi Green Heights",
+    client: "Rosslyn Academy",
     category: "Wastewater Treatment",
-    location: "Nairobi, Kenya",
+    location: "Gigiri, Nairobi, Kenya",
     year: "2024",
     capacity: "80,000 Litres Per Day",
     metricLabel: "Odor Control",
     metricValue: "100%",
     description: "Basement-level Sequencing Batch Reactor (SBR) wastewater plant treating sewage from a 120-unit housing estate. Completely automated decanting cycles yield odor-free water for landscaping.",
-    image: sbrImg
+    image: residential
   }
 ];
 
@@ -99,12 +103,7 @@ export default function Projects() {
 
   return (
     <div>
-      <PageHero
-        eyebrow="Our Projects"
-        heading={"Delivering Engineering\nExcellence in East Africa"}
-        body="Explore our portfolio of completed projects. We deliver end-to-end engineering, manufacturing, and operational expertise for commercial, residential, agricultural, and industrial infrastructure."
-        image={heroImg}
-      />
+      <HeroCarousel />
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
         {/* Section Heading & Category Filter Tabs */}

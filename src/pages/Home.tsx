@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom";
-import { ArrowUpRight, Eye, Target, Award, Check, Leaf } from "lucide-react";
+import { ArrowUpRight, Eye, Target, Award, Check } from "lucide-react";
 import VideoHero from "../components/VideoHero";
 import SectionHeading from "../components/SectionHeading";
 import TechCard from "../components/TechCard";
 import { technologies } from "../data/content";
 import aboutImg from "../assets/waterhand.jpg";
 import designImg from "../assets/design.jpg";
-import ctechLogo from "../assets/ctech.png";
+import sfcLogo from "../assets/sfc logo.jpeg";
+import wteLogo from "../assets/wte logo.jpeg";
+import handImg from "../assets/hand.jpg";
 
 const valuesList = [
   "Integrity",
@@ -26,7 +28,7 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
           {/* New Left Image takes prominent position */}
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:aspect-[3/4] lg:col-span-5 order-2 lg:order-1">
+          <div className="relative aspect-[4/5] w-3/5 md:w-1/2 lg:w-full mx-auto overflow-hidden rounded-2xl md:aspect-[3/4] lg:col-span-3 order-2 lg:order-1">
             <img
               src={aboutImg}
               alt="Allianz Utilities design and engineering plans"
@@ -35,7 +37,7 @@ export default function Home() {
           </div>
           
           {/* Welcome Text + Reduced Original Image & Slogan */}
-          <div className="lg:col-span-7 order-1 lg:order-2">
+          <div className="lg:col-span-9 order-1 lg:order-2">
             <div className="flex flex-col text-left items-start">
               <h1 className="mt-3 font-display text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-[var(--color-secondary)] md:text-5xl lg:text-6xl">
                 Welcome to Allianz Utilities
@@ -56,24 +58,32 @@ export default function Home() {
                 What We Do <ArrowUpRight size={16} />
               </NavLink>
             </div>
+          </div>
+        </div>
 
-            {/* Reduced Image + Slogan */}
-            <div className="mt-10 flex flex-col sm:flex-row items-center gap-5 border-t border-black/5 pt-8">
-              <div className="h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-black/5 shadow-sm">
-                <img
-                  src={designImg}
-                  alt="Coastal water landscape in East Africa"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="text-center sm:text-left">
-                <p className="font-display text-xl italic font-bold tracking-tight text-[var(--color-deepwater)] leading-tight">
-                  "Treat your today, save your tomorrow."
-                </p>
-                <p className="mt-1 text-xs text-[var(--color-ink)]/50">
-                  Our commitment to water sustainability and resource conservation.
-                </p>
-              </div>
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-center mt-16 md:mt-24">
+          {/* New Right Image on desktop */}
+          <div className="relative aspect-[4/5] w-3/5 md:w-1/2 lg:w-full mx-auto overflow-hidden rounded-2xl md:aspect-[3/4] lg:col-span-3 order-2 lg:order-2">
+            <img
+              src={handImg}
+              alt="Allianz Utilities design and engineering plans"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          
+          {/* Welcome Text on the left */}
+          <div className="lg:col-span-9 order-1 lg:order-1">
+            <div className="flex flex-col text-left items-start">
+              <h1 className="mt-3 font-display text-4xl font-extrabold leading-[0.95] tracking-tight text-[var(--color-current)] md:text-5xl lg:text-6xl">
+                Treat Today. Save Your Tomorrow
+              </h1>
+              <span className="eyebrow text-[var(--color-secondary)]">
+                Many lives. One choice.
+              </span>
+              
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-[var(--color-ink)]/70">
+                Every choice we make shapes tomorrow. Clean water is not just a resource—it is life itself. By acting now, we safeguard communities, preserve health, and ensure that generations to come inherit a world where reliability and sustainability are more than promises. Many lives depend on one choice, and that choice begins today.
+              </p>
             </div>
           </div>
         </div>
@@ -103,7 +113,7 @@ export default function Home() {
       <section className="bg-white border-y border-black/5 py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <SectionHeading
-            eyebrow="What We Do"
+            eyebrow="What We Do "
             heading="End-to-end utility engineering."
             body="We design, engineer, and manage a wide range of utility systems, including water treatment plants, wastewater treatment plants, HVAC systems, and related engineering solutions. Our approach covers the full project cycle, ensuring every solution is efficient, effective, and built for lasting value."
           />
@@ -168,8 +178,8 @@ export default function Home() {
             <div className="flex flex-col items-center p-8 rounded-2xl border border-black/5 bg-white shadow-sm hover:shadow-md transition-all duration-300">
               <div className="flex h-20 w-44 items-center justify-center rounded-xl bg-white p-3 border border-black/5 shadow-inner">
                 <img
-                  src={ctechLogo}
-                  alt="SFC Umwelttechnik / C-Tech Logo"
+                  src={sfcLogo}
+                  alt="SFC Umwelttechnik Logo"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>
@@ -189,11 +199,12 @@ export default function Home() {
 
             {/* WTE Group */}
             <div className="flex flex-col items-center p-8 rounded-2xl border border-black/5 bg-white shadow-sm hover:shadow-md transition-all duration-300">
-              <div className="flex h-20 w-44 items-center justify-center rounded-xl bg-[var(--color-foam-2)] p-3 border border-black/5">
-                <div className="flex items-center gap-2 text-[var(--color-deepwater)] font-display font-black text-3xl tracking-tighter">
-                  <Leaf className="text-[var(--color-secondary)] fill-[var(--color-secondary)]/20" size={24} />
-                  <span>WTE</span>
-                </div>
+              <div className="flex h-20 w-44 items-center justify-center rounded-xl bg-white p-3 border border-black/5 shadow-inner">
+                <img
+                  src={wteLogo}
+                  alt="WTE Group Logo"
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
               <h3 className="mt-6 font-display text-xl font-bold text-[var(--color-deepwater)] text-center">WTE Group</h3>
               <p className="mt-2 text-center text-sm leading-relaxed text-[var(--color-ink)]/70 flex-1">
