@@ -14,7 +14,7 @@ import ciataLogo from "../assets/ciata_logo.svg";
 import rosslynLogo from "../assets/rosslyn_logo.png";
 import biovaxLogo from "../assets/biovax_logo.webp";
 import weetabixLogo from "../assets/weetabix_logo.svg";
-import lifecareLogo from "../assets/lifecare_logo.jpg";
+import lifecareLogo from "../assets/lifecare_Logo.jpg";
 
 // Client industries / case profiles
 const clientCases = [
