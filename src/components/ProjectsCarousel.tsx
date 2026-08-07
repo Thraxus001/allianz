@@ -14,26 +14,26 @@ const projectSlides = [
   {
     image: reverseImg,
     eyebrow: "Water Treatment",
-    heading: "Industrial Reverse\nOsmosis Systems",
-    body: "State-of-the-art 50,000 LPH brackish water purification system commissioned for Kenya BioVax Institute (BioVax).",
+    heading: "6,000 LPH Double-Pass\nReverse Osmosis System",
+    body: "High-purity water system engineered for clinical vaccine product formulation and manufacturing at Kenya BioVax Institute (BioVax).",
   },
   {
     image: ultrafiltrationImg,
     eyebrow: "Wastewater Treatment",
-    heading: "Biokleen Membrane\nBioreactor (MBR) Plants",
-    body: "Zero-odor campus biological wastewater recycling system deployed for Sabis International School.",
+    heading: "Sabis School RO & MBR\nWastewater Systems",
+    body: "15,000 LPH Reverse Osmosis system and 20 kld biological MBR Sewage Treatment Plant commissioned for Sabis International School.",
   },
   {
     image: central,
     eyebrow: "HVAC & Utilities",
-    heading: "Central HVAC Chilled\nWater Engineering",
-    body: "Complete central chiller plant installation and water conditioning utility O&M at Two Rivers Mall.",
+    heading: "Central Utility O&M &\nWater Quality Testing Lab",
+    body: "Ongoing management of 2,000 m³/day RO, 1,500 m³/day biological STP, and a fully equipped water quality testing laboratory for Two Rivers Mall.",
   },
   {
     image: effluentImg,
     eyebrow: "Wastewater Treatment",
-    heading: "Industrial Effluent\nTreatment Upgrades",
-    body: "Modernizing biological aeration basins and microfiltration systems for Weetabix East Africa.",
+    heading: "20 kld C-MEM Wastewater\nRecycling System",
+    body: "Complete biological membrane bioreactor treatment plant designed for cereal processing waste at Weetabix East Africa.",
   }
 ];
 

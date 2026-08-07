@@ -61,7 +61,7 @@ export default function ServiceDetail() {
             </div>
 
             <div className="rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
-              <p className="eyebrow text-[var(--color-current)]">Where we do the service</p>
+              <p className="eyebrow text-[var(--color-current)]">Industries we serve</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {service.applications.map((a) => (
                   <span

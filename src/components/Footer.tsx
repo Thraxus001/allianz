@@ -168,7 +168,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-[var(--color-foam)]/50 md:flex-row">
-          <p>&copy; {new Date().getFullYear()} Allianz Utilities (EA) Ltd. All rights reserved.</p>
+          <p>&copy;QK {new Date().getFullYear()} Allianz Utilities (EA) Ltd. All rights reserved.</p>
           <p className="font-mono">Engineered water. Every drop accounted for.</p>
         </div>
       </div>

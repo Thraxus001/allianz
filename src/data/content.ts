@@ -11,8 +11,9 @@ import reverse from "../assets/reverse.jpeg";
 import ultrafiltration from "../assets/ultrafiltration.png";
 import wastewater from "../assets/wastewater.png";
 import design from "../assets/design.jpg";
-import training from "../assets/training.jpg";
+import training from "../assets/training.jpeg";
 import ctech from "../assets/ctech.webp";
+import main from "../assets/maintenancee.jpeg";
 
 export type Product = {
   slug: string;
@@ -73,8 +74,8 @@ export const products: Product[] = [
   },
   {
     slug: "c-mem-sbr",
-    navLabel: "C-Mem SBR",
-    title: "C-Mem SBR (Membrane Bioreactor)",
+    navLabel: "C-Mem ",
+    title: "C-Mem (Membrane Bioreactor)",
     tagline: "Advanced Wastewater Recycling with Membrane Technology.",
     heroImage: ultrafiltration,
     intro:
@@ -138,7 +139,7 @@ export const products: Product[] = [
     navLabel: "Aqua Clean RO",
     title: "Aqua Clean RO (Reverse Osmosis System)",
     tagline: "High-Purity Water for Critical Applications.",
-    heroImage: reverse,
+    heroImage: Aquamembrane,
     intro:
       "Aqua Clean RO systems use high-pressure semi-permeable membranes to remove dissolved salts, heavy metals, micro-pollutants, and silica from brackish and borehole water. Engineered for longevity and performance, these systems feed pure water to laboratories, healthcare setups, and industrial processes.\n\nEvery system is engineered to deliver maximum efficiency, reliability, and long-term performance.",
     highlights: [
@@ -169,7 +170,7 @@ export const products: Product[] = [
     navLabel: "Aqua Clean UF",
     title: "Aqua Clean UF (Ultrafiltration System)",
     tagline: "Advanced Pathogen and Suspended Solids Removal.",
-    heroImage: ultrafiltration,
+    heroImage: reverse,
     intro:
       "Aqua Clean UF systems filter water using hollow-fiber membranes with a pore size of 0.02 microns. This physical barrier blocks suspended solids, turbidity, viruses, and bacteria while keeping essential minerals intact, making it perfect for primary borehole filtration or RO pre-treatment.\n\nOur UF systems are built using premium membrane technology and customized to suit your water source, ensuring consistent water quality with reduced operational costs.",
     highlights: [
@@ -342,14 +343,19 @@ export const services: Service[] = [
         body: "We deploy qualified operators who manage the plant daily in accordance with custom site SOPs.",
       },
       {
-        title: "Chemical & Consumable Supply",
-        body: "We supply and dose chlorine, antiscalants, and other treatment consumables as part of the contract.",
+        title: "Budgeting & Supply Planning",
+        body: "We work with clients to forecast, budget, and plan for essential treatment consumables — from chlorine and antiscalants to specialty chemicals. Our turnkey approach ensures predictable costs, reliable supply, and efficient dosing as part of every contract."
+      },
+      {
+        title: "Compliance & Strategic Water Planning",
+        body: "We support clients in achieving full compliance with NEMA standards while meeting water quality regulations for safe consumption. Our services include budgeting, forecasting, and supply planning to ensure sustainable operations, predictable costs, and reliable access to treated water."
       },
     ],
     applications: [
-      "Municipal and domestic sewage treatment plants",
-      "Industrial process water loops",
-      "Commercial building utility plants",
+      "Malls",
+      "Schools and universities",
+      "Processing Industries",
+      "Residential estates",
     ],
   },
   {
@@ -357,7 +363,7 @@ export const services: Service[] = [
     navLabel: "Annual Maintenance Contracts (AMC)",
     title: "Annual Maintenance Contracts (AMC)",
     tagline: "Reliable Support. Predictable Performance.",
-    heroImage: effluent,
+    heroImage: main,
     intro:
       "Our Annual Maintenance Contracts provide scheduled preventive maintenance, routine servicing, inspections, emergency breakdown support, and technical assistance for RO Plants, STPs, ETPs, and other water treatment systems throughout the year.\n\nWith an AMC from Allianz Utilities, you can focus on your core operations while we ensure your systems remain in optimal working condition.\n\nOur tailored maintenance plans reduce unexpected failures, extend equipment life, improve operational efficiency, and provide peace of mind with priority technical support whenever you need it.",
     highlights: [
@@ -365,6 +371,7 @@ export const services: Service[] = [
       "Detailed component inspection and calibration",
       "Emergency breakdown support with prioritized response times",
       "System performance reporting and optimization reviews",
+      "Equiping operators with new tech slills and best practices for improved plant management",
     ],
     process: [
       {
@@ -377,9 +384,10 @@ export const services: Service[] = [
       },
     ],
     applications: [
-      "Reverse Osmosis (RO) plants",
-      "Sewage Treatment Plants (STPs)",
-      "Effluent Treatment Plants (ETPs)",
+      "Malls",
+      "Schools and universities",
+      "Processing Industries",
+      "Residential estates",
     ],
   },
   {
@@ -393,8 +401,8 @@ export const services: Service[] = [
     highlights: [
       "Hands-on site training during commissioning or system handover",
       "Standard Operating Procedures (SOPs) and safety protocols",
-      "Chemical safety, dosing calculations, and water quality testing",
-      "Basic electrical, mechanical, and instrumentation troubleshooting",
+      "Our training covers chemical safety, dosing calculations, and water quality testing combined with basic electrical, mechanical, and instrumentation troubleshooting.",
+      "We organize regular team refresh sessions and bonding meetings to strengthen collaboration, share new knowledge, and keep everyone updated on best practices."
     ],
     process: [
       {
@@ -407,9 +415,10 @@ export const services: Service[] = [
       },
     ],
     applications: [
-      "Industrial site maintenance teams",
-      "Hospital and laboratory facilities managers",
-      "Municipal water utility operators",
+      "Malls",
+      "Schools and universities",
+      "Processing Industries",
+      "Residential estates",
     ],
   },
   {
@@ -437,9 +446,10 @@ export const services: Service[] = [
       },
     ],
     applications: [
-      "Overloaded municipal sewage lagoons and ponds",
-      "Industrial effluent treatment plants facing new regulations",
-      "Commercial developments needing water reclamation upgrades",
+      "Malls",
+      "Schools and universities",
+      "Processing Industries",
+      "Residential estates",
     ],
   },
 ];
@@ -448,17 +458,17 @@ export const heroSlides = [
   {
     image: reverse,
     eyebrow: "Aqua RO Solutions",
-    heading: "Pure Water.\nProven Performance.",
-    body: "Turnkey Reverse Osmosis systems engineered for hospitals, industries and commercial buildings.",
+    heading: "Advanced membrane technology \nfor clean, safe water",
+    body: "Aqua Clean UF uses ultrafiltration membranes to remove suspended solids, bacteria, and viruses from water while retaining essential minerals.",
   },
   {
     image: ultrafiltration,
     eyebrow: "Aqua UF Systems",
-    heading: "Advanced Filtration.\nSuperior Quality.",
-    body: "Hollow-fibre membrane systems delivering clean water at reduced operational costs.",
+    heading: "Advanced Membrane \nBioreactor",
+    body: "High‑efficiency wastewater treatment combining biological processes with membrane filtration for superior water quality.",
   },
   {
-    image: Aquamembrane,
+    image: ctech,
     eyebrow: "Aqua RO",
     heading: "Intelligent batch\nwastewater treatment.",
     body: "Timed SBR cycles combining biological aeration and clarification in a single compact basin.",
@@ -493,12 +503,12 @@ export const offices = [
 export const technologies = [
   {
     name: "Aqua Clean UF",
-    subtitle: "Reverse osmosis purification",
+    subtitle: "Advanced Ultrafiltration Purification",
     image: reverse,
-    slug: "reverse-osmosis-system",
+    slug: "High-Efficiency Ultrafiltration System",
   },
   {
-    name: "Biokleen MBR: C-MEM",
+    name: "C-MEM MBR",
     subtitle: "Advanced membrane filtration",
     image: ultrafiltration,
     slug: "ultrafiltration-plant",
@@ -511,7 +521,7 @@ export const technologies = [
   },
   {
     name: "CTECH SBR",
-    subtitle: "Moving bed biofilm reactor",
+    subtitle: "Sequence Batch Reactor",
     image: ctech,
     slug: "package-mbbr-waste-water-treatment",
   },

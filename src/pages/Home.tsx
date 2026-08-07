@@ -123,7 +123,7 @@ export default function Home() {
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[var(--color-current)] shadow-sm">
                 <Eye size={20} />
               </div>
-              <h3 className="mt-4 font-display text-xl font-bold text-[var(--color-deepwater)]">Our Vision</h3>
+              <h2 className="mt-4 font-display text-2xl md:text-3xl font-bold text-[var(--color-deepwater)]">Our Vision</h2>
               <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink)]/70">
                 To be the trusted partner of choice in Africa for sustainable engineering solutions that support clean water, effective wastewater management and efficient utility operations.
               </p>
@@ -134,7 +134,7 @@ export default function Home() {
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[var(--color-current)] shadow-sm">
                 <Target size={20} />
               </div>
-              <h3 className="mt-4 font-display text-xl font-bold text-[var(--color-deepwater)]">Our Mission</h3>
+              <h2 className="mt-4 font-display text-2xl md:text-3xl font-bold text-[var(--color-deepwater)]">Our Mission</h2>
               <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink)]/70">
                 To provide innovative, efficient and dependable engineering services that meet client needs and promote sustainable infrastructure performance.
               </p>
@@ -145,7 +145,7 @@ export default function Home() {
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[var(--color-current)] shadow-sm">
                 <Award size={20} />
               </div>
-              <h3 className="mt-4 font-display text-xl font-bold text-[var(--color-deepwater)]">Our Values</h3>
+              <h2 className="mt-4 font-display text-2xl md:text-3xl font-bold text-[var(--color-deepwater)]">Our Values</h2>
               <ul className="mt-3 grid grid-cols-2 gap-x-2 gap-y-2.5">
                 {valuesList.map((val) => (
                   <li key={val} className="flex items-center gap-1.5 text-sm text-[var(--color-ink)]/80">

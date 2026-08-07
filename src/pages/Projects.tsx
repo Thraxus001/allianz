@@ -4,86 +4,84 @@ import SectionHeading from "../components/SectionHeading";
 import HeroCarousel from "../components/ProjectsCarousel";
 
 // Local image assets
-import reverseImg from "../assets/reverse.jpeg";
-import ultrafiltrationImg from "../assets/ultrafiltration.png";
-import effluentImg from "../assets/effluent.png";
-import central from "../assets/Central HVAC.avif";
-import borehole from "../assets/borehole.jpg";
-import residential from "../assets/residential.png";
+import tworiversLogo from "../assets/tworivers_logo.jpeg";
+import sabisLogo from "../assets/sabis.jpeg";
+import biovaxLogo from "../assets/biovax_logo.webp";
+import weetabixLogo from "../assets/weetabix_logo.jpeg";
 
 // Implemented Projects List
 const projectsList = [
   {
-    title: "50,000 LPH Brackish Water Reverse Osmosis System",
+    title: "30 kld C-MEM MBR Effluent Treatment Plant",
+    client: "Kenya BioVax Institute (BioVax)",
+    category: "Wastewater Treatment",
+    location: "Embakasi, Nairobi, Kenya",
+    year: "2026",
+    capacity: "30 Kilolitres Per Day (30,000 LPD)",
+    metricLabel: "MBR Effluent Capacity",
+    metricValue: "30 KLD",
+    description: "Design and installation of a 30 kld biological membrane bioreactor (MBR) system to treat pharmaceutical effluent, ensuring absolute sanitation and meeting critical chemical and pathogen NEMA discharge limits.",
+    image: biovaxLogo
+  },
+  {
+    title: "6,000 LPH Double-Pass Reverse Osmosis System",
     client: "Kenya BioVax Institute (BioVax)",
     category: "Water Treatment",
     location: "Embakasi, Nairobi, Kenya",
-    year: "2025",
-    capacity: "50,000 Litres Per Hour",
-    metricLabel: "Water Purity",
-    metricValue: "99.8%",
-    description: "Engineering and installation of an automated commercial reverse osmosis system with media filters, chemical dosing, and UV sanitization to feed ultra-pure water to central laboratory analyzer lines.",
-    image: reverseImg
+    year: "2026",
+    capacity: "6,000 Litres Per Hour",
+    metricLabel: "Vaccine Manufacturing RO",
+    metricValue: "6,000 LPH",
+    description: "Sizing, engineering, and commissioning of a double-pass Reverse Osmosis system with UV sterilization to supply high-purity USP-compliant water required for clinical vaccine product formulation.",
+    image: biovaxLogo
   },
   {
-    title: "150 m³/day Biokleen MBR Wastewater Recycling Plant",
-    client: "Sabis International School",
-    category: "Wastewater Treatment",
-    location: "Runda, Nairobi, Kenya",
-    year: "2024",
-    capacity: "150,000 Litres Per Day",
-    metricLabel: "BOD Reduction",
-    metricValue: "99%",
-    description: "Design and deployment of a biological membrane bioreactor (MBR) package plant to treat lodge sewage. The treated water is fully recycled for land irrigation and fire safety inside Masai Mara wildlife conservancy.",
-    image: ultrafiltrationImg
-  },
-  {
-    title: "Central HVAC Chilled Water System (400 Tons)",
-    client: "Two Rivers Mall",
-    category: "HVAC & Utilities",
-    location: "Ruaka, Nairobi, Kenya",
-    year: "2024",
-    capacity: "400 Tons Cooling Load",
-    metricLabel: "Uptime Rate",
-    metricValue: "99.98%",
-    description: "Mechanical layout and piping installation of twin centrifugal chillers, central air handling units, and cooling towers, integrated with full borehole pre-filtration to prevent scaling.",
-    image: central
-  },
-  {
-    title: "100 m³/day Industrial Effluent treatment plant upgrade",
+    title: "20 kld C-MEM Wastewater Recycling System",
     client: "Weetabix East Africa",
     category: "Wastewater Treatment",
     location: "Nairobi, Kenya",
-    year: "2025",
-    capacity: "100,000 Litres Per Day",
-    metricLabel: "NEMA Compliance",
-    metricValue: "100%",
-    description: "Modernization of biological aeration basins and integration of microfiltration membranes to digest high-organic brewery effluent. Restored full regulatory compliance and reduced chemical usage by 30%.",
-    image: effluentImg
+    year: "2026",
+    capacity: "20 Kilolitres Per Day",
+    metricLabel: "Cereal Processing ETP",
+    metricValue: "20 KLD",
+    description: "Implementation of a 20 kld C-MEM biological membrane bioreactor treatment plant for the cereal processing factory, enabling complete recycling of plant washing and organic production wastewater.",
+    image: weetabixLogo
   },
   {
-    title: "Automated Borehole Softening & Ultrafiltration Plant",
-    client: "University of Nairobi (UoN)",
+    title: "Ongoing Central Utility O&M",
+    client: "Two Rivers Mall",
+    category: "HVAC & Utilities",
+    location: "Ruaka, Nairobi, Kenya",
+    year: "Ongoing",
+    capacity: "2,000 m³/day RO & 1,500 m³/day STP",
+    metricLabel: "Daily Flow Managed",
+    metricValue: "3,500 m³/day",
+    description: "Comprehensive utility operations and maintenance (O&M) of a 2,000 cubic meters per day brackish water Reverse Osmosis system and a 1,500 cubic meters per day biological Sewage Treatment Plant (STP) processing raw sewer water.",
+    image: tworiversLogo
+  },
+  {
+    title: "Water Quality Testing Laboratory Maintenance",
+    client: "Two Rivers Mall",
+    category: "HVAC & Utilities",
+    location: "Ruaka, Nairobi, Kenya",
+    year: "Ongoing",
+    capacity: "Fully Equipped Testing Lab",
+    metricLabel: "Lab Status",
+    metricValue: "24/7 Monitored",
+    description: "Ongoing operations, calibration, and support services for a fully equipped, state-of-the-art on-site water quality testing laboratory, performing continuous biological and chemical sampling to ensure water safety.",
+    image: tworiversLogo
+  },
+  {
+    title: "15,000 LPH RO System & 20 kld MBR STP",
+    client: "Sabis International School",
     category: "Water Treatment",
-    location: "Nairobi, Kenya",
-    year: "2023",
-    capacity: "25,000 Litres Per Hour",
-    metricLabel: "Hardness Removal",
-    metricValue: "95%",
-    description: "Borehole filtration plant containing automatic iron-manganese exchange softeners, sand filtration, and ultrafiltration membranes to protect crop drip irrigation systems from calcium scaling.",
-    image: borehole
-  },
-  {
-    title: "80 m³/day Residential SBR Sewerage Treatment Plant",
-    client: "Rosslyn Academy",
-    category: "Wastewater Treatment",
-    location: "Gigiri, Nairobi, Kenya",
-    year: "2024",
-    capacity: "80,000 Litres Per Day",
-    metricLabel: "Odor Control",
-    metricValue: "100%",
-    description: "Basement-level Sequencing Batch Reactor (SBR) wastewater plant treating sewage from a 120-unit housing estate. Completely automated decanting cycles yield odor-free water for landscaping.",
-    image: residential
+    location: "Runda, Nairobi, Kenya",
+    year: "2025",
+    capacity: "15,000 LPH RO & 20 kld STP",
+    metricLabel: "System Output",
+    metricValue: "15k LPH & 20 KLD",
+    description: "Designed, installed, and commissioned a 15,000 Litres Per Hour commercial Reverse Osmosis system for drinking water supply, alongside a 20 kld biological Sewage Treatment Plant (STP) MBR for water reclamation.",
+    image: sabisLogo
   }
 ];
 

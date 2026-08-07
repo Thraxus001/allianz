@@ -69,7 +69,7 @@ export default function Contact() {
     setSubmitError(null);
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3001/api/contact";
+      const apiUrl = import.meta.env.VITE_API_URL || "https://allianzbackend.netlify.app/api/contact";
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: {

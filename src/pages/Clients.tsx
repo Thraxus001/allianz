@@ -3,18 +3,18 @@ import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
 
 // Local image assets
-import heroImg from "../assets/clientts.png";
-import logoImg from "../assets/logo.jpg";
+import heroImg from "../assets/clients.jpeg";
 
 // Client Logos
-import uonLogo from "../assets/uon_logo.svg";
-import tworiversLogo from "../assets/tworivers_logo.svg";
-import sabisLogo from "../assets/sabis_logo.svg";
-import ciataLogo from "../assets/ciata_logo.svg";
+import uonLogo from "../assets/uon_logo.jpeg";
+import tworiversLogo from "../assets/tworivers_logo.jpeg";
+import sabisLogo from "../assets/sabis.jpeg";
+import ciataLogo from "../assets/ciatalogo.jpg";
 import rosslynLogo from "../assets/rosslyn_logo.png";
 import biovaxLogo from "../assets/biovax_logo.webp";
-import weetabixLogo from "../assets/weetabix_logo.svg";
+import weetabixLogo from "../assets/weetabix_logo.jpeg";
 import lifecareLogo from "../assets/lifecare.jpg";
+import bbsLogo from "../assets/bbslogo.jpg";
 
 // Client industries / case profiles
 const clientCases = [
@@ -22,65 +22,73 @@ const clientCases = [
     name: "University of Nairobi (UoN)",
     sector: "Higher Education & Research",
     location: "Nairobi, Kenya",
-    solution: "Borehole Filtration & Water Treatment Plant",
-    description: "Designed and installed a high-capacity reverse osmosis and sand filtration system for the main campus, supplying safe, treated water to administrative offices, science laboratories, and student residences.",
+    solution: "MBR Wastewater Treatment System",
+    description: "Deployed a high-efficiency biological Membrane Bioreactor (MBR) system to treat campus wastewater, enabling eco-friendly reclamation and water recycling for campus irrigation.",
     image: uonLogo
   },
   {
     name: "Two Rivers Mall",
     sector: "Commercial Real Estate & Retail",
-    location: "Ruaka, Nairobi",
-    solution: "Central HVAC & Water Utility Management",
-    description: "Provides full-scale HVAC operations and comprehensive maintenance of water supply, biological recycling systems, and borehole filtration for East Africa's largest retail and commercial complex.",
+    location: "Ruaka, Nairobi, Kenya",
+    solution: "Reverse Osmosis & MBBR System",
+    description: "Supplied advanced high-pressure Reverse Osmosis systems combined with Moving Bed Biofilm Reactor (MBBR) biological treatment for heavy-duty commercial utility loops.",
     image: tworiversLogo
   },
   {
     name: "Sabis International School",
     sector: "K-12 Education & Institutional",
-    location: "Runda, Nairobi",
-    solution: "Biokleen Biological Wastewater Treatment Plant",
-    description: "Deployed a zero-odor biological wastewater recycling system for the campus. The treated water meets stringent standards and is used for maintaining the institution's sports fields and garden landscaping.",
+    location: "Runda, Nairobi, Kenya",
+    solution: "RO (15,000 L/h) & 20 kld MBR STP",
+    description: "Commissioned a 15,000 LPH Reverse Osmosis system supplying potable drinking water, alongside a 20 kld biological Sewage Treatment Plant (STP) MBR for zero-odor wastewater recycling.",
     image: sabisLogo
   },
   {
     name: "Ciata City Mall",
     sector: "Retail & Commercial Real Estate",
     location: "Kiambu Road, Nairobi",
-    solution: "Water Filtration & Borehole Softening Plant",
-    description: "Engineered and implemented a central water purification and automatic hardness-removal softening plant to protect commercial building infrastructure and ensure reliable water quality for all retail outlets.",
+    solution: "20,000 L/h Reverse Osmosis System",
+    description: "Designed and installed a high-capacity 20,000 Litres Per Hour Reverse Osmosis plant with pre-filtration sand media to ensure high-purity water for commercial mall facilities.",
     image: ciataLogo
   },
   {
     name: "Rosslyn Academy",
     sector: "K-12 Education & International School",
-    location: "Gigiri, Nairobi",
-    solution: "SBR Wastewater Treatment & Water Supply O&M",
-    description: "Manages the design, installation, and daily operations of their biological sequencing batch reactor wastewater plant, supporting the school's sustainability initiatives by recycling greywater.",
+    location: "Gigiri, Nairobi, Kenya",
+    solution: "150 kld MBR Wastewater Treatment Plant",
+    description: "Engineered and deployed a 150 cubic meters per day (150 kld) biological Membrane Bioreactor (MBR) plant to manage and recycle international school campus wastewater.",
     image: rosslynLogo
   },
   {
     name: "Kenya BioVax Institute (BioVax)",
     sector: "Pharmaceutical & Vaccine Manufacturing",
-    location: "Embakasi, Nairobi",
-    solution: "High-Purity Ultrafiltration & RO System",
-    description: "Sized and commissioned a double-pass Reverse Osmosis system with UV sterilization to supply high-purity water for clinical product formulation and laboratory testing processes.",
+    location: "Embakasi, Nairobi, Kenya",
+    solution: "Reverse Osmosis System",
+    description: "Sized and installed a high-rejection Reverse Osmosis system supplying purified pharmaceutical-grade water for vaccine manufacturing and sterile formulation facilities.",
     image: biovaxLogo
   },
   {
     name: "Weetabix East Africa",
     sector: "Food & Beverage Manufacturing",
     location: "Nairobi, Kenya",
-    solution: "Effluent Treatment Plant (ETP) Upgrade",
-    description: "Upgraded the biological treatment and aeration systems at their main processing facility. Improved NEMA compliance, optimized hydraulic capacity, and lowered monthly utility energy costs.",
+    solution: "C-MEM Wastewater Recycling System",
+    description: "A cereal processing company utilizing an advanced C-MEM biological membrane filtration system to clean and recycle production process water, without conventional effluent treatment plants.",
     image: weetabixLogo
   },
   {
     name: "Lifecare Kenya",
-    sector: "Healthcare & Medical Laboratory",
-    location: "Nairobi, Kenya",
-    solution: "Biological Wastewater Treatment & Water Supply O&M",
-    description: "Provides ongoing operations and maintenance of their biological wastewater treatment plant, ensuring compliance with environmental regulations and maintaining high-quality water supply for laboratory and clinical operations.",
+    sector: "Healthcare & Medical Facilities",
+    location: "Bungoma, Meru, Migori, Kikuyu, Eldoret",
+    solution: "Operation & Maintenance Services",
+    description: "Delivers comprehensive utility operation and maintenance (O&M) services, managing water treatment and chemical dosing setups at medical centers in Bungoma, Meru, Migori, Kikuyu, and Eldoret.",
     image: lifecareLogo
+  },
+  {
+    name: "BBS Mall",
+    sector: "Commercial Real Estate & Retail",
+    location: "Eastleigh, Nairobi, Kenya",
+    solution: "HVAC, 5,000 L/h RO & 8,000 L/h WTP",
+    description: "Engineering and facility services managing a central HVAC climate control system, a 5,000 LPH Reverse Osmosis system, and an 8,000 LPH utility Water Treatment Plant (WTP).",
+    image: bbsLogo
   }
 ];
 
@@ -88,34 +96,26 @@ const clientCases = [
 const clientReviews = [
   {
     quote: "Allianz Utilities designed and installed a high-purity water system that exceeds our stringent pharmaceutical guidelines. Their technical response is rapid and highly professional, ensuring our vaccine lines have consistent water quality.",
-    author: "Dr. Michael Mwangi",
-    role: "Director of Operations",
     company: "Kenya BioVax Institute",
-    photo: logoImg,
+    photo: biovaxLogo,
     rating: 5
   },
   {
     quote: "The biological wastewater plant handles our campus sewage load with zero odor, recycling water directly to our sports fields. It has lowered our water bill significantly and aligns perfectly with our campus sustainability goals.",
-    author: "Sarah Ndwiga",
-    role: "Estate & Facilities Manager",
     company: "Sabis International School",
-    photo: logoImg,
+    photo: sabisLogo,
     rating: 5
   },
   {
     quote: "Their biological wastewater recycling solution was completed on schedule and integrates perfectly into our green campus initiative. The recycled water quality is excellent, allowing us to keep our landscaping green all year round.",
-    author: "Jean-Luc Rugamba",
-    role: "Director of Facilities",
     company: "Rosslyn Academy",
-    photo: logoImg,
+    photo: rosslynLogo,
     rating: 5
   },
   {
     quote: "Retrofitting our biological basins with Allianz decreased our operating costs and restored complete NEMA compliance. Their team showed exceptional engineering knowledge and completed the upgrade with minimal downtime to production.",
-    author: "Anil Patel",
-    role: "Technical Director",
     company: "Weetabix East Africa",
-    photo: logoImg,
+    photo: weetabixLogo,
     rating: 5
   }
 ];
@@ -184,11 +184,11 @@ export default function Clients() {
                 className="flex flex-col md:flex-row gap-6 p-6 rounded-2xl border border-black/5 bg-white shadow-sm hover:shadow-md transition-shadow"
               >
                 {/* Photo beside the review */}
-                <div className="w-20 h-20 md:w-24 md:h-24 shrink-0 mx-auto md:mx-0 overflow-hidden rounded-xl border border-black/5 shadow-sm">
+                <div className="w-20 h-20 md:w-24 md:h-24 shrink-0 mx-auto md:mx-0 overflow-hidden rounded-xl border border-black/5 bg-[var(--color-foam-2)]/30 flex items-center justify-center p-3 shadow-sm">
                   <img
                     src={r.photo}
-                    alt={r.author}
-                    className="w-full h-full object-cover"
+                    alt={r.company}
+                    className="max-w-full max-h-full object-contain"
                   />
                 </div>
 
@@ -210,11 +210,8 @@ export default function Clients() {
 
                   <div className="mt-5 border-t border-black/5 pt-4">
                     <h4 className="font-display font-bold text-sm text-[var(--color-deepwater)]">
-                      {r.author}
+                      {r.company}
                     </h4>
-                    <p className="text-xs text-[var(--color-ink)]/50">
-                      {r.role} at <span className="font-semibold text-[var(--color-current)]">{r.company}</span>
-                    </p>
                   </div>
                 </div>
               </div>
