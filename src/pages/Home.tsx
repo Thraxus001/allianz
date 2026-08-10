@@ -25,9 +25,9 @@ export default function Home() {
 
       {/* Welcome / Intro */}
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-        <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-center ">
           {/* New Left Image takes prominent position */}
-          <div className="relative aspect-[4/5] w-3/5 md:w-1/2 lg:w-full mx-auto overflow-hidden rounded-2xl md:aspect-[3/4] lg:col-span-3 order-2 lg:order-1">
+          <div className="relative h-72 w-82 overflow-hidden rounded-2xl lg:col-span-3 order-2 lg:order-1">
             <img
               src={aboutImg}
               alt="Allianz Utilities design and engineering plans"
@@ -36,16 +36,16 @@ export default function Home() {
           </div>
           
           {/* Welcome Text + Reduced Original Image & Slogan */}
-          <div className="lg:col-span-9 order-1 lg:order-2">
+          <div className="lg:col-span-8 lg:col-start-5 order-1 lg:order-2">
             <div className="flex flex-col text-left items-start">
-              <h1 className="mt-3 font-display text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-[var(--color-secondary)] md:text-5xl lg:text-6xl">
+              <h1 className="mt-3 font-display text-4xl font-extrabold leading-[0.95] tracking-tight text-[var(--color-secondary)] md:text-5xl lg:text-6xl">
                 Welcome to Allianz Utilities
               </h1>
               <span className="eyebrow text-[var(--color-current)]">
                 Proven technology. Reliable water.
               </span>
               
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-[var(--color-ink)]/70">
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-black">
                 At Allianz Utilities, we combine proven technology and expertise to deliver clean, reliable water — for every home, business, and industry we serve. From water treatment and wastewater plants to HVAC and utility services, we help clients achieve sustainable solutions tailored to their needs.
               </p>
             </div>
@@ -62,7 +62,7 @@ export default function Home() {
 
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center mt-16 md:mt-24">
           {/* New Right Image on desktop */}
-          <div className="relative aspect-[4/5] w-3/5 md:w-1/2 lg:w-full mx-auto overflow-hidden rounded-2xl md:aspect-[3/4] lg:col-span-3 order-2 lg:order-2">
+          <div className="relative h-72 w-92 overflow-hidden rounded-2xl lg:col-span-3 order-2 lg:order-2">
             <img
               src={handImg}
               alt="Allianz Utilities design and engineering plans"
@@ -71,7 +71,7 @@ export default function Home() {
           </div>
           
           {/* Welcome Text on the left */}
-          <div className="lg:col-span-9 order-1 lg:order-1">
+          <div className="lg:col-span-7 order-1 lg:order-1">
             <div className="flex flex-col text-left items-start">
               <h1 className="mt-3 font-display text-4xl font-extrabold leading-[0.95] tracking-tight text-[var(--color-current)] md:text-5xl lg:text-6xl">
                 Treat Today. Save Your Tomorrow
@@ -80,7 +80,7 @@ export default function Home() {
                 Many lives. One choice.
               </span>
               
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-[var(--color-ink)]/70">
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-black">
                 Every choice we make shapes tomorrow. Clean water is not just a resource—it is life itself. By acting now, we safeguard communities, preserve health, and ensure that generations to come inherit a world where reliability and sustainability are more than promises. Many lives depend on one choice, and that choice begins today.
               </p>
             </div>
@@ -187,7 +187,7 @@ export default function Home() {
                 A pioneer in advanced Sequencing Batch Reactor (SBR) biological wastewater treatment systems, delivering high-efficiency and cost-effective C-Tech™ sanitation systems globally.
               </p>
               <a
-                href="https://www.sfc-umwelttechnik.com/"
+                href="https://sfcu.at/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-[var(--color-foam-2)] px-4 py-2 text-xs font-semibold text-[var(--color-deepwater)] hover:bg-[var(--color-leaf)] hover:text-white transition-colors"

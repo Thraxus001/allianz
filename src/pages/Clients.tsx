@@ -1,4 +1,5 @@
-import { Star, Quote, Building2 } from "lucide-react";
+import { useState } from "react";
+import { Star, Quote, Building2, MessageSquare, CheckCircle2 } from "lucide-react";
 import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
 
@@ -121,6 +122,51 @@ const clientReviews = [
 ];
 
 export default function Clients() {
+  const [rating, setRating] = useState<number>(0);
+  const [hoverRating, setHoverRating] = useState<number>(0);
+  const [feedback, setFeedback] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const handleFeedbackSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (rating === 0 || !feedback.trim()) return;
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const baseUrl = import.meta.env.VITE_API_URL || "http://localhost:3001";
+      const response = await fetch(`${baseUrl}/api/feedback`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          rating,
+          name: name.trim() || undefined,
+          email: email.trim() || undefined,
+          feedback: feedback.trim(),
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit feedback. Please check your connection.");
+      }
+
+      setIsSubmitted(true);
+    } catch (err: any) {
+      console.error("Feedback submission error:", err);
+      setSubmitError(err.message || "Failed to send feedback. Please check your network connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div>
       <PageHero
@@ -140,24 +186,24 @@ export default function Clients() {
           />
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {clientCases.map((c) => (
-            <div key={c.name} className="flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm hover:shadow-md transition-shadow">
-              <div className="relative h-48 w-full bg-[var(--color-foam-2)]/30 flex items-center justify-center p-8 border-b border-black/5">
+            <div key={c.name} className="flex flex-col overflow-hidden rounded-xl border border-black/5 bg-white shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative h-36 w-full bg-[var(--color-foam-2)]/30 flex items-center justify-center p-6 border-b border-black/5">
                 <img src={c.image} alt={c.name} className="max-h-full max-w-full object-contain" />
-                <span className="absolute bottom-3 left-3 rounded-full bg-[var(--color-deepwater)] px-3 py-1 text-xs font-semibold text-white">
+                <span className="absolute bottom-2.5 left-2.5 rounded-full bg-[var(--color-deepwater)] px-2.5 py-0.5 text-[10px] font-semibold text-white">
                   {c.sector}
                 </span>
               </div>
-              <div className="flex flex-1 flex-col p-6">
+              <div className="flex flex-1 flex-col p-4">
                 <div className="flex items-start justify-between gap-2">
-                  <h3 className="font-display text-lg font-bold text-[var(--color-deepwater)]">{c.name}</h3>
-                  <span className="shrink-0 text-xs text-[var(--color-ink)]/50">{c.location}</span>
+                  <h3 className="font-display text-base font-bold text-[var(--color-deepwater)]">{c.name}</h3>
+                  <span className="shrink-0 text-[11px] text-[var(--color-ink)]/50">{c.location}</span>
                 </div>
-                <p className="mt-2 text-xs font-mono font-bold uppercase tracking-wider text-[var(--color-secondary)]">
+                <p className="mt-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--color-secondary)]">
                   {c.solution}
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink)]/70 flex-1">
+                <p className="mt-2 text-xs leading-relaxed text-[var(--color-ink)]/70 flex-1 line-clamp-3">
                   {c.description}
                 </p>
               </div>
@@ -220,25 +266,136 @@ export default function Clients() {
         </div>
       </section>
 
-      {/* Trust Grid */}
+      {/* Feedback Form Section */}
       <section className="bg-white border-t border-black/5 py-16">
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 rounded-2xl bg-[var(--color-surface-light)] p-8 border border-black/5">
-            <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[var(--color-current)] shadow-sm">
-                <Building2 size={24} />
+        <div className="mx-auto max-w-3xl px-5 md:px-8">
+          <div className="rounded-3xl border border-black/5 bg-[var(--color-surface-light)] p-8 md:p-10 shadow-sm">
+            {isSubmitted ? (
+              <div className="flex flex-col items-center text-center py-6">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-leaf)]/10 text-[var(--color-leaf-2)] mb-5 shadow-inner">
+                  <CheckCircle2 size={32} />
+                </div>
+                <h3 className="font-display text-2xl font-bold text-[var(--color-deepwater)]">
+                  Thank You for Your Feedback!
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink)]/70 max-w-md">
+                  Your comments and rating help us continually refine our water treatment and utility services. We appreciate your time and support.
+                </p>
+                <button
+                  onClick={() => {
+                    setIsSubmitted(false);
+                    setRating(0);
+                    setFeedback("");
+                    setName("");
+                    setEmail("");
+                    setSubmitError(null);
+                  }}
+                  className="mt-6 text-sm font-semibold text-[var(--color-current)] underline underline-offset-4 hover:text-[var(--color-current-2)] cursor-pointer"
+                >
+                  Submit another response
+                </button>
               </div>
-              <div>
-                <h3 className="font-display text-lg font-bold text-[var(--color-deepwater)]">Partner with Allianz Utilities</h3>
-                <p className="text-sm text-[var(--color-ink)]/60">Let's discuss how we can improve your water system, wastewater treatment, or utility O&M.</p>
-              </div>
-            </div>
-            <a
-              href="/contact"
-              className="inline-flex shrink-0 items-center justify-center rounded-full bg-[var(--color-current)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-current-2)]"
-            >
-              Request a Consultation
-            </a>
+            ) : (
+              <form onSubmit={handleFeedbackSubmit} className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-[var(--color-current)] shadow-sm">
+                    <MessageSquare size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl font-bold text-[var(--color-deepwater)]">
+                      Share Your Feedback
+                    </h3>
+                    <p className="text-xs text-[var(--color-ink)]/50">
+                      Help us improve our engineering solutions and customer care.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Star Rating Select */}
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-[var(--color-ink)]/65 mb-2">
+                    How would you rate our services?
+                  </label>
+                  <div className="flex gap-2">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <button
+                        key={star}
+                        type="button"
+                        onClick={() => setRating(star)}
+                        onMouseEnter={() => setHoverRating(star)}
+                        onMouseLeave={() => setHoverRating(0)}
+                        className="p-1 transition-transform hover:scale-115 cursor-pointer text-2xl focus:outline-none"
+                      >
+                        <Star
+                          size={28}
+                          className={`${
+                            star <= (hoverRating || rating)
+                              ? "fill-amber-400 text-amber-400"
+                              : "fill-transparent text-black/15"
+                          } transition-colors`}
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Form Inputs */}
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-xs font-semibold uppercase tracking-wide text-[var(--color-ink)]/60 mb-1.5">
+                      Your Name (optional)
+                    </label>
+                    <input
+                      type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="Jane Wanjiru"
+                      className="w-full rounded-xl border border-black/10 bg-white px-4 py-2.5 text-sm text-[var(--color-ink)] outline-none focus:border-[var(--color-current)]"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold uppercase tracking-wide text-[var(--color-ink)]/60 mb-1.5">
+                      Email Address (optional)
+                    </label>
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="jane@example.com"
+                      className="w-full rounded-xl border border-black/10 bg-white px-4 py-2.5 text-sm text-[var(--color-ink)] outline-none focus:border-[var(--color-current)]"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wide text-[var(--color-ink)]/60 mb-1.5">
+                    Feedback / Comments
+                  </label>
+                  <textarea
+                    rows={4}
+                    value={feedback}
+                    onChange={(e) => setFeedback(e.target.value)}
+                    required
+                    placeholder="Tell us about your experience with Allianz Utilities..."
+                    className="w-full rounded-xl border border-black/10 bg-white px-4 py-2.5 text-sm text-[var(--color-ink)] outline-none focus:border-[var(--color-current)] resize-none"
+                  />
+                </div>
+
+                {submitError && (
+                  <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+                    {submitError}
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting || !feedback.trim() || rating === 0}
+                  className="w-full rounded-full bg-[var(--color-current)] py-3 text-sm font-bold text-white transition-all hover:bg-[var(--color-current-2)] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                >
+                  {isSubmitting ? "Submitting..." : "Submit Feedback"}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>

@@ -85,18 +85,20 @@ export default function WhatWeDo() {
           </div>
         </div>
       </section>
-      <ContourDivider from="var(--color-deepwater)" to="var(--color-foam)" flip />
+      <ContourDivider from="var(--color-deepwater)" to="var(--color-leaf)" flip />
 
-      <section className="mx-auto max-w-7xl px-5 py-20 text-center md:px-8">
-        <h2 className="font-display text-3xl font-bold text-[var(--color-deepwater)] md:text-4xl">
-          See the technologies behind the process.
-        </h2>
-        <NavLink
-          to="/products"
-          className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--color-current)] px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-105"
-        >
-          Browse Products <ArrowUpRight size={16} />
-        </NavLink>
+      <section className="bg-[var(--color-leaf)] py-20 text-center md:py-24">
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <h2 className="font-display text-3xl font-bold text-[var(--color-deepwater)] md:text-4xl">
+            See the technologies behind the process.
+          </h2>
+          <NavLink
+            to="/products"
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--color-deepwater)] px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-105 hover:bg-[var(--color-deepwater-2)] shadow-md"
+          >
+            Browse Products <ArrowUpRight size={16} />
+          </NavLink>
+        </div>
       </section>
     </div>
   );

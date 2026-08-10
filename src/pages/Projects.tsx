@@ -8,84 +8,151 @@ import tworiversLogo from "../assets/tworivers_logo.jpeg";
 import sabisLogo from "../assets/sabis.jpeg";
 import biovaxLogo from "../assets/biovax_logo.webp";
 import weetabixLogo from "../assets/weetabix_logo.jpeg";
+import lifecareLogo from "../assets/lifecare.jpg";
+import bbsMallLogo from "../assets/bbslogo.jpg";
+import ciataMallLogo from "../assets/ciatalogo.jpg";
+import rosslynLogo from "../assets/rosslyn_logo.png";
+import uonLogo from "../assets/uon_logo.jpeg";
+import konzaLogo from "../assets/Konza.jpg";
+import vipingoLogo from "../assets/vipingo.jpg";
 
 // Implemented Projects List
 const projectsList = [
+ {
+    title: "Central Utility O&M & Water Testing Lab",
+    client: "Two Rivers Mall",
+    category: "Operation & Maintenance",
+    location: "Ruaka, Nairobi, Kenya",
+    year: "Ongoing",
+    capacity: "2,000 CMD RO & 1,500 m³/day MBBR",
+    metricLabel: "Daily Flow Managed",
+    metricValue: "3,500 m³/day",
+    description: "Operations and maintenance (O&M) for a 2,000 CMD brackish water Reverse Osmosis plant, a 1,500 m³/day MBBR Sewage Treatment Plant, and an on-site water quality laboratory.",
+    image: tworiversLogo
+  },
   {
-    title: "30 kld C-MEM MBR Effluent Treatment Plant",
+    title: "20,000 LPH RO & 10,000 KLD MBR System O&M",
+    client: "Sabis International School",
+    category: "Operation & Maintenance",
+    location: "Runda, Nairobi, Kenya",
+    year: "Ongoing",
+    capacity: "20,000 LPH RO & 10,000 KLD MBR",
+    metricLabel: "System Capacity",
+    metricValue: "20k LPH & 10k KLD",
+    description: "Comprehensive operation and maintenance services for a 20,000 LPH Reverse Osmosis drinking water system and a 10,000 KLD MBR wastewater reclamation facility.",
+    image: sabisLogo
+  },
+  {
+    title: "80 KLD C-MEM MBR & 6,000 LPH RO Aquaclean",
     client: "Kenya BioVax Institute (BioVax)",
     category: "Wastewater Treatment",
     location: "Embakasi, Nairobi, Kenya",
     year: "2026",
-    capacity: "30 Kilolitres Per Day (30,000 LPD)",
-    metricLabel: "MBR Effluent Capacity",
-    metricValue: "30 KLD",
-    description: "Design and installation of a 30 kld biological membrane bioreactor (MBR) system to treat pharmaceutical effluent, ensuring absolute sanitation and meeting critical chemical and pathogen NEMA discharge limits.",
+    capacity: "80 KLD MBR & 6,000 LPH RO",
+    metricLabel: "Pharmaceutical Water/WW",
+    metricValue: "80 KLD / 6k LPH",
+    description: "Engineering and installation of an 80 KLD biological C-MEM MBR effluent plant alongside a 6,000 LPH RO Aquaclean system for pharmaceutical-grade processing.",
     image: biovaxLogo
   },
   {
-    title: "6,000 LPH Double-Pass Reverse Osmosis System",
-    client: "Kenya BioVax Institute (BioVax)",
-    category: "Water Treatment",
-    location: "Embakasi, Nairobi, Kenya",
-    year: "2026",
-    capacity: "6,000 Litres Per Hour",
-    metricLabel: "Vaccine Manufacturing RO",
-    metricValue: "6,000 LPH",
-    description: "Sizing, engineering, and commissioning of a double-pass Reverse Osmosis system with UV sterilization to supply high-purity USP-compliant water required for clinical vaccine product formulation.",
-    image: biovaxLogo
-  },
-  {
-    title: "20 kld C-MEM Wastewater Recycling System",
+    title: "20 KLD C-MEM Wastewater Recycling System",
     client: "Weetabix East Africa",
     category: "Wastewater Treatment",
     location: "Nairobi, Kenya",
     year: "2026",
     capacity: "20 Kilolitres Per Day",
-    metricLabel: "Cereal Processing ETP",
+    metricLabel: "Factory Recycling ETP",
     metricValue: "20 KLD",
-    description: "Implementation of a 20 kld C-MEM biological membrane bioreactor treatment plant for the cereal processing factory, enabling complete recycling of plant washing and organic production wastewater.",
+    description: "Implementation of a 20 KLD C-MEM biological membrane bioreactor system for cereal processing plant effluent, enabling complete factory wash water recycling.",
     image: weetabixLogo
   },
   {
-    title: "Ongoing Central Utility O&M",
-    client: "Two Rivers Mall",
+    title: "HVAC Services, 5k LPH RO & 8k LPH Wastewater Plant",
+    client: "BBS Mall",
     category: "HVAC & Utilities",
-    location: "Ruaka, Nairobi, Kenya",
-    year: "Ongoing",
-    capacity: "2,000 m³/day RO & 1,500 m³/day STP",
-    metricLabel: "Daily Flow Managed",
-    metricValue: "3,500 m³/day",
-    description: "Comprehensive utility operations and maintenance (O&M) of a 2,000 cubic meters per day brackish water Reverse Osmosis system and a 1,500 cubic meters per day biological Sewage Treatment Plant (STP) processing raw sewer water.",
-    image: tworiversLogo
+    location: "Eastleigh, Nairobi, Kenya",
+    year: "2026",
+    capacity: "5,000 LPH RO & 8,000 LPH Wastewater",
+    metricLabel: "Utility Flow Rate",
+    metricValue: "13,000 LPH",
+    description: "Turnkey HVAC installation along with a 5,000 LPH Reverse Osmosis water treatment plant and an 8,000 LPH commercial wastewater processing facility.",
+    image: bbsMallLogo
   },
   {
-    title: "Water Quality Testing Laboratory Maintenance",
-    client: "Two Rivers Mall",
-    category: "HVAC & Utilities",
-    location: "Ruaka, Nairobi, Kenya",
-    year: "Ongoing",
-    capacity: "Fully Equipped Testing Lab",
-    metricLabel: "Lab Status",
-    metricValue: "24/7 Monitored",
-    description: "Ongoing operations, calibration, and support services for a fully equipped, state-of-the-art on-site water quality testing laboratory, performing continuous biological and chemical sampling to ensure water safety.",
-    image: tworiversLogo
-  },
-  {
-    title: "15,000 LPH RO System & 20 kld MBR STP",
-    client: "Sabis International School",
+    title: "20,000 LPH Reverse Osmosis System",
+    client: "Ciata City Mall",
     category: "Water Treatment",
-    location: "Runda, Nairobi, Kenya",
-    year: "2025",
-    capacity: "15,000 LPH RO & 20 kld STP",
-    metricLabel: "System Output",
-    metricValue: "15k LPH & 20 KLD",
-    description: "Designed, installed, and commissioned a 15,000 Litres Per Hour commercial Reverse Osmosis system for drinking water supply, alongside a 20 kld biological Sewage Treatment Plant (STP) MBR for water reclamation.",
-    image: sabisLogo
+    location: "Kiambu Road, Nairobi, Kenya",
+    year: "2026",
+    capacity: "20,000 Litres Per Hour",
+    metricLabel: "RO Water Supply",
+    metricValue: "20,000 LPH",
+    description: "Design, installation, and commissioning of a commercial 20,000 LPH Reverse Osmosis plant delivering clean potable water for tenant and retail operations.",
+    image: ciataMallLogo
+  },
+  {
+    title: "150 KLD MBR Wastewater Treatment Plant",
+    client: "Rosslyn Academy",
+    category: "Wastewater Treatment",
+    location: "Gigiri, Nairobi, Kenya",
+    year: "2026",
+    capacity: "150 Kilolitres Per Day",
+    metricLabel: "Campus STP Output",
+    metricValue: "150 KLD",
+    description: "Deployment of a 150 KLD MBR biological sewage treatment plant servicing campus facilities to ensure full environmental compliance and irrigation reuse.",
+    image: rosslynLogo
+  },
+  {
+    title: "150 KLD MBR Wastewater Treatment System",
+    client: "University of Nairobi",
+    category: "Wastewater Treatment",
+    location: "Nairobi, Kenya",
+    year: "2026",
+    capacity: "150 Kilolitres Per Day",
+    metricLabel: "Revised STP Output",
+    metricValue: "150 KLD",
+    description: "Installation and engineering of a revised 150 KLD MBR wastewater treatment system to handle campus effluent and support sustainable water reuse.",
+    image: uonLogo
+  },
+  {
+    title: "Wastewater Lagoon System & 250 KLD Open University STP",
+    client: "Konza Technopolis (Konza City)",
+    category: "Wastewater Treatment",
+    location: "Konza, Machakos, Kenya",
+    year: "2026",
+    capacity: "Lagoon System & 250 KLD STP",
+    metricLabel: "Open University STP",
+    metricValue: "250 KLD",
+    description: "Large-scale wastewater lagoon system engineering combined with a dedicated 250 KLD sewage treatment plant for Kenya Open University.",
+    image: konzaLogo
+  },
+  {
+    title: "1,500 CMD Seawater Desalination Plant",
+    client: "Vipingo Development",
+    category: "Water Treatment",
+    location: "Vipingo, Kilifi, Kenya",
+    year: "2026",
+    capacity: "1,500 Cubic Meters Per Day",
+    metricLabel: "Desalination Output",
+    metricValue: "1,500 CMD",
+    description: "Construction and commissioning of a 1,500 CMD coastal seawater desalination plant supplying fresh municipal-grade water for community developments.",
+    image: vipingoLogo
+  },
+  {
+    title: "Medical Grade Dialysis RO System O&M",
+    client: "LifeCare Hospitals",
+    category: "Operation & Maintenance",
+    location: "Kenya",
+    year: "Ongoing",
+    capacity: "Clinical Hemodialysis Grade RO",
+    metricLabel: "Dialysis RO Water",
+    metricValue: "Medical Grade",
+    description: "Specialized operations and maintenance of ultra-pure Reverse Osmosis water treatment systems critical for clinical hemodialysis therapy.",
+    image: lifecareLogo
   }
 ];
 
-const categories = ["All", "Water Treatment", "Wastewater Treatment", "HVAC & Utilities"];
+const categories = ["All", "Water Treatment", "Wastewater Treatment", "HVAC & Utilities", "OPeration & Maintenance"];
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -128,62 +195,62 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((proj, idx) => (
             <div
               key={idx}
-              className="flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm hover:shadow-md transition-shadow group"
+              className="flex flex-col overflow-hidden rounded-xl border border-black/5 bg-white shadow-sm hover:shadow-md transition-shadow group"
             >
               {/* Image & Category Badge */}
-              <div className="relative h-56 w-full overflow-hidden">
+              <div className="relative h-36 w-full overflow-hidden">
                 <img
                   src={proj.image}
                   alt={proj.title}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute top-4 left-4 flex flex-col gap-1.5 items-start">
-                  <span className="rounded-full bg-[var(--color-deepwater)] px-3.5 py-1 text-xs font-semibold text-white shadow-sm">
+                <div className="absolute top-2.5 left-2.5 flex flex-col gap-1 items-start">
+                  <span className="rounded-full bg-[var(--color-deepwater)]/90 backdrop-blur-xs px-2.5 py-0.5 text-[10px] font-semibold text-white shadow-xs">
                     {proj.category}
                   </span>
                 </div>
               </div>
 
               {/* Card Body */}
-              <div className="flex flex-1 flex-col p-6">
+              <div className="flex flex-1 flex-col p-4">
                 <div className="flex-1">
-                  <span className="text-xs font-semibold text-[var(--color-ink)]/50">
+                  <span className="text-[11px] font-semibold text-[var(--color-ink)]/50">
                     Client: {proj.client}
                   </span>
-                  <h3 className="mt-1 font-display text-xl font-bold leading-tight text-[var(--color-deepwater)] group-hover:text-[var(--color-current)] transition-colors">
+                  <h3 className="mt-0.5 font-display text-base font-bold leading-snug text-[var(--color-deepwater)] group-hover:text-[var(--color-current)] transition-colors">
                     {proj.title}
                   </h3>
                   
                   {/* Meta Details */}
-                  <div className="mt-4 flex flex-wrap items-center gap-y-2 gap-x-4 border-y border-black/5 py-3 text-xs text-[var(--color-ink)]/65">
-                    <span className="flex items-center gap-1.5">
-                      <MapPin size={13} className="text-[var(--color-secondary)]" /> {proj.location}
+                  <div className="mt-2.5 flex flex-wrap items-center gap-y-1 gap-x-3 border-y border-black/5 py-2 text-[11px] text-[var(--color-ink)]/65">
+                    <span className="flex items-center gap-1">
+                      <MapPin size={12} className="text-[var(--color-secondary)]" /> {proj.location}
                     </span>
-                    <span className="flex items-center gap-1.5">
-                      <Calendar size={13} className="text-[var(--color-secondary)]" /> Completed {proj.year}
+                    <span className="flex items-center gap-1">
+                      <Calendar size={12} className="text-[var(--color-secondary)]" /> {proj.year}
                     </span>
                   </div>
 
-                  <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink)]/70">
+                  <p className="mt-2 text-xs leading-relaxed text-[var(--color-ink)]/70 line-clamp-3">
                     {proj.description}
                   </p>
                 </div>
 
                 {/* Metrics & Footer */}
-                <div className="mt-6 border-t border-black/5 pt-5 flex items-center justify-between">
+                <div className="mt-4 border-t border-black/5 pt-3 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--color-foam-2)] text-[var(--color-secondary)]">
-                      <Gauge size={18} />
+                    <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[var(--color-foam-2)] text-[var(--color-secondary)]">
+                      <Gauge size={14} />
                     </div>
                     <div>
-                      <p className="text-[9px] font-semibold uppercase tracking-wider text-[var(--color-ink)]/40 leading-none">
+                      <p className="text-[8px] font-semibold uppercase tracking-wider text-[var(--color-ink)]/40 leading-none">
                         {proj.metricLabel}
                       </p>
-                      <p className="text-sm font-bold text-[var(--color-deepwater)] leading-tight mt-0.5">
+                      <p className="text-xs font-bold text-[var(--color-deepwater)] leading-tight mt-0.5">
                         {proj.metricValue}
                       </p>
                     </div>
@@ -191,10 +258,10 @@ export default function Projects() {
                   
                   <a
                     href="/contact"
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-foam-2)] text-[var(--color-deepwater)] hover:bg-[var(--color-current)] hover:text-white transition-colors"
+                    className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-foam-2)] text-[var(--color-deepwater)] hover:bg-[var(--color-current)] hover:text-white transition-colors"
                     aria-label="Enquire about this project"
                   >
-                    <ArrowUpRight size={16} />
+                    <ArrowUpRight size={14} />
                   </a>
                 </div>
               </div>

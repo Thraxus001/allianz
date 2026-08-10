@@ -14,6 +14,8 @@ import design from "../assets/design.jpg";
 import training from "../assets/training.jpeg";
 import ctech from "../assets/ctech.webp";
 import main from "../assets/maintenancee.jpeg";
+import Ro from "../assets/RO.jpeg";
+import fire from "../assets/fire.webp";
 
 export type Product = {
   slug: string;
@@ -26,6 +28,8 @@ export type Product = {
   process: { title: string; body: string }[];
   applications: string[];
   specNote?: string;
+  pdfFile: string;
+  pdfSize: string;
 };
 
 export type Service = {
@@ -57,12 +61,20 @@ export const products: Product[] = [
     ],
     process: [
       {
-        title: "Filling & Aeration",
-        body: "Wastewater fills the basin where active biology digests organic matter under cyclical aeration.",
+        title: "Filling",
+        body: "Wastewater fills the basin.",
       },
       {
-        title: "Settling & Decanting",
-        body: "Aeration stops, allowing biomass to settle before clean supernatant is decanted.",
+        title: "Aeration",
+        body: "Active biology digests organic matter under cyclical aeration.",
+      },
+      {
+        title: "Settling",
+        body: "Aeration stops, allowing biomass to settle.",
+      },
+      {
+        title: "Decanting",
+        body: "Clean supernatant is decanted.",
       },
     ],
     applications: [
@@ -71,6 +83,8 @@ export const products: Product[] = [
       "Industrial effluent and manufacturing factories",
       "Municipal sewage treatment upgrades",
     ],
+    pdfFile: "c-tech-sbr-datasheet.pdf",
+    pdfSize: "1.4 MB",
   },
   {
     slug: "c-mem-sbr",
@@ -102,6 +116,8 @@ export const products: Product[] = [
       "Commercial complexes and malls",
       "Water-scarce industrial manufacturing plants",
     ],
+    pdfFile: "c-mem-sbr-datasheet.pdf",
+    pdfSize: "1.8 MB",
   },
   {
     slug: "biokleen-mbbr",
@@ -133,13 +149,15 @@ export const products: Product[] = [
       "New residential housing developments",
       "Commercial and business park sewage treatment",
     ],
+    pdfFile: "biokleen-mbbr-datasheet.pdf",
+    pdfSize: "1.2 MB",
   },
   {
     slug: "aqua-clean-ro",
     navLabel: "Aqua Clean RO",
     title: "Aqua Clean RO (Reverse Osmosis System)",
     tagline: "High-Purity Water for Critical Applications.",
-    heroImage: Aquamembrane,
+    heroImage: Ro,
     intro:
       "Aqua Clean RO systems use high-pressure semi-permeable membranes to remove dissolved salts, heavy metals, micro-pollutants, and silica from brackish and borehole water. Engineered for longevity and performance, these systems feed pure water to laboratories, healthcare setups, and industrial processes.\n\nEvery system is engineered to deliver maximum efficiency, reliability, and long-term performance.",
     highlights: [
@@ -164,6 +182,8 @@ export const products: Product[] = [
       "Borehole purification for residential complexes",
       "Commercial drinking water systems",
     ],
+    pdfFile: "aqua-clean-ro-datasheet.pdf",
+    pdfSize: "2.1 MB",
   },
   {
     slug: "aqua-clean-uf",
@@ -195,6 +215,8 @@ export const products: Product[] = [
       "Potable water supply for schools and estates",
       "Greywater and secondary effluent polishing",
     ],
+    pdfFile: "aqua-clean-uf-datasheet.pdf",
+    pdfSize: "1.6 MB",
   },
   {
     slug: "aqua-clean-wtp",
@@ -226,6 +248,8 @@ export const products: Product[] = [
       "Borehole water conditioning for central HVAC loops",
       "Agricultural and greenhouse water supply",
     ],
+    pdfFile: "aqua-clean-wtp-datasheet.pdf",
+    pdfSize: "2.5 MB",
   },
   {
     slug: "aqua-clean-lake-river",
@@ -257,6 +281,8 @@ export const products: Product[] = [
       "Municipal backup water supplies",
       "Industrial process water extraction",
     ],
+    pdfFile: "aqua-clean-lake-river-datasheet.pdf",
+    pdfSize: "2.3 MB",
   },
   {
     slug: "hvac-systems",
@@ -288,13 +314,15 @@ export const products: Product[] = [
       "Corporate offices and high-rise buildings",
       "Industrial process cooling loops",
     ],
+    pdfFile: "hvac-systems-datasheet.pdf",
+    pdfSize: "1.9 MB",
   },
   {
     slug: "fire-fighting-systems",
     navLabel: "Fire Fighting Systems",
     title: "Fire Fighting & Safety Systems",
     tagline: "Automatic Sprinklers, Hydrants, and Pump Stations.",
-    heroImage: design,
+    heroImage: fire,
     intro:
       "We plan and deploy professional fire protection systems according to NFPA regulations. From high-pressure fire pump packages and wet-pipe automatic sprinkler networks to landing valves and hydrants, we build life safety infrastructure you can trust during emergencies.",
     highlights: [
@@ -319,6 +347,8 @@ export const products: Product[] = [
       "High-density residential complexes",
       "Off-grid lodges and eco-resorts",
     ],
+    pdfFile: "fire-fighting-systems-datasheet.pdf",
+    pdfSize: "1.5 MB",
   },
 ];
 
@@ -333,7 +363,6 @@ export const services: Service[] = [
       "Allianz Utilities provides comprehensive on-site operational staffing, chemical supply, and regular troubleshooting to keep treatment plants operating at peak design efficiency. Our trained personnel manage daily operations, log parameters, and maintain safety standards.",
     highlights: [
       "24/7 on-site operations by trained technicians",
-      "Chemical supply and dosing control",
       "Daily logging of flow and water quality parameters",
       "Preventive servicing of pumps, valves, and blowers",
     ],
@@ -344,16 +373,17 @@ export const services: Service[] = [
       },
       {
         title: "Budgeting & Supply Planning",
-        body: "We work with clients to forecast, budget, and plan for essential treatment consumables — from chlorine and antiscalants to specialty chemicals. Our turnkey approach ensures predictable costs, reliable supply, and efficient dosing as part of every contract."
+        body: "We work with clients to forecast, budget, and plan for essential treatment consumables. Our turnkey approach ensures our clients can make precise projectionsas part of every contract."
       },
       {
         title: "Compliance & Strategic Water Planning",
-        body: "We support clients in achieving full compliance with NEMA standards while meeting water quality regulations for safe consumption. Our services include budgeting, forecasting, and supply planning to ensure sustainable operations, predictable costs, and reliable access to treated water."
+        body: "We support clients in achieving full compliance and water quality regulations for safe consumption. Our services include budgeting, forecasting, and supply planning to ensure sustainable operations, predictable costs, and reliable access to treated water."
       },
     ],
     applications: [
       "Malls",
-      "Schools and universities",
+      "Schools",
+      "Universities",
       "Processing Industries",
       "Residential estates",
     ],
@@ -385,7 +415,8 @@ export const services: Service[] = [
     ],
     applications: [
       "Malls",
-      "Schools and universities",
+      "Schools",
+      "Universities",
       "Processing Industries",
       "Residential estates",
     ],
@@ -416,7 +447,8 @@ export const services: Service[] = [
     ],
     applications: [
       "Malls",
-      "Schools and universities",
+      "Schools",
+      "Universities",
       "Processing Industries",
       "Residential estates",
     ],
@@ -447,7 +479,8 @@ export const services: Service[] = [
     ],
     applications: [
       "Malls",
-      "Schools and universities",
+      "Schools",
+      "Universities",
       "Processing Industries",
       "Residential estates",
     ],
@@ -516,7 +549,7 @@ export const technologies = [
   {
     name: "Aqua Clean RO",
     subtitle: " Advanced Reverse Osmosis",
-    image: Aquamembrane,
+    image: Ro,
     slug: "package-sbr-waste-water-treatment",
   },
   {

@@ -69,21 +69,23 @@ export default function Contact() {
     setSubmitError(null);
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || "https://allianzbackend.netlify.app/api/contact";
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          company: form.company,
-          interest: form.interest,
-          message: form.message,
-        }),
-      });
+      // ✅ CORRECT: Appending /api/contact to the base URL
+const baseUrl = import.meta.env.VITE_API_URL || "allianzbackend.netlify.app";
+
+const response = await fetch(`${baseUrl}/api/contact`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    name: form.name,
+    email: form.email,
+    phone: form.phone,
+    company: form.company,
+    interest: form.interest,
+    message: form.message,
+  }),
+});
 
       const result = await response.json();
 
@@ -151,7 +153,7 @@ export default function Contact() {
               <div className="overflow-hidden rounded-2xl border border-black/5 shadow-sm">
                 <iframe
                   title="Allianz Utilities — Nairobi office map"
-                  src="https://www.google.com/maps?q=Nairobi,Kenya&output=embed"
+                  src="https://www.google.com/maps?q=-1.2598,36.8179&z=17&output=embed"
                   className="h-full min-h-[180px] w-full grayscale-[15%]"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

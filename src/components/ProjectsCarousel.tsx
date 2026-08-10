@@ -7,32 +7,34 @@ import reverseImg from "../assets/reverse.jpeg";
 import ultrafiltrationImg from "../assets/ultrafiltration.png";
 import effluentImg from "../assets/effluent.png";
 import central from "../assets/Central HVAC.avif";
+import Aquamembrane from "../assets/Aqua-membrane.jpg";
+import Ctech from "../assets/ctech.webp";
 
 const AUTOPLAY_MS = 6000;
 
 const projectSlides = [
   {
-    image: reverseImg,
+    image: Aquamembrane,
     eyebrow: "Water Treatment",
-    heading: "6,000 LPH Double-Pass\nReverse Osmosis System",
-    body: "High-purity water system engineered for clinical vaccine product formulation and manufacturing at Kenya BioVax Institute (BioVax).",
+    heading: "Pure Water.\nProven Performance",
+    body: "Aqua Clean Reverse Osmosis systems engineered for hospitals, industries and commercial buildings.",
   },
   {
     image: ultrafiltrationImg,
     eyebrow: "Wastewater Treatment",
-    heading: "Sabis School RO & MBR\nWastewater Systems",
-    body: "15,000 LPH Reverse Osmosis system and 20 kld biological MBR Sewage Treatment Plant commissioned for Sabis International School.",
+    heading: "Advanced Filtration.\nSuperior Quality.",
+    body: "Hollow-fibre C-MEM membrane systems delivering clean water at reduced operatonal cost.",
   },
   {
-    image: central,
-    eyebrow: "HVAC & Utilities",
-    heading: "Central Utility O&M &\nWater Quality Testing Lab",
-    body: "Ongoing management of 2,000 m³/day RO, 1,500 m³/day biological STP, and a fully equipped water quality testing laboratory for Two Rivers Mall.",
+    image: Ctech,
+    eyebrow: "WATER TREATMENT",
+    heading: "Intelligent batch\nWastewater treatment.",
+    body: "Timed C-TECH SBR cycles combining biological aeration and clarification in a single compact basin.",
   },
   {
     image: effluentImg,
     eyebrow: "Wastewater Treatment",
-    heading: "20 kld C-MEM Wastewater\nRecycling System",
+    heading: "Wastewater\nTreatment System",
     body: "Complete biological membrane bioreactor treatment plant designed for cereal processing waste at Weetabix East Africa.",
   }
 ];
