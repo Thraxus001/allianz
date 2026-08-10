@@ -146,7 +146,7 @@ export default function ProductDetail() {
               <p className="eyebrow text-[var(--color-current)]">Key Features</p>
               <ul className="mt-4 space-y-3">
                 {product.highlights.map((h) => (
-                  <li key={h} className="flex gap-2.5 text-sm leading-relaxed text-[var(--color-ink)]/80">
+                  <li key={h} className="flex gap-2.5 text-sm leading-relaxed text-black">
                     <Check size={16} className="mt-0.5 shrink-0 text-[var(--color-leaf-2)]" />
                     {h}
                   </li>
