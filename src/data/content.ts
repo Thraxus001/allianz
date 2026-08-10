@@ -90,7 +90,7 @@ export const products: Product[] = [
     tagline: "Advanced Wastewater Recycling with Membrane Technology.",
     heroImage: ultrafiltration,
     intro:
-      "C-Mem SBR systems combine biological treatment with ultrafiltration membrane separation. By utilizing hollow-fiber membranes directly within or after the reactor, the system filters out all suspended solids, bacteria, and pathogens, yielding extremely high-quality effluent suitable for unrestricted recycling.\n\nWe supply advanced membrane technology that delivers outstanding water quality, reduced footprint, and reliable long-term operation.",
+      "C-Mem MBR systems combine biological treatment with ultrafiltration membrane separation. By utilizing hollow-fiber membranes directly within or after the reactor, the system filters out all suspended solids, bacteria, and pathogens, yielding extremely high-quality effluent suitable for unrestricted recycling.\n\nWe supply advanced membrane technology that delivers outstanding water quality, reduced footprint, and reliable long-term operation.",
     highlights: [
       "Combines biological digestion with ultrafiltration membrane separation",
       "Produces high-purity effluent ready for reuse (toilet flushing, irrigation)",
