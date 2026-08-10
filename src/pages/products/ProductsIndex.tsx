@@ -38,7 +38,7 @@ export default function ProductsIndex() {
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="font-display text-2xl font-bold text-[var(--color-deepwater)]">{p.title}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--color-ink)]/70">{p.tagline}</p>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-black">{p.tagline}</p>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-current)]">
                   View details
                   <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

@@ -1,18 +1,14 @@
 import uff from "../assets/uff.jpeg";
 import effluent from "../assets/effluent.png";
-//import logoImg from "../assets/logo.jpg";
 import maintennance from "../assets/maintenance.jpeg";
 import mbbr from "../assets/mbbr.jpeg";
-//import productsImg from "../assets/productss.jpeg";
-//import qrCodeImg from "../assets/qrcode.jpg";
-import reverse from "../assets/reverse.jpeg";
 import ultrafiltration from "../assets/ultrafiltration.png";
 import wastewater from "../assets/wastewater.png";
 import training from "../assets/training.jpeg";
 import ctech from "../assets/ctech.webp";
 import main from "../assets/maintenancee.jpeg";
 import Ro from "../assets/RO.jpeg";
-import fire from "../assets/fire.webp";
+
 
 export type Product = {
   slug: string;
@@ -49,7 +45,7 @@ export const products: Product[] = [
     tagline: "Intelligent Cyclic Activated Sludge Wastewater Treatment.",
     heroImage: ctech,
     intro:
-      "C-Tech SBR biological systems treat wastewater in timed cycles within a single reactor. Combining aeration, settling, and decanting into a single basin, this technology offers superior nutrient removal and high-efficiency operations for domestic and industrial effluents.\n\nWe design compact, energy-efficient SBR systems that consistently achieve high treatment standards while minimizing operating costs.",
+      "C-Tech SBR technology treats wastewater through a series of controlled treatment cycles within a single reactor. By integrating filling, biological aeration, settling, and decanting in one basin, the system provides efficient organic matter and nutrient removal for both domestic and industrial wastewater.\n\nOur C-Tech SBR systems are designed to deliver high treatment efficiency, compact installation, and optimized energy consumption, while maintaining consistent effluent quality and minimizing operational and maintenance costs.",
     highlights: [
       "Timed batch processing in a single reactor basin",
       "Eliminates secondary clarifiers and sludge recycling loops",
@@ -59,19 +55,19 @@ export const products: Product[] = [
     process: [
       {
         title: "Filling",
-        body: "Wastewater fills the basin.",
+        body: "Wastewater enters the reactor and fills the treatment basin.",
       },
       {
         title: "Aeration",
-        body: "Active biology digests organic matter under cyclical aeration.",
+        body: "Controlled aeration promotes biological activity, allowing microorganisms to break down organic matter and remove nutrients.",
       },
       {
         title: "Settling",
-        body: "Aeration stops, allowing biomass to settle.",
+        body: "Aeration is stopped, allowing the biological solids to settle naturally and form a clear supernatant layer.",
       },
       {
         title: "Decanting",
-        body: "Clean supernatant is decanted.",
+        body: "The treated supernatant is carefully decanted from the reactor, leaving the settled biomass behind for the next treatment cycle.",
       },
     ],
     applications: [
@@ -85,12 +81,12 @@ export const products: Product[] = [
   },
   {
     slug: "c-mem-sbr",
-    navLabel: "C-Mem ",
-    title: "C-Mem (Membrane Bioreactor)",
+    navLabel: "C-Mem MBR",
+    title: "C-Mem MBR (Membrane Bioreactor)",
     tagline: "Advanced Wastewater Recycling with Membrane Technology.",
     heroImage: ultrafiltration,
     intro:
-      "C-Mem MBR systems combine biological treatment with ultrafiltration membrane separation. By utilizing hollow-fiber membranes directly within or after the reactor, the system filters out all suspended solids, bacteria, and pathogens, yielding extremely high-quality effluent suitable for unrestricted recycling.\n\nWe supply advanced membrane technology that delivers outstanding water quality, reduced footprint, and reliable long-term operation.",
+      "C-Mem MBR technology combines advanced biological wastewater treatment with membrane filtration to deliver exceptional effluent quality in a compact and highly efficient treatment system.\n\nThe technology integrates biological treatment with hollow-fiber ultrafiltration membranes submerged directly within the bioreactor. The membranes provide an effective physical barrier that retains suspended solids, bacteria, and other contaminants, producing a clear, high-quality effluent suitable for reuse and recycling applications.\n\nOur C-Mem MBR systems are engineered for high treatment performance, compact footprints, reliable operation, and reduced sludge production, making them ideal for applications where stringent effluent standards and water reuse are required.",
     highlights: [
       "Combines biological digestion with ultrafiltration membrane separation",
       "Produces high-purity effluent ready for reuse (toilet flushing, irrigation)",
@@ -99,12 +95,24 @@ export const products: Product[] = [
     ],
     process: [
       {
-        title: "Biological Digestion",
-        body: "Aerated biomass digests dissolved organic pollutants in the reactor basin.",
+        title: "Biological Treatment",
+        body: "Wastewater enters the bioreactor, where aerated microorganisms break down dissolved organic matter and remove nutrients.",
       },
       {
         title: "Membrane Filtration",
-        body: "Effluent is drawn through micro-pores under vacuum, separating pure water from activated sludge.",
+        body: "The treated mixed liquor passes through fine-pore hollow-fiber membranes. The membranes retain activated sludge, suspended solids, bacteria, and other particulates while allowing treated water to pass through.",
+      },
+      {
+        title: "Permeate Extraction",
+        body: "A controlled suction or permeate pump draws the filtered water through the membranes, producing a clear and consistently high-quality effluent.",
+      },
+      {
+        title: "Sludge Retention & Recirculation",
+        body: "The membrane barrier retains biomass within the bioreactor, allowing high concentrations of active microorganisms to be maintained for enhanced treatment efficiency and reduced reactor volume.",
+      },
+      {
+        title: "Treated Water Reuse",
+        body: "The resulting permeate is suitable for applications requiring high-quality treated water, including toilet flushing, irrigation, industrial processes, cleaning, and other non-potable reuse applications, subject to the applicable treatment and reuse standards.",
       },
     ],
     applications: [
@@ -123,7 +131,7 @@ export const products: Product[] = [
     tagline: "High-Efficiency Biological Wastewater Treatment.",
     heroImage: mbbr,
     intro:
-      "Biokleen MBBR technology utilizes custom-designed floating biofilm carriers to increase active surface area in biological aeration tanks. This robust process is highly resilient to flow fluctuations and provides rapid biological degradation within a compact layout.\n\nOur MBBR systems are robust, easy to operate, and designed to maximize treatment efficiency while reducing plant footprint and maintenance.",
+      "Biokleen MBBR (Moving Bed Biofilm Reactor) technology uses specially designed floating biofilm carriers to provide a large surface area for the growth of active microorganisms within biological treatment tanks. This increases the concentration of treatment biomass and enhances the system’s capacity to remove organic matter and nutrients within a compact footprint.\n\nThe process is designed to handle variable flow and organic loading, making it a reliable solution for both domestic and industrial wastewater applications. Biokleen MBBR systems offer high treatment efficiency, operational flexibility, compact installation, and simplified maintenance, while reducing the space required for conventional biological treatment.",
     highlights: [
       "High active biomass concentration on floating carrier media",
       "Compact footprint compared to conventional activated sludge systems",
@@ -132,12 +140,24 @@ export const products: Product[] = [
     ],
     process: [
       {
-        title: "Biofilm carriers",
-        body: "Wastewater is mixed in a basin containing floating high-surface-area carriers that support the growth of active biofilm.",
+        title: "Biofilm Carriers",
+        body: "Wastewater enters an aerated basin containing free-floating, high-surface-area biofilm carriers. Microorganisms attach to the carrier surfaces and form an active biofilm that breaks down organic pollutants.",
+      },
+      {
+        title: "Aeration & Mixing",
+        body: "Continuous or controlled aeration keeps the carriers in constant movement while supplying oxygen required for biological activity. The movement promotes effective contact between wastewater, oxygen, and the biofilm.",
+      },
+      {
+        title: "Biological Treatment",
+        body: "As wastewater passes through the reactor, the microorganisms within the biofilm consume and degrade organic matter and, where configured, facilitate biological nitrogen removal.",
       },
       {
         title: "Clarification",
-        body: "Treated wastewater passes to a settling basin where sloughed biomass is separated.",
+        body: "Treated wastewater flows to a settling or clarification stage, where excess biomass that has naturally detached from the carriers is separated from the treated water.",
+      },
+      {
+        title: "Treated Effluent",
+        body: "The clarified water is collected as treated effluent and can undergo additional polishing or disinfection where required to meet the intended discharge or reuse standards.",
       },
     ],
     applications: [
@@ -156,7 +176,7 @@ export const products: Product[] = [
     tagline: "High-Purity Water for Critical Applications.",
     heroImage: Ro,
     intro:
-      "Aqua Clean RO systems use high-pressure semi-permeable membranes to remove dissolved salts, heavy metals, micro-pollutants, and silica from brackish and borehole water. Engineered for longevity and performance, these systems feed pure water to laboratories, healthcare setups, and industrial processes.\n\nEvery system is engineered to deliver maximum efficiency, reliability, and long-term performance.",
+      "Aqua Clean RO systems use high-pressure semi-permeable membranes to remove dissolved salts, heavy metals, silica, and other contaminants from brackish and borehole water.\n\nOur systems are engineered for high efficiency, reliable operation, and long-term membrane performance, providing high-quality water for laboratories, healthcare facilities, commercial applications, and industrial processes.",
     highlights: [
       "Sized for flow rates from 250 LPH to 100,000+ LPH",
       "High-rejection thin-film composite membranes",
@@ -165,12 +185,20 @@ export const products: Product[] = [
     ],
     process: [
       {
-        title: "Pre-treatment sizing",
-        body: "We audit raw water TDS, silica and silt density index to size sand filters, softeners and antiscalant dosing.",
+        title: "Pre-Treatment Sizing",
+        body: "Raw water is assessed for Fluorides, TDS, silica, turbidity, hardness, and Silt Density Index to correctly size filtration, softening, cartridge filters, and antiscalant dosing.",
       },
       {
-        title: "Membrane process",
-        body: "Feedwater passes through semi-permeable membranes under pressure, separating clean permeate from concentrated brine.",
+        title: "Membrane Process",
+        body: "Pre-treated feedwater passes through semi-permeable membranes under high pressure, separating high-quality permeate from concentrated brine.",
+      },
+      {
+        title: "Permeate & Reject",
+        body: "The purified permeate is collected for use, while the concentrated reject stream is discharged or managed for recovery where applicable.",
+      },
+      {
+        title: "Final Treatment",
+        body: "Where required, additional treatment such as UV, disinfection, remineralization, or pH correction can be incorporated to meet the final water quality requirements.",
       },
     ],
     applications: [
@@ -187,9 +215,9 @@ export const products: Product[] = [
     navLabel: "Aqua Clean UF",
     title: "Aqua Clean UF (Ultrafiltration System)",
     tagline: "Advanced Pathogen and Suspended Solids Removal.",
-    heroImage: reverse,
+    heroImage: uff,
     intro:
-      "Aqua Clean UF systems filter water using hollow-fiber membranes with a pore size of 0.02 microns. This physical barrier blocks suspended solids, turbidity, viruses, and bacteria while keeping essential minerals intact, making it perfect for primary borehole filtration or RO pre-treatment.\n\nOur UF systems are built using premium membrane technology and customized to suit your water source, ensuring consistent water quality with reduced operational costs.",
+      "Aqua Clean UF (Ultrafiltration) systems use hollow-fiber membranes with pore sizes as fine as 0.02 microns to remove suspended solids, turbidity, bacteria, and viruses while retaining essential minerals.\n\nDesigned for borehole filtration, surface water treatment, and RO pre-treatment, our UF systems provide consistent water quality, compact operation, and reduced chemical and maintenance requirements.",
     highlights: [
       "Removes pathogens and macromolecules down to 0.02 microns",
       "High-flux hollow-fiber membranes with automated backwash",
@@ -199,11 +227,19 @@ export const products: Product[] = [
     process: [
       {
         title: "Barrier Filtration",
-        body: "Raw water passes through hollow fibers, trapping particulate matter on the outside.",
+        body: "Raw water passes through hollow-fiber membranes, where suspended solids, turbidity, bacteria, and other particulates are retained.",
+      },
+      {
+        title: "Membrane Separation",
+        body: "The fine membrane pores provide a physical barrier against microorganisms and contaminants while allowing dissolved minerals to pass through.",
       },
       {
         title: "Automated Backwash",
-        body: "Flow is periodically reversed to flush out accumulated solids.",
+        body: "The filtration flow is periodically reversed to flush accumulated solids from the membrane surface and restore filtration performance.",
+      },
+      {
+        title: "Treated Water",
+        body: "Filtered water is collected as high-quality permeate for direct use or further treatment, including as pre-treated feedwater for RO systems.",
       },
     ],
     applications: [
@@ -216,54 +252,13 @@ export const products: Product[] = [
     pdfSize: "1.6 MB",
   },
   {
-    slug: "aqua-clean-wtp",
-    navLabel: "Aqua Clean WTP",
-    title: "Aqua Clean Water Treatment Plant",
-    tagline: "Comprehensive Large-Scale Utility Water Purification.",
-    heroImage: wastewater,
-    intro:
-      "Aqua Clean Water Treatment Plants combine coagulation, flocculation, aeration, iron/manganese removal, ion exchange, and disinfection technologies to treat highly contaminated borehole, municipal, or well water. Designed for high volume, they deliver stable, safe drinking and utility water.\n\nWe provide carefully engineered solutions using high-quality resins that maximize efficiency, extend equipment life, and reduce maintenance costs.",
-    highlights: [
-      "Modular layouts combining clarification, softening, and iron filtration",
-      "Volumetric automatic regeneration for ion exchange resins",
-      "Corrosion-resistant FRP pressure vessels and multi-port valves",
-      "Chemical dosing systems for disinfection and pH adjustment",
-    ],
-    process: [
-      {
-        title: "Oxidation",
-        body: "Air or chlorine is added to precipitate iron and manganese.",
-      },
-      {
-        title: "Coagulation",
-        body: "Coagulants are added to precipitate organic matter.",
-      },
-      {
-        title: "Media Filtration",
-        body: "Water passes through catalytic media.",
-      },
-      {
-        title: "Ion Filtration",
-        body: "Water passes through resin beds to remove hardness and minerals.",
-      },
-    ],
-    applications: [
-      "Large industrial manufacturing complexes",
-      "Residential estates and high-rise apartments",
-      "Borehole water conditioning for central HVAC loops",
-      "Agricultural and greenhouse water supply",
-    ],
-    pdfFile: "aqua-clean-wtp-datasheet.pdf",
-    pdfSize: "2.5 MB",
-  },
-  {
     slug: "aqua-clean-lake-river",
     navLabel: "Aqua Clean Lake/River",
     title: "Aqua Clean Lake/River Water Treatment System",
     tagline: "High-Efficiency Surface Water Purification.",
     heroImage: effluent,
     intro:
-      "Our Lake/River surface water treatment systems are designed to process highly turbid water with fluctuating organic loads. By integrating clarifiers, chemical coagulation, ultrafiltration, and active carbon filters, we turn raw river or lake water into safe drinking water for communities and estates.\n\nWe deliver complete skid-mounted or containerized solutions that allow simple installation and start-up in remote or rural locations.",
+      "Aqua Clean surface water treatment systems are designed to treat highly turbid lake and river water with varying organic loads. By combining clarification, chemical coagulation, filtration, and disinfection, the systems produce safe, high-quality water for communities, estates, and other applications.\n\nOur systems are available in skid-mounted or containerized configurations and are designed for efficient installation, reliable operation, and deployment in remote and rural locations.",
     highlights: [
       "Engineered for high turbidity and variable organic content",
       "Rapid coagulation-flocculation basins with lamella clarifiers",
@@ -273,15 +268,19 @@ export const products: Product[] = [
     process: [
       {
         title: "Clarification",
-        body: "Coagulant chemical dosing precipitates mud, silt, and algae in a lamella settler.",
+        body: "Coagulant dosing promotes the removal of mud, silt, suspended solids, and algae, which are separated in a lamella or other high-rate settling unit.",
       },
       {
         title: "Polishing",
-        body: "Clarified water is polished through sand/carbon beds.",
+        body: "Clarified water passes through sand and activated carbon filters to remove remaining fine particles, colour, taste, and organic contaminants.",
       },
       {
         title: "Disinfection",
-        body: "Polished water is disinfected.",
+        body: "The filtered water is disinfected using an appropriate process such as chlorination or UV, ensuring effective control of harmful microorganisms.",
+      },
+      {
+        title: "Treated Water",
+        body: "The final treated water is collected for potable supply or other intended uses, in accordance with the required water quality standards.",
       },
     ],
     applications: [
@@ -300,7 +299,7 @@ export const products: Product[] = [
     tagline: "Central Climate Control and Chilled Water Distribution.",
     heroImage: maintennance,
     intro:
-      "We engineer and install central HVAC systems, including centrifugal chillers, air handling units, cooling towers, and duct networks. Our HVAC solutions are integrated with water conditioning systems to prevent scaling, ensuring continuous thermal comfort and maximum energy efficiency for large developments.",
+      "We design and install central HVAC systems incorporating centrifugal chillers, air handling units, cooling towers, and duct networks for large commercial and industrial developments.\n\nOur HVAC solutions integrate water conditioning and treatment to minimize scaling, improve system efficiency, and ensure reliable long-term operation.",
     highlights: [
       "Central chiller layouts optimized for commercial cooling loads",
       "High-performance air handling and mechanical ventilation",
@@ -310,11 +309,19 @@ export const products: Product[] = [
     process: [
       {
         title: "Thermal Exchange",
-        body: "Chilled water loops distribute cool air through air handling units.",
+        body: "Chillers produce chilled water that circulates through the system and supplies air handling units to provide conditioned air throughout the building.",
+      },
+      {
+        title: "Air Distribution",
+        body: "AHUs regulate and distribute conditioned air through a network of ducts and diffusers, maintaining the required indoor temperature and comfort.",
       },
       {
         title: "Heat Rejection",
-        body: "Cooling towers reject heat, protected from scaling by integrated softeners.",
+        body: "Cooling towers reject heat from the chilled-water system to the atmosphere, maintaining efficient chiller operation.",
+      },
+      {
+        title: "Water Conditioning",
+        body: "Integrated water treatment systems help control scale, corrosion, and fouling within cooling water circuits, protecting equipment and maintaining energy efficiency.",
       },
     ],
     applications: [
@@ -325,39 +332,6 @@ export const products: Product[] = [
     ],
     pdfFile: "hvac-systems-datasheet.pdf",
     pdfSize: "1.9 MB",
-  },
-  {
-    slug: "fire-fighting-systems",
-    navLabel: "Fire Fighting Systems",
-    title: "Fire Fighting & Safety Systems",
-    tagline: "Automatic Sprinklers, Hydrants, and Pump Stations.",
-    heroImage: fire,
-    intro:
-      "We plan and deploy professional fire protection systems according to NFPA regulations. From high-pressure fire pump packages and wet-pipe automatic sprinkler networks to landing valves and hydrants, we build life safety infrastructure you can trust during emergencies.",
-    highlights: [
-      "Automatic sprinkler networks and wet riser lines",
-      "High-pressure fire pump sets (Duty, Standby, and Jockey pumps)",
-      "Compliant with NFPA and local fire safety codes",
-      "Integrated storage reservoir piping and control check valves",
-    ],
-    process: [
-      {
-        title: "Pressure Monitoring",
-        body: "Jockey pumps maintain pipe pressure. System activation starts main duty pumps.",
-      },
-      {
-        title: "Fire Suppression",
-        body: "Heat-sensitive sprinklers or manual hydrants discharge water to contain fire.",
-      },
-    ],
-    applications: [
-      "Commercial shopping malls and offices",
-      "Industrial warehouses and factories",
-      "High-density residential complexes",
-      "Off-grid lodges and eco-resorts",
-    ],
-    pdfFile: "fire-fighting-systems-datasheet.pdf",
-    pdfSize: "1.5 MB",
   },
 ];
 
@@ -498,7 +472,7 @@ export const services: Service[] = [
 
 export const heroSlides = [
   {
-    image: reverse,
+    image: uff,
     eyebrow: "Aqua RO Solutions",
     heading: "Advanced membrane technology \nfor clean, safe water",
     body: "Aqua Clean UF uses ultrafiltration membranes to remove suspended solids, bacteria, and viruses from water while retaining essential minerals.",

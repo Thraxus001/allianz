@@ -21,7 +21,7 @@ export default function SectionHeading({ eyebrow, heading, body, light, align = 
         {heading}
       </h2>
       {body && (
-        <p className={`mt-4 max-w-xl text-base leading-relaxed ${light ? "text-white/75" : "text-[var(--color-ink)]/70"}`}>
+        <p className={`mt-4 max-w-xl text-base leading-relaxed ${light ? "text-white/75" : "text-black"}`}>
           {body}
         </p>
       )}

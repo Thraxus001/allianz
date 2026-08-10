@@ -52,7 +52,7 @@ export default function Careers() {
             <div key={title} className="rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
               <Icon size={22} className="text-[var(--color-current)]" />
               <h3 className="mt-4 font-display text-xl font-bold text-[var(--color-deepwater)]">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">{body}</p>
+              <p className="mt-2 text-sm leading-relaxed text-black">{body}</p>
             </div>
           ))}
         </div>
@@ -88,7 +88,7 @@ export default function Careers() {
           </div>
 
           <div className="mt-10 rounded-2xl border border-dashed border-black/15 bg-white p-6 text-center">
-            <p className="text-sm text-[var(--color-ink)]/70">
+            <p className="text-sm text-black">
               Don't see the right role? Send a general application and tell us what you're looking for.
             </p>
             <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -119,7 +119,7 @@ export default function Careers() {
           <div className="relative w-full max-w-md transform overflow-hidden rounded-3xl border border-black/5 bg-white p-8 shadow-2xl transition-all animate-in fade-in zoom-in-95 duration-200">
             <button
               onClick={() => setShowApplyModal(false)}
-              className="absolute right-5 top-5 rounded-full p-2 text-[var(--color-ink)]/40 hover:bg-black/5 hover:text-[var(--color-ink)]/70 transition-colors cursor-pointer"
+              className="absolute right-5 top-5 rounded-full p-2 text-[var(--color-ink)]/40 hover:bg-black/5 hover:text-black transition-colors cursor-pointer"
             >
               <X size={20} />
             </button>
@@ -137,7 +137,7 @@ export default function Careers() {
                 Position: {selectedRole}
               </p>
 
-              <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink)]/70">
+              <p className="mt-4 text-sm leading-relaxed text-black">
                 Thank you for your interest in joining Allianz Utilities! There are no current opportunities for now for this role.
               </p>
 

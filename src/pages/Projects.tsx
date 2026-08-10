@@ -185,7 +185,7 @@ export default function Projects() {
                 className={`rounded-full px-5 py-2 text-xs font-semibold tracking-wide transition-all ${
                   activeCategory === cat
                     ? "bg-[var(--color-current)] text-white shadow-sm"
-                    : "bg-[var(--color-foam-2)] text-[var(--color-ink)]/70 hover:bg-black/5"
+                    : "bg-[var(--color-foam-2)] text-black hover:bg-black/5"
                 }`}
               >
                 {cat}
@@ -235,7 +235,7 @@ export default function Projects() {
                     </span>
                   </div>
 
-                  <p className="mt-2 text-xs leading-relaxed text-[var(--color-ink)]/70 line-clamp-3">
+                  <p className="mt-2 text-xs leading-relaxed text-black line-clamp-3">
                     {proj.description}
                   </p>
                 </div>

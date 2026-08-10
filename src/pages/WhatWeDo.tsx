@@ -63,7 +63,7 @@ export default function WhatWeDo() {
                 <h3 className="mt-4 font-display text-2xl font-bold text-[var(--color-deepwater)]">
                   {s.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]/70">{s.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-black">{s.body}</p>
               </div>
             </div>
           ))}

@@ -40,7 +40,7 @@ export default function ServiceDetail() {
                     <h3 className="font-display text-xl font-bold text-[var(--color-deepwater)]">
                       {step.title}
                     </h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-ink)]/70">{step.body}</p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-black">{step.body}</p>
                   </div>
                 </div>
               ))}
@@ -102,7 +102,7 @@ export default function ServiceDetail() {
                 className="group rounded-2xl border border-black/5 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <h3 className="font-display text-lg font-bold text-[var(--color-deepwater)]">{s.title}</h3>
-                <p className="mt-1.5 text-sm text-[var(--color-ink)]/70">{s.tagline}</p>
+                <p className="mt-1.5 text-sm text-black">{s.tagline}</p>
                 <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-[var(--color-current)]">
                   View details <ArrowUpRight size={13} />
                 </span>

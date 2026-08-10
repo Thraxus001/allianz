@@ -115,7 +115,7 @@ export default function FAQs() {
                     isOpen ? "max-h-[16rem] border-t border-black/5" : "max-h-0"
                   }`}
                 >
-                  <p className="p-5 text-sm leading-relaxed text-[var(--color-ink)]/70 md:p-6">
+                  <p className="p-5 text-sm leading-relaxed text-black md:p-6">
                     {faq.answer}
                   </p>
                 </div>

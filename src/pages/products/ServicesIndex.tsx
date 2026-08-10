@@ -40,7 +40,7 @@ export default function ServicesIndex() {
                 <h3 className="font-display text-2xl font-bold text-[var(--color-deepwater)]">
                   {s.title}
                 </h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--color-ink)]/70">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-black">
                   {s.tagline}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-current)]">

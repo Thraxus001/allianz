@@ -203,7 +203,7 @@ export default function Clients() {
                 <p className="mt-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--color-secondary)]">
                   {c.solution}
                 </p>
-                <p className="mt-2 text-xs leading-relaxed text-[var(--color-ink)]/70 flex-1 line-clamp-3">
+                <p className="mt-2 text-xs leading-relaxed text-black flex-1 line-clamp-3">
                   {c.description}
                 </p>
               </div>
@@ -278,7 +278,7 @@ export default function Clients() {
                 <h3 className="font-display text-2xl font-bold text-[var(--color-deepwater)]">
                   Thank You for Your Feedback!
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink)]/70 max-w-md">
+                <p className="mt-3 text-sm leading-relaxed text-black max-w-md">
                   Your comments and rating help us continually refine our water treatment and utility services. We appreciate your time and support.
                 </p>
                 <button

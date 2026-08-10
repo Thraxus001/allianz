@@ -124,7 +124,7 @@ export default function Home() {
                 <Eye size={20} />
               </div>
               <h2 className="mt-4 font-display text-2xl md:text-3xl font-bold text-[var(--color-deepwater)]">Our Vision</h2>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink)]/70">
+              <p className="mt-3 text-sm leading-relaxed text-black">
                 To be the trusted partner of choice in Africa for sustainable engineering solutions that support clean water, effective wastewater management and efficient utility operations.
               </p>
             </div>
@@ -135,7 +135,7 @@ export default function Home() {
                 <Target size={20} />
               </div>
               <h2 className="mt-4 font-display text-2xl md:text-3xl font-bold text-[var(--color-deepwater)]">Our Mission</h2>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink)]/70">
+              <p className="mt-3 text-sm leading-relaxed text-black">
                 To provide innovative, efficient and dependable engineering services that meet client needs and promote sustainable infrastructure performance.
               </p>
             </div>
@@ -148,7 +148,7 @@ export default function Home() {
               <h2 className="mt-4 font-display text-2xl md:text-3xl font-bold text-[var(--color-deepwater)]">Our Values</h2>
               <ul className="mt-3 grid grid-cols-2 gap-x-2 gap-y-2.5">
                 {valuesList.map((val) => (
-                  <li key={val} className="flex items-center gap-1.5 text-sm text-[var(--color-ink)]/80">
+                  <li key={val} className="flex items-center gap-1.5 text-sm text-black">
                     <Check size={16} className="text-[var(--color-secondary)] shrink-0" />
                     {val}
                   </li>
@@ -183,7 +183,7 @@ export default function Home() {
                 />
               </div>
               <h3 className="mt-6 font-display text-xl font-bold text-[var(--color-deepwater)] text-center">SFC</h3>
-              <p className="mt-2 text-center text-sm leading-relaxed text-[var(--color-ink)]/70 flex-1">
+              <p className="mt-2 text-center text-sm leading-relaxed text-black flex-1">
                 A pioneer in advanced Sequencing Batch Reactor (SBR) biological wastewater treatment systems, delivering high-efficiency and cost-effective C-Tech™ sanitation systems globally.
               </p>
               <a
@@ -206,7 +206,7 @@ export default function Home() {
                 />
               </div>
               <h3 className="mt-6 font-display text-xl font-bold text-[var(--color-deepwater)] text-center">WTE Group</h3>
-              <p className="mt-2 text-center text-sm leading-relaxed text-[var(--color-ink)]/70 flex-1">
+              <p className="mt-2 text-center text-sm leading-relaxed text-black flex-1">
                 A leading European water infrastructure group, planning, building, and operating advanced wastewater treatment plants and utility energy recovery facilities.
               </p>
               <a

@@ -42,7 +42,7 @@ export default function ProductDetail() {
                 className={`pb-4 text-base font-bold transition-all border-b-2 mr-8 cursor-pointer ${
                   activeTab === "overview"
                     ? "border-[var(--color-current)] text-[var(--color-deepwater)]"
-                    : "border-transparent text-[var(--color-ink)]/40 hover:text-[var(--color-ink)]/70"
+                    : "border-transparent text-[var(--color-ink)]/40 hover:text-black"
                 }`}
               >
                 Technology Overview
@@ -52,7 +52,7 @@ export default function ProductDetail() {
                 className={`pb-4 text-base font-bold transition-all border-b-2 cursor-pointer ${
                   activeTab === "documents"
                     ? "border-[var(--color-current)] text-[var(--color-deepwater)]"
-                    : "border-transparent text-[var(--color-ink)]/40 hover:text-[var(--color-ink)]/70"
+                    : "border-transparent text-[var(--color-ink)]/40 hover:text-black"
                 }`}
               >
                 Technical Documents
@@ -74,7 +74,7 @@ export default function ProductDetail() {
                         <h3 className="font-display text-xl font-bold text-[var(--color-deepwater)]">
                           {step.title}
                         </h3>
-                        <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-ink)]/70">
+                        <p className="mt-1.5 text-sm leading-relaxed text-black">
                           {step.body}
                         </p>
                       </div>
@@ -196,7 +196,7 @@ export default function ProductDetail() {
                 className="group rounded-2xl border border-black/5 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <h3 className="font-display text-lg font-bold text-[var(--color-deepwater)]">{p.title}</h3>
-                <p className="mt-1.5 text-sm text-[var(--color-ink)]/70">{p.tagline}</p>
+                <p className="mt-1.5 text-sm text-black">{p.tagline}</p>
                 <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-[var(--color-current)]">
                   View details <ArrowUpRight size={13} />
                 </span>

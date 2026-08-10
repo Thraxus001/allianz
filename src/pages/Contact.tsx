@@ -120,15 +120,15 @@ const response = await fetch(`${baseUrl}/api/contact`, {
               {offices.map((o) => (
                 <div key={o.country} className="rounded-2xl border border-black/5 bg-white p-5 shadow-sm">
                   <h3 className="font-display text-lg font-bold text-[var(--color-deepwater)]">{o.country}</h3>
-                  <p className="mt-2 flex gap-2 text-sm text-[var(--color-ink)]/70">
+                  <p className="mt-2 flex gap-2 text-sm text-black">
                     <MapPin size={16} className="mt-0.5 shrink-0 text-[var(--color-current)]" />
                     {o.address}
                   </p>
-                  <a href={`tel:${o.phone.replace(/\s+/g, "")}`} className="mt-1.5 flex items-center gap-2 text-sm text-[var(--color-ink)]/70 hover:text-[var(--color-current)]">
+                  <a href={`tel:${o.phone.replace(/\s+/g, "")}`} className="mt-1.5 flex items-center gap-2 text-sm text-black hover:text-[var(--color-current)]">
                     <Phone size={16} className="shrink-0 text-[var(--color-current)]" />
                     {o.phone}
                   </a>
-                  <a href={`mailto:${o.email}`} className="mt-1.5 flex items-center gap-2 text-sm text-[var(--color-ink)]/70 hover:text-[var(--color-current)]">
+                  <a href={`mailto:${o.email}`} className="mt-1.5 flex items-center gap-2 text-sm text-black hover:text-[var(--color-current)]">
                     <Mail size={16} className="shrink-0 text-[var(--color-current)]" />
                     {o.email}
                   </a>
@@ -172,7 +172,7 @@ const response = await fetch(`${baseUrl}/api/contact`, {
                 <p className="font-display text-xl font-bold text-[var(--color-deepwater)]">
                   Your message has been sent!
                 </p>
-                <p className="text-sm text-[var(--color-ink)]/70">
+                <p className="text-sm text-black">
                   We have successfully received your enquiry. Our team will review your details and get back to you shortly at <span className="font-semibold text-[var(--color-deepwater)]">{form.email}</span>.
                 </p>
                 <button
@@ -258,7 +258,7 @@ const response = await fetch(`${baseUrl}/api/contact`, {
                       onChange={(e) => setForm((f) => ({ ...f, consent: e.target.checked }))}
                       className="mt-1 h-4 w-4 rounded border-black/15 text-[var(--color-current)] focus:ring-[var(--color-current)] cursor-pointer"
                     />
-                    <span className="text-sm text-[var(--color-ink)]/70">
+                    <span className="text-sm text-black">
                       I consent to having Allianz Utilities capture and store my submitted details for reference and communication purposes.
                     </span>
                   </label>
