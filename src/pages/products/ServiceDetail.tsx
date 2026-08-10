@@ -224,7 +224,7 @@ export default function ServiceDetail() {
         </h1>
         <div className="grid gap-14 md:grid-cols-[1.2fr_1fr]">
           <div>
-            {service.slug === "operation-and-maintenance" ? (
+            {service.slug === "operation-and-maintenance" || service.slug === "annual-maintenance-contracts" ? (
               <>
                 {/* Tabs Navigation */}
                 <div className="mb-8 flex border-b border-black/5">
