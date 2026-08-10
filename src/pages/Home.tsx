@@ -25,7 +25,7 @@ export default function Home() {
 
       {/* Welcome / Intro */}
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-        <div className="grid gap-12 lg:grid-cols-12 lg:items-center ">
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-start ">
           {/* New Left Image takes prominent position */}
           <div className="relative h-72 w-82 overflow-hidden rounded-2xl lg:col-span-3 order-2 lg:order-1">
             <img
@@ -38,7 +38,7 @@ export default function Home() {
           {/* Welcome Text + Reduced Original Image & Slogan */}
           <div className="lg:col-span-8 lg:col-start-5 order-1 lg:order-2">
             <div className="flex flex-col text-left items-start">
-              <h1 className="mt-3 font-display text-4xl font-extrabold leading-[0.95] tracking-tight text-[var(--color-secondary)] md:text-5xl lg:text-6xl">
+              <h1 className="font-display text-4xl font-extrabold leading-[0.95] tracking-tight text-[var(--color-secondary)] md:text-5xl lg:text-6xl">
                 Welcome to Allianz Utilities
               </h1>
               <span className="eyebrow text-[var(--color-current)]">
@@ -60,7 +60,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="grid gap-12 lg:grid-cols-12 lg:items-center mt-16 md:mt-24">
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-start mt-16 md:mt-24">
           {/* New Right Image on desktop */}
           <div className="relative h-72 w-92 overflow-hidden rounded-2xl lg:col-span-3 order-2 lg:order-2">
             <img
@@ -73,7 +73,7 @@ export default function Home() {
           {/* Welcome Text on the left */}
           <div className="lg:col-span-7 order-1 lg:order-1">
             <div className="flex flex-col text-left items-start">
-              <h1 className="mt-3 font-display text-4xl font-extrabold leading-[0.95] tracking-tight text-[var(--color-current)] md:text-5xl lg:text-6xl">
+              <h1 className="font-display text-4xl font-extrabold leading-[0.95] tracking-tight text-[var(--color-current)] md:text-5xl lg:text-6xl">
                 Treat Today. Save Your Tomorrow
               </h1>
               <span className="eyebrow text-[var(--color-secondary)]">
