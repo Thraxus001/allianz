@@ -233,12 +233,20 @@ export const products: Product[] = [
     ],
     process: [
       {
-        title: "Oxidation & Coagulation",
-        body: "Air, chlorine, or coagulants are added to precipitate iron, manganese, and organics.",
+        title: "Oxidation",
+        body: "Air or chlorine is added to precipitate iron and manganese.",
       },
       {
-        title: "Media & Ion Filtration",
-        body: "Water passes through catalytic media and resin beds to remove hardness and minerals.",
+        title: "Coagulation",
+        body: "Coagulants are added to precipitate organic matter.",
+      },
+      {
+        title: "Media Filtration",
+        body: "Water passes through catalytic media.",
+      },
+      {
+        title: "Ion Filtration",
+        body: "Water passes through resin beds to remove hardness and minerals.",
       },
     ],
     applications: [
@@ -270,8 +278,12 @@ export const products: Product[] = [
         body: "Coagulant chemical dosing precipitates mud, silt, and algae in a lamella settler.",
       },
       {
-        title: "Polishing & Disinfection",
-        body: "Clarified water is polished through sand/carbon beds and disinfected.",
+        title: "Polishing",
+        body: "Clarified water is polished through sand/carbon beds.",
+      },
+      {
+        title: "Disinfection",
+        body: "Polished water is disinfected.",
       },
     ],
     applications: [
