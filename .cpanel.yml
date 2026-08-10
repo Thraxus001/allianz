@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/admin@aul.co.ke/public_html
+    - export DEPLOYPATH=/home/aulcoke/public_html
     - /bin/cp -R * $DEPLOYPATH
