@@ -3,10 +3,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import ContourDivider from "./ContourDivider";
 
 // Local image assets matching the projects page
-import reverseImg from "../assets/reverse.jpeg";
 import ultrafiltrationImg from "../assets/ultrafiltration.png";
 import effluentImg from "../assets/effluent.png";
-import central from "../assets/Central HVAC.avif";
 import Aquamembrane from "../assets/Aqua-membrane.jpg";
 import Ctech from "../assets/ctech.webp";
 

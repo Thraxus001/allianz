@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Star, Quote, Building2, MessageSquare, CheckCircle2 } from "lucide-react";
+import { Star, Quote, MessageSquare, CheckCircle2 } from "lucide-react";
 import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
 

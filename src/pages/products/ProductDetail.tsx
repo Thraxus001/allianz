@@ -1,18 +1,10 @@
-import { useState, useEffect, useRef, type DragEvent, type ChangeEvent } from "react";
+import { useState } from "react";
 import { Navigate, NavLink, useParams } from "react-router-dom";
-import { ArrowUpRight, Check, FileText, UploadCloud, Download, Trash2, ExternalLink } from "lucide-react";
+import { ArrowUpRight, Check, FileText, Download, ExternalLink } from "lucide-react";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 import ContourDivider from "../../components/ContourDivider";
 import { products } from "../../data/content";
-
-type AttachedFile = {
-  id: string;
-  name: string;
-  size: string;
-  date: string;
-  dataUrl: string;
-};
 
 export default function ProductDetail() {
   const { slug } = useParams();
@@ -21,84 +13,10 @@ export default function ProductDetail() {
   if (!product) return <Navigate to="/products" replace />;
 
   const [activeTab, setActiveTab] = useState<"overview" | "documents">("overview");
-  const [attachedFiles, setAttachedFiles] = useState<AttachedFile[]>([]);
-  const [isDragging, setIsDragging] = useState(false);
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Load user attached files from localStorage on mount/slug change
-  useEffect(() => {
-    const saved = localStorage.getItem(`attached-pdf-${product.slug}`);
-    if (saved) {
-      try {
-        setAttachedFiles(JSON.parse(saved));
-      } catch (e) {
-        console.error("Failed to parse attached files", e);
-      }
-    } else {
-      setAttachedFiles([]);
-    }
-  }, [product.slug]);
 
-  const handleFile = (file: File) => {
-    if (file.type !== "application/pdf") {
-      alert("Please upload PDF documents only.");
-      return;
-    }
-    if (file.size > 10 * 1024 * 1024) {
-      alert("File size exceeds 10MB limit.");
-      return;
-    }
 
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const dataUrl = e.target?.result as string;
-      const newFile: AttachedFile = {
-        id: crypto.randomUUID(),
-        name: file.name,
-        size: (file.size / (1024 * 1024)).toFixed(2) + " MB",
-        date: new Date().toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "short",
-          day: "numeric",
-        }),
-        dataUrl,
-      };
 
-      const updated = [newFile, ...attachedFiles];
-      setAttachedFiles(updated);
-      localStorage.setItem(`attached-pdf-${product.slug}`, JSON.stringify(updated));
-    };
-    reader.readAsDataURL(file);
-  };
-
-  const handleDrop = (e: DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    setIsDragging(false);
-    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      handleFile(e.dataTransfer.files[0]);
-    }
-  };
-
-  const handleFileSelect = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      handleFile(e.target.files[0]);
-    }
-  };
-
-  const handleDeleteFile = (id: string) => {
-    const updated = attachedFiles.filter((f) => f.id !== id);
-    setAttachedFiles(updated);
-    localStorage.setItem(`attached-pdf-${product.slug}`, JSON.stringify(updated));
-  };
-
-  const handleViewAttached = (file: AttachedFile) => {
-    const win = window.open();
-    if (win) {
-      win.document.write(
-        `<iframe src="${file.dataUrl}" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>`
-      );
-    }
-  };
 
   const others = products.filter((p) => p.slug !== product.slug).slice(0, 3);
 

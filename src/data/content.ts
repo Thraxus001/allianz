@@ -1,4 +1,4 @@
-import Aquamembrane from "../assets/Aqua-membrane.jpg";
+
 //import aboutImg from "../assets/waterhand.jpg";
 //import ctech from "../assets/ctech.png";
 import effluent from "../assets/effluent.png";
@@ -10,7 +10,6 @@ import mbbr from "../assets/mbbr.jpeg";
 import reverse from "../assets/reverse.jpeg";
 import ultrafiltration from "../assets/ultrafiltration.png";
 import wastewater from "../assets/wastewater.png";
-import design from "../assets/design.jpg";
 import training from "../assets/training.jpeg";
 import ctech from "../assets/ctech.webp";
 import main from "../assets/maintenancee.jpeg";
