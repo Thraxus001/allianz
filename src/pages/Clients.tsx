@@ -248,7 +248,7 @@ export default function Clients() {
                     </div>
                     <div className="relative">
                       <Quote size={20} className="absolute -left-2 -top-2 opacity-5 text-[var(--color-current)]" />
-                      <p className="text-sm leading-relaxed text-[var(--color-ink)]/80 italic">
+                      <p className="text-sm leading-relaxed text-black italic">
                         "{r.quote}"
                       </p>
                     </div>
