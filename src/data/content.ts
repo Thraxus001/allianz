@@ -1,6 +1,4 @@
-
-//import aboutImg from "../assets/waterhand.jpg";
-//import ctech from "../assets/ctech.png";
+import uff from "../assets/uff.jpeg";
 import effluent from "../assets/effluent.png";
 //import logoImg from "../assets/logo.jpg";
 import maintennance from "../assets/maintenance.jpeg";
@@ -548,7 +546,7 @@ export const technologies = [
   {
     name: "Aqua Clean UF",
     subtitle: "Advanced Ultrafiltration Purification",
-    image: reverse,
+    image: uff,
     slug: "High-Efficiency Ultrafiltration System",
   },
   {
