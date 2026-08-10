@@ -152,7 +152,7 @@ const projectsList = [
   }
 ];
 
-const categories = ["All", "Water Treatment", "Wastewater Treatment", "HVAC & Utilities", "OPeration & Maintenance"];
+const categories = ["All", "Water Treatment", "Wastewater Treatment", "HVAC & Utilities", "Operation & Maintenance"];
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
