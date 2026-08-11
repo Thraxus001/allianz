@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { ArrowUpRight } from 'lucide-react';
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
@@ -153,11 +154,21 @@ const response = await fetch(`${baseUrl}/api/contact`, {
               <div className="overflow-hidden rounded-2xl border border-black/5 shadow-sm">
                 <iframe
                   title="Allianz Utilities — Nairobi office map"
-                  src="https://www.google.com/maps?q=-1.2598,36.8179&z=17&output=embed"
+                  src="https://www.google.com/maps?q=-1.257267,36.811802&z=17&output=embed"
                   className="h-full min-h-[180px] w-full grayscale-[15%]"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
+              </div>
+              <div className="mt-3 text-right">
+                <a
+                  href="https://maps.app.goo.gl/cVC9gWsPGgjx2KT16"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--color-current)] hover:underline"
+                >
+                  Open in Google Maps <ArrowUpRight size={14} />
+                </a>
               </div>
             </div>
           </div>

@@ -4,15 +4,15 @@ import ContourDivider from "./ContourDivider";
 
 // Local image assets matching the projects page
 import ultrafiltrationImg from "../assets/ultrafiltration.png";
-import effluentImg from "../assets/effluent.png";
-import Aquamembrane from "../assets/Aqua-membrane.jpg";
 import Ctech from "../assets/ctech.webp";
+import Ro from "../assets/RO.jpeg";
+import uff from "../assets/uff.jpeg";
 
 const AUTOPLAY_MS = 6000;
 
 const projectSlides = [
   {
-    image: Aquamembrane,
+    image: Ro,
     eyebrow: "Water Treatment",
     heading: "Pure Water.\nProven Performance",
     body: "Aqua Clean Reverse Osmosis systems engineered for hospitals, industries and commercial buildings.",
@@ -30,10 +30,10 @@ const projectSlides = [
     body: "Timed C-TECH SBR cycles combining biological aeration and clarification in a single compact basin.",
   },
   {
-    image: effluentImg,
-    eyebrow: "Wastewater Treatment",
-    heading: "Wastewater\nTreatment System",
-    body: "Complete biological membrane bioreactor treatment plant designed for cereal processing waste at Weetabix East Africa.",
+    image: uff,
+    eyebrow: "WATER PURIFICATION",
+    heading: "Advanced ultrafiltration\nfor crystal-clear water.",
+    body: "High-efficiency Aqua Clean UF membranes delivering superior removal of suspended solids, bacteria, and turbidity in a compact, low-energy design.",
   }
 ];
 

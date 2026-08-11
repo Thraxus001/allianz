@@ -31,7 +31,7 @@ const projectsList = [
     image: tworiversLogo
   },
   {
-    title: "20,000 LPH RO & 10,000 KLD MBR System O&M",
+    title: "O&M, Aquaclean RO & MBR Systems",
     client: "Sabis International School",
     category: "Operation & Maintenance",
     location: "Runda, Nairobi, Kenya",
@@ -43,7 +43,7 @@ const projectsList = [
     image: sabisLogo
   },
   {
-    title: "80 KLD C-MEM MBR & 6,000 LPH RO Aquaclean",
+    title: "C-MEM MBR, Aquaclean RO",
     client: "Kenya BioVax Institute (BioVax)",
     category: "Wastewater Treatment",
     location: "Embakasi, Nairobi, Kenya",
@@ -55,7 +55,7 @@ const projectsList = [
     image: biovaxLogo
   },
   {
-    title: "20 KLD C-MEM Wastewater Recycling System",
+    title: "C-MEM Wastewater Recycling System",
     client: "Weetabix East Africa",
     category: "Wastewater Treatment",
     location: "Nairobi, Kenya",
@@ -67,7 +67,7 @@ const projectsList = [
     image: weetabixLogo
   },
   {
-    title: "HVAC Services, 5k LPH RO & 8k LPH Wastewater Plant",
+    title: "HVAC Services, Aquaclean RO & Wastewater Plant",
     client: "BBS Mall",
     category: "HVAC & Utilities",
     location: "Eastleigh, Nairobi, Kenya",
@@ -79,7 +79,7 @@ const projectsList = [
     image: bbsMallLogo
   },
   {
-    title: "20,000 LPH Reverse Osmosis System",
+    title: "Reverse Osmosis System",
     client: "Ciata City Mall",
     category: "Water Treatment",
     location: "Kiambu Road, Nairobi, Kenya",
@@ -91,7 +91,7 @@ const projectsList = [
     image: ciataMallLogo
   },
   {
-    title: "150 KLD MBR Wastewater Treatment Plant",
+    title: "Wastewater Treatment MBR Plant",
     client: "Rosslyn Academy",
     category: "Wastewater Treatment",
     location: "Gigiri, Nairobi, Kenya",
@@ -103,7 +103,7 @@ const projectsList = [
     image: rosslynLogo
   },
   {
-    title: "150 KLD MBR Wastewater Treatment System",
+    title: "Wastewater Treatment MBR System",
     client: "University of Nairobi",
     category: "Wastewater Treatment",
     location: "Nairobi, Kenya",
@@ -115,7 +115,7 @@ const projectsList = [
     image: uonLogo
   },
   {
-    title: "Wastewater Lagoon System & 250 KLD Open University STP",
+    title: "Wastewater Lagoon System & Open University STP",
     client: "Konza Technopolis (Konza City)",
     category: "Wastewater Treatment",
     location: "Konza, Machakos, Kenya",
@@ -127,7 +127,7 @@ const projectsList = [
     image: konzaLogo
   },
   {
-    title: "1,500 CMD Seawater Desalination Plant",
+    title: "Seawater Desalination Plant",
     client: "Vipingo Development",
     category: "Water Treatment",
     location: "Vipingo, Kilifi, Kenya",
