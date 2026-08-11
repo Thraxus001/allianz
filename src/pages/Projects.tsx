@@ -14,7 +14,7 @@ import ciataMallLogo from "../assets/ciatalogo.jpg";
 import rosslynLogo from "../assets/rosslyn_logo.png";
 import uonLogo from "../assets/uon_logo.jpeg";
 import konzaLogo from "../assets/Konza.jpg";
-import vipingoLogo from "../assets/vipingo.jpg";
+import vipingoLogo from "../assets/vipingo.png";
 
 // Implemented Projects List
 const projectsList = [
@@ -135,7 +135,7 @@ const projectsList = [
     capacity: "1,500 Cubic Meters Per Day",
     metricLabel: "Desalination Output",
     metricValue: "1,500 CMD",
-    description: "Construction and commissioning of a 1,500 CMD coastal seawater desalination plant supplying fresh municipal-grade water for community developments.",
+    description: "Construction and commissioning of a 1,500 CMD coastal seawater desalination plant supplying fresh water for community developments.",
     image: vipingoLogo
   },
   {
