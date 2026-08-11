@@ -23,7 +23,7 @@ const clientCases = [
     name: "University of Nairobi (UoN)",
     sector: "Higher Education & Research",
     location: "Nairobi, Kenya",
-    solution: "MBR Wastewater Treatment System",
+    solution: "150 kld MBR STP",
     description: "Deployed a high-efficiency biological Membrane Bioreactor (MBR) system to treat campus wastewater, enabling eco-friendly reclamation and water recycling for campus irrigation.",
     image: uonLogo
   },
@@ -31,8 +31,8 @@ const clientCases = [
     name: "Two Rivers Mall",
     sector: "Commercial Real Estate & Retail",
     location: "Ruaka, Nairobi, Kenya",
-    solution: "Reverse Osmosis & MBBR System",
-    description: "Supplied advanced high-pressure Reverse Osmosis systems combined with Moving Bed Biofilm Reactor (MBBR) biological treatment for heavy-duty commercial utility loops.",
+    solution: "RO (2,000 cmd) & 1,500 m³/day MBBR STP",
+    description: "Provides comprehensive operations and maintenance (O&M) services for the advanced high-pressure Reverse Osmosis systems and Moving Bed Biofilm Reactor (MBBR) biological treatment plant.",
     image: tworiversLogo
   },
   {
@@ -47,7 +47,7 @@ const clientCases = [
     name: "Ciata City Mall",
     sector: "Retail & Commercial Real Estate",
     location: "Kiambu Road, Nairobi",
-    solution: "20,000 L/h Reverse Osmosis System",
+    solution: "RO (20,000 L/h)",
     description: "Designed and installed a high-capacity 20,000 Litres Per Hour Reverse Osmosis plant with pre-filtration sand media to ensure high-purity water for commercial mall facilities.",
     image: ciataLogo
   },
@@ -55,7 +55,7 @@ const clientCases = [
     name: "Rosslyn Academy",
     sector: "K-12 Education & International School",
     location: "Gigiri, Nairobi, Kenya",
-    solution: "150 kld MBR Wastewater Treatment Plant",
+    solution: "150 kld MBR STP",
     description: "Engineered and deployed a 150 cubic meters per day (150 kld) biological Membrane Bioreactor (MBR) plant to manage and recycle international school campus wastewater.",
     image: rosslynLogo
   },
@@ -63,7 +63,7 @@ const clientCases = [
     name: "Kenya BioVax Institute (BioVax)",
     sector: "Pharmaceutical & Vaccine Manufacturing",
     location: "Embakasi, Nairobi, Kenya",
-    solution: "Reverse Osmosis System",
+    solution: "RO (6,000 L/h) & 80 kld MBR ETP",
     description: "Sized and installed a high-rejection Reverse Osmosis system supplying purified pharmaceutical-grade water for vaccine manufacturing and sterile formulation facilities.",
     image: biovaxLogo
   },
@@ -71,7 +71,7 @@ const clientCases = [
     name: "Weetabix East Africa",
     sector: "Food & Beverage Manufacturing",
     location: "Nairobi, Kenya",
-    solution: "C-MEM Wastewater Recycling System",
+    solution: "20 kld C-MEM MBR ETP",
     description: "A cereal processing company utilizing an advanced C-MEM biological membrane filtration system to clean and recycle production process water, without conventional effluent treatment plants.",
     image: weetabixLogo
   },
@@ -79,7 +79,7 @@ const clientCases = [
     name: "Lifecare Kenya",
     sector: "Healthcare & Medical Facilities",
     location: "Bungoma, Meru, Migori, Kikuyu, Eldoret",
-    solution: "Operation & Maintenance Services",
+    solution: "Clinical Dialysis RO (Medical Grade) O&M",
     description: "Delivers comprehensive utility operation and maintenance (O&M) services, managing water treatment and chemical dosing setups at medical centers in Bungoma, Meru, Migori, Kikuyu, and Eldoret.",
     image: lifecareLogo
   },
@@ -87,7 +87,7 @@ const clientCases = [
     name: "BBS Mall",
     sector: "Commercial Real Estate & Retail",
     location: "Eastleigh, Nairobi, Kenya",
-    solution: "HVAC, 5,000 L/h RO & 8,000 L/h WTP",
+    solution: "HVAC, RO (5,000 L/h) & 8,000 L/h WTP",
     description: "Engineering and facility services managing a central HVAC climate control system, a 5,000 LPH Reverse Osmosis system, and an 8,000 LPH utility Water Treatment Plant (WTP).",
     image: bbsLogo
   }
