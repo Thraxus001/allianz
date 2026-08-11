@@ -71,7 +71,7 @@ export default function Contact() {
 
     try {
       // ✅ CORRECT: Appending /api/contact to the base URL
-const baseUrl = import.meta.env.VITE_API_URL || "allianzbackend.netlify.app";
+const baseUrl = import.meta.env.VITE_API_URL || "https://allianzbackend.netlify.app";
 
 const response = await fetch(`${baseUrl}/api/contact`, {
   method: "POST",
