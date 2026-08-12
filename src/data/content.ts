@@ -8,7 +8,14 @@ import training from "../assets/training.jpeg";
 import ctech from "../assets/ctech.webp";
 import main from "../assets/maintenancee.jpeg";
 import Ro from "../assets/RO.jpeg";
-
+import cmemzero from "../assets/cmemzero.png";
+import membraloop from "../assets/Membraloop.png";
+import clarifiers from "../assets/clarrifiers.webp"; 
+import zeroliquid  from "../assets/zeroliquid.webp";
+import effluenttreatment from "../assets/effluenttreatment.webp";
+import watersoftener from "../assets/water softerner.webp";
+import filtrationplant from "../assets/filtrationplant.jpeg";
+import cion from "../assets/cion.jpeg";
 
 export type Product = {
   slug: string;
@@ -23,6 +30,7 @@ export type Product = {
   specNote?: string;
   pdfFile: string;
   pdfSize: string;
+  category: "Waste Water Treatment" | "Water Treatment" | "River Water Cleaning and Rejuvenation" | "HVAC & Utilities";
 };
 
 export type Service = {
@@ -38,14 +46,16 @@ export type Service = {
 };
 
 export const products: Product[] = [
+  // WASTE WATER TREATMENT
   {
     slug: "c-tech-sbr",
-    navLabel: "C-Tech SBR",
+    navLabel: "C-TECH SBR",
     title: "C-Tech SBR (Sequencing Batch Reactor)",
     tagline: "Intelligent Cyclic Activated Sludge Wastewater Treatment.",
     heroImage: ctech,
+    category: "Waste Water Treatment",
     intro:
-      "C-Tech SBR technology treats wastewater through a series of controlled treatment cycles within a single reactor. By integrating filling, biological aeration, settling, and decanting in one basin, the system provides efficient organic matter and nutrient removal for both domestic and industrial wastewater.\n\nOur C-Tech SBR systems are designed to deliver high treatment efficiency, compact installation, and optimized energy consumption, while maintaining consistent effluent quality and minimizing operational and maintenance costs.",
+      "C-Tech SBR is a technology from SFC; An Austrian company based in Salzburg, with over 30 years of global leadership in innovative drinking water treatment, wastewater treatment, and water reuse technologies.\n\nC-Tech SBR technology treats wastewater through a series of controlled treatment cycles within a single reactor. By integrating filling, biological aeration, settling, and decanting in one basin, the system provides efficient organic matter and nutrient removal for both domestic and industrial wastewater.\n\nOur C-Tech SBR systems are designed to deliver high treatment efficiency, compact installation, and optimized energy consumption, while maintaining consistent effluent quality and minimizing operational and maintenance costs.",
     highlights: [
       "Timed batch processing in a single reactor basin",
       "Eliminates secondary clarifiers and sludge recycling loops",
@@ -76,17 +86,18 @@ export const products: Product[] = [
       "Industrial effluent and manufacturing factories",
       "Municipal sewage treatment upgrades",
     ],
-    pdfFile: "c-tech-sbr-datasheet.pdf",
-    pdfSize: "1.4 MB",
+    pdfFile: "SBR.pdf",
+    pdfSize: "3.5 KB",
   },
   {
-    slug: "c-mem-sbr",
-    navLabel: "C-Mem MBR",
+    slug: "c-mem-mbr",
+    navLabel: "C-MEM MBR",
     title: "C-Mem MBR (Membrane Bioreactor)",
     tagline: "Advanced Wastewater Recycling with Membrane Technology.",
     heroImage: ultrafiltration,
+    category: "Waste Water Treatment",
     intro:
-      "C-Mem MBR technology combines advanced biological wastewater treatment with membrane filtration to deliver exceptional effluent quality in a compact and highly efficient treatment system.\n\nThe technology integrates biological treatment with hollow-fiber ultrafiltration membranes submerged directly within the bioreactor. The membranes provide an effective physical barrier that retains suspended solids, bacteria, and other contaminants, producing a clear, high-quality effluent suitable for reuse and recycling applications.\n\nOur C-Mem MBR systems are engineered for high treatment performance, compact footprints, reliable operation, and reduced sludge production, making them ideal for applications where stringent effluent standards and water reuse are required.",
+      "C-MEM MBR is a technology from SFC; An Austrian company based in Salzburg, with over 30 years of global leadership in innovative drinking water treatment, wastewater treatment, and water reuse technologies.\n\nC-Mem MBR technology combines advanced biological wastewater treatment with membrane filtration to deliver exceptional effluent quality in a compact and highly efficient treatment system. The technology integrates biological treatment with hollow-fiber ultrafiltration membranes submerged directly within the bioreactor. The membranes provide an effective physical barrier that retains suspended solids, bacteria, and other contaminants, producing a clear, high-quality effluent suitable for reuse and recycling applications. Our C-Mem MBR systems are engineered for high treatment performance, compact footprints, reliable operation, and reduced sludge production, making them ideal for applications where stringent effluent standards and water reuse are required.",
     highlights: [
       "Combines biological digestion with ultrafiltration membrane separation",
       "Produces high-purity effluent ready for reuse (toilet flushing, irrigation)",
@@ -121,15 +132,16 @@ export const products: Product[] = [
       "Commercial complexes and malls",
       "Water-scarce industrial manufacturing plants",
     ],
-    pdfFile: "c-mem-sbr-datasheet.pdf",
-    pdfSize: "1.8 MB",
+    pdfFile: "MBR.pdf",
+    pdfSize: "2.9 KB",
   },
   {
     slug: "biokleen-mbbr",
-    navLabel: "Biokleen MBBR",
-    title: "Biokleen MBBR (Moving Bed Biofilm Reactor)",
+    navLabel: "BioKleen MBBR",
+    title: "BioKleen MBBR (Moving Bed Biofilm Reactor)",
     tagline: "High-Efficiency Biological Wastewater Treatment.",
     heroImage: mbbr,
+    category: "Waste Water Treatment",
     intro:
       "Biokleen MBBR (Moving Bed Biofilm Reactor) technology uses specially designed floating biofilm carriers to provide a large surface area for the growth of active microorganisms within biological treatment tanks. This increases the concentration of treatment biomass and enhances the system’s capacity to remove organic matter and nutrients within a compact footprint.\n\nThe process is designed to handle variable flow and organic loading, making it a reliable solution for both domestic and industrial wastewater applications. Biokleen MBBR systems offer high treatment efficiency, operational flexibility, compact installation, and simplified maintenance, while reducing the space required for conventional biological treatment.",
     highlights: [
@@ -170,11 +182,148 @@ export const products: Product[] = [
     pdfSize: "1.2 MB",
   },
   {
-    slug: "aqua-clean-ro",
-    navLabel: "Aqua Clean RO",
+    slug: "effluent-treatment-plant",
+    navLabel: "Effluent Treatment Plant",
+    title: "Effluent Treatment Plant (ETP)",
+    tagline: "Custom Engineered Solutions for Industrial Effluent Reclamation.",
+    heroImage: effluenttreatment,
+    category: "Waste Water Treatment",
+    intro:
+      "Our Effluent Treatment Plants (ETP) are custom-engineered to handle complex industrial streams by combining precise physical screening, chemical conditioning, clarification, biological oxidation, and tertiary filtration. We deliver a complete unit process treatment train designed to reduce organic load, remove heavy metals, and achieve compliant effluent quality.",
+    highlights: [
+      "Coarse (10-25 mm) and fine (1-6 mm) physical screening barriers",
+      "Sized equalization tank (6-24h) and pH correction (6.5-8.5)",
+      "Coagulation-flocculation and primary/secondary clarification treatment train",
+      "Aerobic biological reactors maintaining dissolved oxygen (DO) of 2-3 mg/L",
+    ],
+    process: [
+      {
+        title: "Screening",
+        body: "Coarse screens (10-25 mm opening) and fine screens (1-6 mm opening) remove floating debris and large suspended solids.",
+      },
+      {
+        title: "Equalization & pH Correction",
+        body: "An equalization tank sized for 6-24 hours of average flow balances inlet variations, followed by adjustment to pH 6.5-8.5.",
+      },
+      {
+        title: "Coagulation & Flocculation",
+        body: "Chemical dosing includes rapid mixing (1-5 minutes) and flocculation (15-30 minutes) to agglomerate microscopic particles into heavy flocs.",
+      },
+      {
+        title: "Primary Clarification",
+        body: "The conditioned wastewater settles in primary clarifiers with approximately 1.5-2.5 hours detention time to remove settleable solids.",
+      },
+      {
+        title: "Aerobic Biological Reactor",
+        body: "Aerated biological systems maintain a dissolved oxygen (DO) level of 2-3 mg/L, enabling microbial degradation of dissolved organics.",
+      },
+      {
+        title: "Secondary Clarification & Sludge Handling",
+        body: "Secondary clarifiers separate active biomass, while excess sludge undergoes thickening, dewatering, and approved disposal.",
+      },
+      {
+        title: "Tertiary Filtration & Disinfection",
+        body: "Tertiary sand filtration (5-15 m/h) and activated carbon remove trace organics and colour, followed by UV, chlorine, or ozone disinfection.",
+      },
+    ],
+    applications: [
+      "Food and beverage factories",
+      "Pharmaceutical manufacturing plants",
+      "Agricultural processing sites",
+      "Chemical processing facilities",
+    ],
+    pdfFile: "ETP.pdf",
+    pdfSize: "2.6 KB",
+  },
+  {
+    slug: "zero-liquid-discharge",
+    navLabel: "Zero Liquid Discharge (ZLD)",
+    title: "Zero Liquid Discharge (ZLD) Systems",
+    tagline: "Ultimate Water Recovery and Industrial Effluent Elimination.",
+    heroImage: zeroliquid,
+    category: "Waste Water Treatment",
+    intro:
+      "Allianz Utilities Zero Liquid Discharge (ZLD) systems employ advanced thermal evaporation and crystallization technologies to eliminate wastewater discharge completely. The system purifies industrial effluent, recovering up to 98% of high-purity water for reuse while converting remaining dissolved solids into solid dry crystals for disposal or secondary resource recovery.",
+    highlights: [
+      "Complete elimination of wastewater discharge",
+      "High-efficiency mechanical vapor recompression (MVR) evaporators",
+      "Recovers up to 98% of process water for reuse",
+      "Robust corrosion-resistant material construction (Titanium/Duplex)",
+    ],
+    process: [
+      {
+        title: "Pre-Concentration",
+        body: "Reverse Osmosis membranes concentrate salinity levels, reducing the volume of water sent to evaporators.",
+      },
+      {
+        title: "Thermal Evaporation",
+        body: "High-efficiency MVR heating evaporates water vapor, which is condensed and recovered as pure distillate.",
+      },
+      {
+        title: "Crystallization",
+        body: "The remaining highly concentrated brine slurry is crystallized, forming a dry solid cake of salt.",
+      },
+      {
+        title: "Distillate Recovery",
+        body: "Pure condensed water is returned directly to the plant's process loop, closing the water cycle.",
+      },
+    ],
+    applications: [
+      "Chemical manufacturing",
+      "Pharmaceutical production",
+      "Power plants and mining",
+      "Eco-industrial zones",
+    ],
+    pdfFile: "zero-liquid-discharge-datasheet.pdf",
+    pdfSize: "2.6 KB",
+  },
+
+  // WATER TREATMENT
+  {
+    slug: "filtration-plant",
+    navLabel: "Filtration plant",
+    title: "Filtration Plant Systems",
+    tagline: "Multi-Media, Activated Carbon, and Depth Sand Filtration.",
+    heroImage: filtrationplant,
+    category: "Water Treatment",
+    intro:
+      "Our commercial and industrial Filtration Plants utilize depth sand media, activated carbon, and iron removal filtration to extract suspended solids, turbidity, chlorine, odors, and dissolved metals from raw borehole or municipal water. These units provide vital pre-filtration to protect downstream RO membranes and ensure clean utility water.",
+    highlights: [
+      "Multi-grade sand media for particles down to 10-15 microns",
+      "High-adsorption coconut shell activated carbon",
+      "Automated multiport valve control for automatic backwash",
+      "Durable fiber-reinforced plastic (FRP) vessel construction",
+    ],
+    process: [
+      {
+        title: "Mechanical Filtration",
+        body: "Water flows through layers of graduated sand, anthracite, and gravel, trapping suspended debris and dirt.",
+      },
+      {
+        title: "Carbon Adsorption",
+        body: "Activated carbon granules chemically bind organic contaminants, chlorine, taste, and foul odors.",
+      },
+      {
+        title: "Automatic Backwash",
+        body: "A pressure-based trigger reverses the flow to flush out collected dirt to drain, restoring filter bed efficiency.",
+      },
+    ],
+    applications: [
+      "Borehole water pre-treatment",
+      "Commercial building utility water supply",
+      "Cooling tower loop protection",
+      "Pre-filtration for Reverse Osmosis systems",
+    ],
+    pdfFile: "Filtration.pdf",
+    pdfSize: "2.3 KB",
+  },
+  {
+    slug: "reverse-osmosis-plant",
+    navLabel: "Aqua Clean RO system",
     title: "Aqua Clean RO (Reverse Osmosis System)",
     tagline: "High-Purity Water for Critical Applications.",
     heroImage: Ro,
+    category: "Water Treatment",
     intro:
       "Aqua Clean RO systems use high-pressure semi-permeable membranes to remove dissolved salts, heavy metals, silica, and other contaminants from brackish and borehole water.\n\nOur systems are engineered for high efficiency, reliable operation, and long-term membrane performance, providing high-quality water for laboratories, healthcare facilities, commercial applications, and industrial processes.",
     highlights: [
@@ -207,17 +356,18 @@ export const products: Product[] = [
       "Borehole purification for residential complexes",
       "Commercial drinking water systems",
     ],
-    pdfFile: "aqua-clean-ro-datasheet.pdf",
-    pdfSize: "2.1 MB",
+    pdfFile: "RO.pdf",
+    pdfSize: "2.2 KB",
   },
   {
-    slug: "aqua-clean-uf",
-    navLabel: "Aqua Clean UF",
-    title: "Aqua Clean UF (Ultrafiltration System)",
+    slug: "ultrafiltration-plant",
+    navLabel: "Ultrafiltration plant",
+    title: "C-MEM UF (Ultrafiltration System)",
     tagline: "Advanced Pathogen and Suspended Solids Removal.",
     heroImage: uff,
+    category: "Water Treatment",
     intro:
-      "Aqua Clean UF (Ultrafiltration) systems use hollow-fiber membranes with pore sizes as fine as 0.02 microns to remove suspended solids, turbidity, bacteria, and viruses while retaining essential minerals.\n\nDesigned for borehole filtration, surface water treatment, and RO pre-treatment, our UF systems provide consistent water quality, compact operation, and reduced chemical and maintenance requirements.",
+      "C-MEM UF (Ultrafiltration) systems use hollow-fiber membranes with pore sizes as fine as 0.02 microns to remove suspended solids, turbidity, bacteria, and viruses while retaining essential minerals.\n\nDesigned for borehole filtration, surface water treatment, and RO pre-treatment, our UF systems provide consistent water quality, compact operation, and reduced chemical and maintenance requirements.",
     highlights: [
       "Removes pathogens and macromolecules down to 0.02 microns",
       "High-flux hollow-fiber membranes with automated backwash",
@@ -248,8 +398,8 @@ export const products: Product[] = [
       "Potable water supply for schools and estates",
       "Greywater and secondary effluent polishing",
     ],
-    pdfFile: "aqua-clean-uf-datasheet.pdf",
-    pdfSize: "1.6 MB",
+    pdfFile: "Ultrafiltration.pdf",
+    pdfSize: "2.3 KB",
   },
   {
     slug: "aqua-clean-lake-river",
@@ -257,6 +407,7 @@ export const products: Product[] = [
     title: "Aqua Clean Lake/River Water Treatment System",
     tagline: "High-Efficiency Surface Water Purification.",
     heroImage: effluent,
+    category: "Water Treatment",
     intro:
       "Aqua Clean surface water treatment systems are designed to treat highly turbid lake and river water with varying organic loads. By combining clarification, chemical coagulation, filtration, and disinfection, the systems produce safe, high-quality water for communities, estates, and other applications.\n\nOur systems are available in skid-mounted or containerized configurations and are designed for efficient installation, reliable operation, and deployment in remote and rural locations.",
     highlights: [
@@ -293,11 +444,259 @@ export const products: Product[] = [
     pdfSize: "2.3 MB",
   },
   {
+    slug: "softeners",
+    navLabel: "Softeners",
+    title: "Water Softener & Ion-Exchange Systems",
+    tagline: "High-Capacity Hardness Removal and Scaling Prevention.",
+    heroImage: watersoftener,
+    category: "Water Treatment",
+    intro:
+      "Allianz Utilities Water Softeners use premium strong-acid cation exchange resin to replace calcium and magnesium with sodium ions, preventing scale buildup. The system treats raw water with inlet hardness up to 1,000 mg/L as CaCO3, yielding output hardness typically <5 mg/L as CaCO3. Engineered for 10-40 BV/h service flow and 0.75-1.5 m resin bed depth, the units feature automated backwash, brine draw, and rinse cycles using sodium chloride regenerant.",
+    highlights: [
+      "High-exchange capacity strong-acid cation resin bed",
+      "Treats inlet hardness up to 1,000 mg/L as CaCO3 down to <5 mg/L",
+      "Service flow rate of 10-40 BV/h with 0.75-1.5 m bed depth",
+      "Automated regeneration cycles based on volume, leakage, or time",
+    ],
+    process: [
+      {
+        title: "Ion Exchange",
+        body: "Hard water passes through the strong-acid cation resin bed, replacing hardness ions with sodium ions.",
+      },
+      {
+        title: "Backwashing",
+        body: "Water flow is reversed for 10-20 minutes to expand the resin bed and flush out accumulated particulates.",
+      },
+      {
+        title: "Brine Draw & Rinse",
+        body: "Sodium chloride brine is drawn (20-60 minutes) to regenerate the resin, followed by a slow rinse (20-60 minutes).",
+      },
+      {
+        title: "Fast Rinse & Return",
+        body: "A fast rinse (10-30 minutes) washes out residual salt, packs the bed, and returns the system to active service.",
+      },
+    ],
+    applications: [
+      "Boiler feedwater pre-treatment",
+      "Cooling tower makeup loops",
+      "Commercial laundry facilities",
+      "Residential estates with hard borehole water",
+    ],
+    pdfFile: "Softeners.pdf",
+    pdfSize: "2.4 KB",
+  },
+  {
+    slug: "c-mem-zero",
+    navLabel: "C-Mem Zero",
+    title: "C-Mem Zero Gravity Water Purification",
+    tagline: "Decentralized Ultrafiltration with Zero Power Requirements.",
+    heroImage: cmemzero,
+    category: "Water Treatment",
+    intro:
+      "C-Mem Zero is a technology from SFC; An Austrian company based in Salzburg, with over 30 years of global leadership in innovative drinking water treatment, wastewater treatment, and water reuse technologies.\n\nC-Mem Zero is a compact gravity-driven ultrafiltration (UF) system designed for raw-water and drinking-water purification. Operating under hydrostatic pressure (gravity) or a pump, it features a permanently hydrophilic membrane with approximately 20 nm (0.02 um) pores and 6 m2 of membrane area. The system delivers up to 1.6 L/min flow under gravity (2 m head) and up to 16 L/min under pump-driven pressure (2 bar), effectively removing turbidity, bacteria, and pathogens without requiring electricity or chemicals.",
+    highlights: [
+      "Zero electricity or chemical consumption required in gravity mode",
+      "Compact hollow-fiber membrane with 20 nm (0.02 um) pore size",
+      "6 m2 active membrane surface area for reliable decentralized supply",
+      "Flexible operation: Gravity (1.6 L/min) or Pump-driven (16 L/min)",
+    ],
+    process: [
+      {
+        title: "Pre-Screening",
+        body: "Source-dependent screening and sediment removal are utilized to protect the membranes from large particulates.",
+      },
+      {
+        title: "Gravity or Pump Intake",
+        body: "Feed water is fed under a 2 m gravity head (1.6 L/min) or via a pump at 2 bar (16 L/min) depending on design requirements.",
+      },
+      {
+        title: "Hollow-Fiber Ultrafiltration",
+        body: "Water passes outside-in through the 20 nm hollow fibers, retaining turbidity, bacteria, and pathogens on the membrane exterior.",
+      },
+      {
+        title: "Treated Water Outlet",
+        body: "Clean, safe water is collected from the internal lumen of the fibers and directed to the drinking water distribution line.",
+      },
+    ],
+    applications: [
+      "Rural off-grid communities",
+      "Disaster relief zones",
+      "Remote agricultural and mining camps",
+      "Eco-lodges and conservation camps",
+    ],
+    pdfFile: "CMEM Zero.pdf",
+    pdfSize: "2.4 KB",
+  },
+  {
+    slug: "membraloop",
+    navLabel: "Membraloop",
+    title: "Membraloop Point-of-Use Ultrafiltration",
+    tagline: "Point-of-Use Raw Water & Drinking Water Purification.",
+    heroImage: membraloop,
+    category: "Water Treatment",
+    intro:
+      "Membraloop is a technology from SFC; An Austrian company based in Salzburg, with over 30 years of global leadership in innovative drinking water treatment, wastewater treatment, and water reuse technologies.\n\nMembraloop is a compact, point-of-use ultrafiltration system engineered for raw-water and drinking-water purification. Utilizing C-MEM hollow-fiber technology with a 0.020 um pore size, it acts as a reliable physical barrier against suspended solids, bacteria, and pathogens. It features a membrane surface area of 3 m2 and supports both gravity-fed and pump-driven flow configurations with standard 3/4-inch connections.",
+    highlights: [
+      "C-MEM hollow-fiber ultrafiltration with 0.020 um average pore size",
+      "3 m2 active membrane surface area for point-of-use applications",
+      "Dual-mode: Gravity flow (0.8 L/min at 2m head) or Pumped flow (8 L/min at 2 bar)",
+      "Standard 3/4-inch plumbing connections for easy installation",
+    ],
+    process: [
+      {
+        title: "Water Inlet Connection",
+        body: "Feed water enters the system through standard 3/4-inch connections from raw water sources or storage tanks.",
+      },
+      {
+        title: "Ultrafiltration Barrier",
+        body: "Water passes through the C-MEM hollow-fiber membrane, filtering out suspended solids, bacteria, and pathogens down to 0.020 um.",
+      },
+      {
+        title: "Gravity or Pumped Flow",
+        body: "Operates under gravity-fed conditions (0.8 L/min at 2m head) or pump-driven pressure (8 L/min at 2 bar) depending on installation setup.",
+      },
+      {
+        title: "Clean Water Output",
+        body: "Purified water is collected from the membrane lumen, delivering clean water for domestic or drinking purposes.",
+      },
+    ],
+    applications: [
+      "Residential drinking water purification",
+      "Remote cabins and off-grid cottages",
+      "Emergency water relief stations",
+      "Small commercial point-of-use systems",
+    ],
+    pdfFile: "Membraloop.pdf",
+    pdfSize: "2.1 KB",
+  },
+  {
+    slug: "clarrifiers",
+    navLabel: "Clarrifiers",
+    title: "Lamella Clarifiers & Settling Systems",
+    tagline: "High-Rate Sedimentation and Suspended Solids Settling.",
+    heroImage: clarifiers,
+    category: "Water Treatment",
+    intro:
+      "Our Lamella Clarifiers utilize inclined plate settling technology to maximize gravity sedimentation in a small physical footprint. By reducing the settling depth, they allow high-capacity particulate separation from raw river water or industrial process loops, preparing water for fine filtration.",
+    highlights: [
+      "Inclined plate packs increase settling area up to 10x",
+      "Compact footprint compared to traditional circular clarifiers",
+      "Integrated sludge collection hopper and scraper options",
+      "Manufactured in heavy-duty epoxy-coated steel or FRP",
+    ],
+    process: [
+      {
+        title: "Coagulated Feed",
+        body: "Raw feed treated with flocculants enters the distribution duct of the clarifier basin.",
+      },
+      {
+        title: "Plate Settlement",
+        body: "As water flows upwards between inclined plates, suspended solids slide down the smooth plate surfaces.",
+      },
+      {
+        title: "Clear Overflow",
+        body: "Clarified water overflows into collecting channels while thick sludge accumulates in the bottom hopper.",
+      },
+    ],
+    applications: [
+      "Surface river water pre-clarification",
+      "Municipal water plant pre-treatment",
+      "Industrial manufacturing process loops",
+    ],
+    pdfFile: "lamella-clarifiers-datasheet.pdf",
+    pdfSize: "1.5 MB",
+  },
+  {
+    slug: "c-ion",
+    navLabel: "C-ION",
+    title: "C-ION Advanced Oxidation System",
+    tagline: "Advanced Oxidation Process (AOP) using Non-Thermal Plasma.",
+    heroImage: cion,
+    category: "Water Treatment",
+    intro:
+      "C-ION is a technology from SFC; An Austrian company based in Salzburg, with over 30 years of global leadership in innovative drinking water treatment, wastewater treatment, and water reuse technologies.\n\nC-ION is an innovative Advanced Oxidation Process (AOP) that utilizes electrical glow discharge to generate non-thermal plasma (NTP) in the treatment chamber. By producing highly reactive oxygen species (ROS), the system oxidizes and breaks down complex organic and inorganic contaminants. It is highly effective for trace-organic removal, arsenic/manganese removal, and bulking-sludge control, and can be optionally combined with iron coagulation and C-MEM immersed hollow-fiber ultrafiltration.",
+    highlights: [
+      "Non-thermal plasma (NTP) generated via electrical glow discharge",
+      "High concentration of Reactive Oxygen Species (ROS) for rapid oxidation",
+      "Effective for trace-organic, arsenic, and manganese removal",
+      "Can integrate with C-MEM immersed hollow-fiber UF and iron coagulation",
+    ],
+    process: [
+      {
+        title: "Electrical Glow Discharge",
+        body: "Electrical energy is applied to generate a non-thermal plasma (NTP) field inside the treatment chamber.",
+      },
+      {
+        title: "ROS Oxidation",
+        body: "Highly reactive oxygen species (ROS) oxidize and break down difficult organic and inorganic contaminants.",
+      },
+      {
+        title: "Coagulation & Flocculation (Optional)",
+        body: "An iron coagulant is added to precipitate oxidized metals like arsenic and manganese.",
+      },
+      {
+        title: "C-MEM Ultrafiltration (Optional)",
+        body: "Immersed C-MEM hollow-fiber membranes provide a physical barrier to filter out the precipitated chemical flocs.",
+      },
+    ],
+    applications: [
+      "Trace organic pollutant removal",
+      "Industrial wastewater polishing",
+      "Arsenic and manganese drinking water treatment",
+      "Biological system bulking-sludge control",
+    ],
+    pdfFile: "C-ION.pdf",
+    pdfSize: "2.6 KB",
+  },
+
+  // RIVER WATER CLEANING AND REJUVENATION
+  {
+    slug: "river-water-cleaning-rejuvenation",
+    navLabel: "River Water Cleaning and Rejuvenation",
+    title: "River Water Cleaning & Rejuvenation",
+    tagline: "Large-Scale Surface Water Reclamation and Ecological Restoration.",
+    heroImage: effluent,
+    category: "River Water Cleaning and Rejuvenation",
+    intro:
+      "Our River Water Cleaning and Rejuvenation systems combine high-capacity sand filtration, biological riverbed aeration, and natural floating wetlands to restore polluted surface water bodies. Designed for municipal canals, lakes, and rivers, this ecological engineering approach removes heavy organic load, odors, and algae, returning the water body to a thriving ecological state.",
+    highlights: [
+      "Combines mechanical filtration with biological wetlands",
+      "Oxygenates water to eliminate anaerobic odors and sludge",
+      "Tailored for high flow rates in rivers, lakes, and channels",
+      "Improves biodiversity and local community water access",
+    ],
+    process: [
+      {
+        title: "Intake Clarification",
+        body: "Coagulants and lamella separators filter mud, silt, and heavy sand out of the incoming river flow.",
+      },
+      {
+        title: "Bio-Aeration",
+        body: "Micro-bubbler arrays oxygenate the riverbed, breaking down sludge deposits and ending septic odors.",
+      },
+      {
+        title: "Wetland Polishing",
+        body: "Floating wetlands absorb nitrates, phosphates, and ammonia through natural root-system nutrient uptake.",
+      },
+    ],
+    applications: [
+      "Urban canal restoration projects",
+      "Municipal lake cleanup and aeration",
+      "Industrial estate run-off channels",
+      "Community river rehabilitation sites",
+    ],
+    pdfFile: "river-rejuvenation-wte-datasheet.pdf",
+    pdfSize: "2.2 MB",
+  },
+
+  // HVAC & UTILITIES (kept for routing compatibility)
+  {
     slug: "hvac-systems",
     navLabel: "HVAC Systems",
     title: "HVAC (Heating, Ventilation & Air Conditioning)",
     tagline: "Central Climate Control and Chilled Water Distribution.",
     heroImage: maintennance,
+    category: "HVAC & Utilities",
     intro:
       "We design and install central HVAC systems incorporating centrifugal chillers, air handling units, cooling towers, and duct networks for large commercial and industrial developments.\n\nOur HVAC solutions integrate water conditioning and treatment to minimize scaling, improve system efficiency, and ensure reliable long-term operation.",
     highlights: [
@@ -475,7 +874,7 @@ export const heroSlides = [
     image: uff,
     eyebrow: "Aqua RO Solutions",
     heading: "Advanced membrane technology \nfor clean, safe water",
-    body: "Aqua Clean UF uses ultrafiltration membranes to remove suspended solids, bacteria, and viruses from water while retaining essential minerals.",
+    body: "C-MEM UF uses ultrafiltration membranes to remove suspended solids, bacteria, and viruses from water while retaining essential minerals.",
   },
   {
     image: ultrafiltration,
@@ -518,27 +917,27 @@ export const offices = [
 
 export const technologies = [
   {
-    name: "Aqua Clean UF",
+    name: "C-MEM UF",
     subtitle: "Advanced Ultrafiltration Purification",
     image: uff,
-    slug: "High-Efficiency Ultrafiltration System",
+    slug: "ultrafiltration-plant",
   },
   {
     name: "C-MEM MBR",
     subtitle: "Advanced membrane filtration",
     image: ultrafiltration,
-    slug: "ultrafiltration-plant",
+    slug: "c-mem-mbr",
   },
   {
     name: "Aqua Clean RO",
     subtitle: " Advanced Reverse Osmosis",
     image: Ro,
-    slug: "package-sbr-waste-water-treatment",
+    slug: "reverse-osmosis-plant",
   },
   {
     name: "CTECH SBR",
     subtitle: "Sequence Batch Reactor",
     image: ctech,
-    slug: "package-mbbr-waste-water-treatment",
+    slug: "c-tech-sbr",
   },
 ];

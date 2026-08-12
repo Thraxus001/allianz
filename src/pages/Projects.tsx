@@ -15,6 +15,7 @@ import rosslynLogo from "../assets/rosslyn_logo.png";
 import uonLogo from "../assets/uon_logo.jpeg";
 import konzaLogo from "../assets/Konza.jpg";
 import vipingoLogo from "../assets/vipingo.png";
+import dolphineLogo from "../assets/dolhin logo.png";
 
 // Implemented Projects List
 const projectsList = [
@@ -31,7 +32,7 @@ const projectsList = [
     image: tworiversLogo
   },
   {
-    title: "O&M, Aquaclean RO & MBR Systems",
+    title: "Installation & Ongoing O&M, RO & MBR Systems",
     client: "Sabis International School",
     category: "Operation & Maintenance",
     location: "Runda, Nairobi, Kenya",
@@ -39,7 +40,7 @@ const projectsList = [
     capacity: "20,000 LPH RO & 10,000 KLD MBR",
     metricLabel: "System Capacity",
     metricValue: "20k LPH & 10k KLD",
-    description: "Comprehensive operation and maintenance services for a 20,000 LPH Reverse Osmosis drinking water system and a 10,000 KLD MBR wastewater reclamation facility.",
+    description: "Design, installation, and ongoing Operation & Maintenance (O&M) services for the 20,000 LPH Reverse Osmosis drinking water system and a 10,000 KLD MBR wastewater reclamation facility.",
     image: sabisLogo
   },
   {
@@ -103,15 +104,15 @@ const projectsList = [
     image: rosslynLogo
   },
   {
-    title: "Wastewater Treatment MBR System",
+    title: "Installation & Ongoing O&M, MBR System",
     client: "University of Nairobi",
-    category: "Wastewater Treatment",
+    category: "Operation & Maintenance",
     location: "Nairobi, Kenya",
-    year: "2026",
+    year: "Ongoing",
     capacity: "150 Kilolitres Per Day",
     metricLabel: "Revised STP Output",
     metricValue: "150 KLD",
-    description: "Installation and engineering of a revised 150 KLD MBR wastewater treatment system to handle campus effluent and support sustainable water reuse.",
+    description: "Engineering and installation of a revised 150 KLD MBR wastewater treatment system to handle campus effluent, along with ongoing Operation & Maintenance (O&M) services.",
     image: uonLogo
   },
   {
@@ -149,6 +150,18 @@ const projectsList = [
     metricValue: "Medical Grade",
     description: "Specialized operations and maintenance of ultra-pure Reverse Osmosis water treatment systems critical for clinical hemodialysis therapy.",
     image: lifecareLogo
+  },
+  {
+    title: "Aqua Clean RO & BioKleen MBBR Systems",
+    client: "Dolphine Hotel",
+    category: "Water Treatment",
+    location: "Mombasa, Kenya",
+    year: "Ongoing",
+    capacity: "15,000 m³/day RO & 250 m³/day MBBR",
+    metricLabel: "RO & MBBR Capacity",
+    metricValue: "15k CMD & 250 CMD",
+    description: "Engineering and installation of a 15,000 m³/day Aqua Clean Reverse Osmosis desalination system and a 250 m³/day BioKleen MBBR sewage treatment plant for sustainable water self-sufficiency (Ongoing).",
+    image: dolphineLogo
   }
 ];
 

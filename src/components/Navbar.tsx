@@ -88,23 +88,62 @@ export default function Navbar() {
             </NavLink>
 
             {desktopProductsOpen && (
-              <div className="absolute left-1/2 top-full w-80 -translate-x-1/2 pt-3">
-                <div className="overflow-hidden rounded-xl border border-black/5 bg-white shadow-xl">
-                  <NavLink
-                    to="/products"
-                    className="block border-b border-black/5 bg-[var(--color-foam-2)] px-4 py-3 text-sm font-semibold text-[var(--color-current)]"
-                  >
-                    All Products
-                  </NavLink>
-                  {products.map((p) => (
+              <div className="absolute left-1/2 top-full w-[640px] -translate-x-1/2 pt-3">
+                <div className="overflow-hidden rounded-2xl border border-black/5 bg-white p-5 shadow-2xl grid grid-cols-2 gap-6">
+                  {/* Waste Water Treatment Column */}
+                  <div>
+                    <h4 className="font-display text-[11px] font-bold uppercase tracking-wider text-[var(--color-current)] mb-3 border-b border-black/5 pb-1">
+                      Waste Water Treatment
+                    </h4>
+                    <div className="space-y-1">
+                      {products.filter(p => p.category === "Waste Water Treatment").map((p) => (
+                        <NavLink
+                          key={p.slug}
+                          to={`/products/${p.slug}`}
+                          className="block rounded-lg px-3 py-1.5 text-sm text-[var(--color-ink)] hover:bg-[var(--color-foam-2)] hover:text-[var(--color-current)] transition-colors"
+                        >
+                          {p.navLabel}
+                        </NavLink>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Water Treatment Column */}
+                  <div>
+                    <h4 className="font-display text-[11px] font-bold uppercase tracking-wider text-[var(--color-current)] mb-3 border-b border-black/5 pb-1">
+                      Water Treatment
+                    </h4>
+                    <div className="space-y-1">
+                      {products.filter(p => p.category === "Water Treatment").map((p) => (
+                        <NavLink
+                          key={p.slug}
+                          to={`/products/${p.slug}`}
+                          className="block rounded-lg px-3 py-1.5 text-sm text-[var(--color-ink)] hover:bg-[var(--color-foam-2)] hover:text-[var(--color-current)] transition-colors"
+                        >
+                          {p.navLabel}
+                        </NavLink>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* River Water Cleaning / Footer Link */}
+                  <div className="col-span-2 border-t border-black/5 pt-4 flex items-center justify-between">
+                    {products.filter(p => p.category === "River Water Cleaning and Rejuvenation").map((p) => (
+                      <NavLink
+                        key={p.slug}
+                        to={`/products/${p.slug}`}
+                        className="flex items-center gap-1 text-sm font-bold text-[var(--color-deepwater)] hover:text-[var(--color-current)] transition-colors"
+                      >
+                        River Water Cleaning & Rejuvenation
+                      </NavLink>
+                    ))}
                     <NavLink
-                      key={p.slug}
-                      to={`/products/${p.slug}`}
-                      className="block px-4 py-2.5 text-sm text-[var(--color-ink)] hover:bg-[var(--color-foam-2)] hover:text-[var(--color-current)]"
+                      to="/products"
+                      className="text-xs font-semibold text-[var(--color-current)] hover:underline"
                     >
-                      {p.navLabel}
+                      All Products &rarr;
                     </NavLink>
-                  ))}
+                  </div>
                 </div>
               </div>
             )}
@@ -241,21 +280,66 @@ export default function Navbar() {
           </button>
           <div
             className={`overflow-hidden pl-3 transition-[max-height] duration-300 ${
-              mobileProductsOpen ? "max-h-[500px]" : "max-h-0"
+              mobileProductsOpen ? "max-h-[1000px]" : "max-h-0"
             }`}
           >
-            <NavLink to="/products" className="block rounded-lg px-3 py-1.5 text-sm font-semibold text-[var(--color-current)]">
+            <NavLink to="/products" className="block rounded-lg px-3 py-1.5 text-sm font-semibold text-[var(--color-current)] mb-2">
               All Products
             </NavLink>
-            {products.map((p) => (
-              <NavLink
-                key={p.slug}
-                to={`/products/${p.slug}`}
-                className="block rounded-lg px-3 py-1.5 text-sm text-[var(--color-ink)]/80 hover:bg-[var(--color-foam-2)]"
-              >
-                {p.navLabel}
-              </NavLink>
-            ))}
+
+            {/* Waste Water Sub-group */}
+            <div className="mb-3">
+              <div className="px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[var(--color-current)]/75">
+                Waste Water Treatment
+              </div>
+              <div className="pl-2 space-y-1">
+                {products.filter(p => p.category === "Waste Water Treatment").map((p) => (
+                  <NavLink
+                    key={p.slug}
+                    to={`/products/${p.slug}`}
+                    className="block rounded-lg px-3 py-1 text-sm text-[var(--color-ink)]/80 hover:bg-[var(--color-foam-2)]"
+                  >
+                    {p.navLabel}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+
+            {/* Water Treatment Sub-group */}
+            <div className="mb-3">
+              <div className="px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[var(--color-current)]/75">
+                Water Treatment
+              </div>
+              <div className="pl-2 space-y-1">
+                {products.filter(p => p.category === "Water Treatment").map((p) => (
+                  <NavLink
+                    key={p.slug}
+                    to={`/products/${p.slug}`}
+                    className="block rounded-lg px-3 py-1 text-sm text-[var(--color-ink)]/80 hover:bg-[var(--color-foam-2)]"
+                  >
+                    {p.navLabel}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+
+            {/* River Water Rejuvenation Sub-group */}
+            <div className="mb-2">
+              <div className="px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[var(--color-current)]/75">
+                River Water Cleaning
+              </div>
+              <div className="pl-2 space-y-1">
+                {products.filter(p => p.category === "River Water Cleaning and Rejuvenation").map((p) => (
+                  <NavLink
+                    key={p.slug}
+                    to={`/products/${p.slug}`}
+                    className="block rounded-lg px-3 py-1 text-sm text-[var(--color-ink)]/80 hover:bg-[var(--color-foam-2)]"
+                  >
+                    {p.navLabel}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Mobile Services Accordion */}

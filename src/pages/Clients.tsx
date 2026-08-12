@@ -16,6 +16,21 @@ import biovaxLogo from "../assets/biovax_logo.webp";
 import weetabixLogo from "../assets/weetabix_logo.jpeg";
 import lifecareLogo from "../assets/lifecare.jpg";
 import bbsLogo from "../assets/bbslogo.jpg";
+import dolphineLogo from "../assets/dolhin logo.png";
+import allianzLogo from "../assets/logo.jpg";
+import citamLogo from "../assets/Citam Ngong.jpg";
+import dciLogo from "../assets/DCI Headquarters.jpg";
+import jwmarriottLogo from "../assets/JW Marriott Hotel.png";
+import mihrabLogo from "../assets/Mihrab Tower.jpg";
+import radissonLogo from "../assets/Radisson Blu.png";
+import sanlamLogo from "../assets/Sanlam.jpg";
+import swaminarayanSchoolLogo from "../assets/Swaminarayan School.jpg";
+import swaminarayanTempleLogo from "../assets/Swaminarayan Temple.png";
+import kenmeatLogo from "../assets/kenmeatlogo.png";
+import olesereniLogo from "../assets/olesereni.jpg";
+import perlmarinaLogo from "../assets/perlmarina.jpg";
+import sasiniLogo from "../assets/sasini.jpg";
+
 
 // Client industries / case profiles
 const clientCases = [
@@ -90,6 +105,118 @@ const clientCases = [
     solution: "HVAC, RO (5,000 L/h) & 8,000 L/h WTP",
     description: "Engineering and facility services managing a central HVAC climate control system, a 5,000 LPH Reverse Osmosis system, and an 8,000 LPH utility Water Treatment Plant (WTP).",
     image: bbsLogo
+  },
+  {
+    name: "EPZ Athi River",
+    sector: "Industrial Parks & Manufacturing",
+    location: "Athi River, Kenya",
+    solution: "10,000 m³/day C-Tech SBR",
+    description: "Engineered a massive 10,000 CMD Sequencing Batch Reactor (SBR) biological system for high-volume industrial effluent treatment and safe environmental discharge.",
+    image: allianzLogo
+  },
+  {
+    name: "Ken Meat",
+    sector: "Food & Beverage Processing",
+    location: "Kenya",
+    solution: "360 m³/day BioKleen MBBR",
+    description: "Deployed a 360 CMD Moving Bed Biofilm Reactor (MBBR) biological treatment plant to handle complex high-BOD meat processing facility effluent.",
+    image: kenmeatLogo
+  },
+  {
+    name: "Pearl Marina",
+    sector: "Residential & Hospitality",
+    location: "Uganda",
+    solution: "180 m³/day BioKleen MBBR",
+    description: "Installed a 180 CMD biological MBBR sewage treatment facility to reclaim wastewater for landscape irrigation across the lakefront resort development.",
+    image: perlmarinaLogo
+  },
+  {
+    name: "Dolphine Hotel",
+    sector: "Hospitality & Tourism",
+    location: "Mombasa, Kenya",
+    solution: "15,000 m³/day RO & 250 m³/day MBBR (Ongoing)",
+    description: "Installing a 15,000 CMD seawater Reverse Osmosis desalination system and a 250 CMD biological MBBR wastewater plant for coastal resort water independence.",
+    image: dolphineLogo
+  },
+  {
+    name: "Sasini",
+    sector: "Agricultural & Food Processing",
+    location: "Kenya",
+    solution: "3,000 L/h RO & 3,000 L/day MBBR",
+    description: "Commissioned a 3,000 LPH Aqua Clean Reverse Osmosis system and a 3 CMD biological MBBR sewage treatment plant for agricultural processing facilities.",
+    image: sasiniLogo
+  },
+  {
+    name: "Ole Sereni",
+    sector: "Hospitality & Hotels",
+    location: "Nairobi, Kenya",
+    solution: "250 m³/day BioKleen MBBR",
+    description: "Deploys a 250 CMD BioKleen MBBR biological system to process hotel wastewater for eco-friendly garden irrigation and water reuse.",
+    image: olesereniLogo
+  },
+  {
+    name: "Radisson Blu",
+    sector: "Hospitality & Hotels",
+    location: "Nairobi, Kenya",
+    solution: "12,000 L/h RO",
+    description: "Installed a high-purity 12,000 LPH Reverse Osmosis water treatment plant to service domestic hotel utility and cooking water loops.",
+    image: radissonLogo
+  },
+  {
+    name: "Sanlam",
+    sector: "Commercial Real Estate",
+    location: "Nairobi, Kenya",
+    solution: "8,000 L/h RO",
+    description: "Commissioned an 8,000 LPH Reverse Osmosis system with advanced multimedia pre-filtration to supply clean utility water for corporate offices.",
+    image: sanlamLogo
+  },
+  {
+    name: "Mihrab Tower",
+    sector: "Commercial Real Estate",
+    location: "Nairobi, Kenya",
+    solution: "8,000 L/h RO & 1,000 m³/day MBBR",
+    description: "Designed and manages an integrated 8,000 LPH Reverse Osmosis drinking water plant alongside a 1,000 CMD biological MBBR wastewater recycling loop.",
+    image: mihrabLogo
+  },
+  {
+    name: "Swaminarayan Temple",
+    sector: "Institutional & Cultural",
+    location: "Nairobi, Kenya",
+    solution: "50 m³/day BioKleen MBBR",
+    description: "Engineered a 50 CMD biological MBBR wastewater plant for eco-friendly reclamation and landscape maintenance.",
+    image: swaminarayanTempleLogo
+  },
+  {
+    name: "Swaminarayan School",
+    sector: "K-12 Education & Institutional",
+    location: "Nairobi, Kenya",
+    solution: "100 m³/day BioKleen MBBR",
+    description: "Deployed a 100 CMD biological MBBR sewage treatment plant to recycle school campus wastewater for sustainable facility operations.",
+    image: swaminarayanSchoolLogo
+  },
+  {
+    name: "JW Marriott Hotel",
+    sector: "Hospitality & Hotels",
+    location: "Nairobi, Kenya",
+    solution: "80 m³/day C-Mem MBR",
+    description: "Deploys an 80 CMD biological C-Mem Membrane Bioreactor (MBR) wastewater plant for premium greywater recycling and irrigation.",
+    image: jwmarriottLogo
+  },
+  {
+    name: "Citam Ngong",
+    sector: "Institutional & Community",
+    location: "Ngong, Kenya",
+    solution: "40 m³/day BioKleen MBBR",
+    description: "Installed a 40 CMD biological MBBR sewage treatment system to handle facility sewage and enable localized water reuse.",
+    image: citamLogo
+  },
+  {
+    name: "DCI Headquarters",
+    sector: "Government & Public Infrastructure",
+    location: "Nairobi, Kenya",
+    solution: "20 m³/day BioKleen MBBR",
+    description: "Deployed a 20 CMD biological MBBR wastewater treatment plant to process site effluent in full compliance with public regulations.",
+    image: dciLogo
   }
 ];
 

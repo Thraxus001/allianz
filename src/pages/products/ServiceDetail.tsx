@@ -57,7 +57,8 @@ const omPackages = [
           "Equipment performance records",
           "Monthly O&M reports",
           "Breakdown and corrective maintenance reports",
-          "Recommendations for plant improvement"
+          "Recommendations for plant improvement",
+          "Digital Reporting"
         ]
       }
     ],
