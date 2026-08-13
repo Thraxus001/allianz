@@ -288,15 +288,15 @@ export default function Projects() {
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 text-center">
             <div>
-              <p className="font-display text-4xl font-extrabold text-[var(--color-secondary)] md:text-5xl">9+</p>
+              <p className="font-display text-4xl font-extrabold text-[var(--color-secondary)] md:text-5xl">10+</p>
               <p className="mt-2 text-xs font-semibold tracking-wider uppercase text-white/60">Years in Operation</p>
             </div>
             <div>
-              <p className="font-display text-4xl font-extrabold text-[var(--color-secondary)] md:text-5xl">50+</p>
+              <p className="font-display text-4xl font-extrabold text-[var(--color-secondary)] md:text-5xl">100+</p>
               <p className="mt-2 text-xs font-semibold tracking-wider uppercase text-white/60">Plants Commissioned</p>
             </div>
             <div>
-              <p className="font-display text-4xl font-extrabold text-[var(--color-secondary)] md:text-5xl">50M+</p>
+              <p className="font-display text-4xl font-extrabold text-[var(--color-secondary)] md:text-5xl">20M+</p>
               <p className="mt-2 text-xs font-semibold tracking-wider uppercase text-white/60">Litres Treated Daily</p>
             </div>
             <div>
