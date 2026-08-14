@@ -17,6 +17,8 @@ import konzaLogo from "../assets/Konza.jpg";
 import vipingoLogo from "../assets/vipingo.png";
 import dolphineLogo from "../assets/dolhin logo.png";
 import kaist from "../assets/kaist.png";
+import kldc from "../assets/kldc.jpg";
+import epz from "../assets/epz.jpg";
 
 // Implemented Projects List
 const projectsList = [
@@ -40,7 +42,7 @@ const projectsList = [
     year: "Ongoing",
     capacity: "20,000 LPH RO & 10,000 KLD MBR",
     metricLabel: "System Capacity",
-    metricValue: "20k LPH & 300 KLD",
+    metricValue: "20k LPH RO & 300 KLD MBR",
     description: "Design, installation, and ongoing Operation & Maintenance (O&M) services for the 20,000 LPH Reverse Osmosis drinking water system and a 300 KLD MBR wastewater reclamation facility.",
     image: sabisLogo
   },
@@ -175,6 +177,30 @@ const projectsList = [
     metricValue: "250 KLD",
     description: "Design, construction, and commissioning of a 250 KLD biological Moving Bed Biofilm Reactor (MBBR) Effluent Treatment Plant (ETP) for campus wastewater reclamation.",
     image: kaist
+  },
+  {
+    title: "Effluent Treatment Plant (ETP)",
+    client: "Kenya Industrial Leather Park",
+    category: "Wastewater Treatment",
+    location: "Athi River, Kenya",
+    year: "2026",
+    capacity: "2.5 MLD ETP",
+    metricLabel: "ETP Capacity",
+    metricValue: "2.5 MLD",
+    description: "Design and construction of a 2.5 MLD biological Effluent Treatment Plant (ETP) to treat and reclaim industrial wastewater from leather processing operations.",
+    image: kldc
+  },
+  {
+    title: "Common Effluent Treatment Plant (CETP)",
+    client: "EPZ Athi River",
+    category: "Wastewater Treatment",
+    location: "Athi River, Kenya",
+    year: "Ongoing",
+    capacity: "10 MLD CETP",
+    metricLabel: "Shared CETP Capacity",
+    metricValue: "10 MLD",
+    description: "Engineering a massive 10 MLD Common Effluent Treatment Plant (CETP) shared with Kenya Industrial Leather Park to process combined industrial discharges.",
+    image: epz
   }
 ];
 
