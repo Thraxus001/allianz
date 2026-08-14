@@ -9,6 +9,7 @@ import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import ProductsIndex from "./pages/products/ProductsIndex";
 import ProductDetail from "./pages/products/ProductDetail";
+import SubProductDetail from "./pages/products/SubProductDetail";
 import ServicesIndex from "./pages/products/ServicesIndex";
 import ServiceDetail from "./pages/products/ServiceDetail";
 import FAQs from "./pages/FAQs";
@@ -47,6 +48,7 @@ export default function App() {
             <Route path="/what-we-do" element={<WhatWeDo />} />
             <Route path="/products" element={<ProductsIndex />} />
             <Route path="/products/:slug" element={<ProductDetail />} />
+            <Route path="/products/:slug/:subSlug" element={<SubProductDetail />} />
             <Route path="/services" element={<ServicesIndex />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/projects" element={<Projects />} />

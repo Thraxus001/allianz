@@ -89,7 +89,7 @@ const omPackages = [
           "RO CIP where required",
           "Cartridge filter replacement",
           "Multimedia filter inspection",
-          "Softener inspection",
+          "Ion exchange / Softener unit inspection",
           "MBBR carrier inspection",
           "SBR equipment inspection",
           "MBR membrane inspection and cleaning",

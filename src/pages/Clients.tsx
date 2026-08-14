@@ -17,7 +17,8 @@ import weetabixLogo from "../assets/weetabix_logo.jpeg";
 import lifecareLogo from "../assets/lifecare.jpg";
 import bbsLogo from "../assets/bbslogo.jpg";
 import dolphineLogo from "../assets/dolhin logo.png";
-import allianzLogo from "../assets/logo.jpg";
+import kldc from "../assets/kldc.jpg";
+import epz from "../assets/epz.jpg";
 import citamLogo from "../assets/Citam Ngong.jpg";
 import dciLogo from "../assets/DCI Headquarters.jpg";
 import jwmarriottLogo from "../assets/JW Marriott Hotel.png";
@@ -49,6 +50,22 @@ const clientCases = [
     solution: "RO (2,000 cmd) & 1,500 m³/day MBBR STP",
     description: "Provides comprehensive operations and maintenance (O&M) services for the advanced high-pressure Reverse Osmosis systems and Moving Bed Biofilm Reactor (MBBR) biological treatment plant.",
     image: tworiversLogo
+  },
+  {
+    name: "Kenya Industrial Leather Park",
+    sector: "Industrial Parks & Manufacturing",
+    location: "Athi River, Kenya",
+    solution: "2.5 MLD Effluent Treatment Plant",
+    description: "Design and construction of a 2.5 MLD biological Effluent Treatment Plant to process and treat industrial wastewater from leather processing operations.",
+    image: kldc
+  },
+  {
+    name: "EPZ Athi River",
+    sector: "Industrial Parks & Infrastructure",
+    location: "Athi River, Kenya",
+    solution: "10 MLD Common Effluent Treatment Plant",
+    description: "Engineered a massive 10 MLD Common Effluent Treatment Plant (CETP) shared with Kenya Industrial Leather Park to process combined industrial discharges.",
+    image: epz
   },
   {
     name: "Sabis International School",
@@ -105,14 +122,6 @@ const clientCases = [
     solution: "HVAC, RO (5,000 L/h) & 8,000 L/h WTP",
     description: "Engineering and facility services managing a central HVAC climate control system, a 5,000 LPH Reverse Osmosis system, and an 8,000 LPH utility Water Treatment Plant (WTP).",
     image: bbsLogo
-  },
-  {
-    name: "EPZ Athi River",
-    sector: "Industrial Parks & Manufacturing",
-    location: "Athi River, Kenya",
-    solution: "10,000 m³/day C-Tech SBR",
-    description: "Engineered a massive 10,000 CMD Sequencing Batch Reactor (SBR) biological system for high-volume industrial effluent treatment and safe environmental discharge.",
-    image: allianzLogo
   },
   {
     name: "Ken Meat",

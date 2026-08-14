@@ -16,6 +16,7 @@ import uonLogo from "../assets/uon_logo.jpeg";
 import konzaLogo from "../assets/Konza.jpg";
 import vipingoLogo from "../assets/vipingo.png";
 import dolphineLogo from "../assets/dolhin logo.png";
+import kaist from "../assets/kaist.png";
 
 // Implemented Projects List
 const projectsList = [
@@ -39,7 +40,7 @@ const projectsList = [
     year: "Ongoing",
     capacity: "20,000 LPH RO & 10,000 KLD MBR",
     metricLabel: "System Capacity",
-    metricValue: "20k LPH & 10k KLD",
+    metricValue: "20k LPH & 300 KLD",
     description: "Design, installation, and ongoing Operation & Maintenance (O&M) services for the 20,000 LPH Reverse Osmosis drinking water system and a 10,000 KLD MBR wastewater reclamation facility.",
     image: sabisLogo
   },
@@ -123,7 +124,7 @@ const projectsList = [
     year: "2026",
     capacity: "Lagoon System & 250 KLD STP",
     metricLabel: "Open University STP",
-    metricValue: "250 KLD",
+    metricValue: "600 KLD",
     description: "Large-scale wastewater lagoon system engineering combined with a dedicated 250 KLD sewage treatment plant for Kenya Open University.",
     image: konzaLogo
   },
@@ -162,6 +163,18 @@ const projectsList = [
     metricValue: "15k CMD & 250 CMD",
     description: "Engineering and installation of a 15,000 m³/day Aqua Clean Reverse Osmosis desalination system and a 250 m³/day BioKleen MBBR sewage treatment plant for sustainable water self-sufficiency (Ongoing).",
     image: dolphineLogo
+  },
+  {
+    title: "Effluent Treatment Plant (MBBR)",
+    client: "KAIST",
+    category: "Wastewater Treatment",
+    location: "Konza Technopolis, Kenya",
+    year: "2026",
+    capacity: "250 KLD MBBR",
+    metricLabel: "ETP Capacity",
+    metricValue: "250 KLD",
+    description: "Design, construction, and commissioning of a 250 KLD biological Moving Bed Biofilm Reactor (MBBR) Effluent Treatment Plant (ETP) for campus wastewater reclamation.",
+    image: kaist
   }
 ];
 

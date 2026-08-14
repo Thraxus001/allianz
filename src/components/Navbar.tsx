@@ -88,13 +88,13 @@ export default function Navbar() {
             </NavLink>
 
             {desktopProductsOpen && (
-              <div className="absolute left-1/2 top-full w-[640px] -translate-x-1/2 pt-3">
-                <div className="overflow-hidden rounded-2xl border border-black/5 bg-white p-5 shadow-2xl grid grid-cols-2 gap-6">
+              <div className="absolute left-1/2 top-full w-[880px] -translate-x-1/2 pt-3">
+                <div className="overflow-hidden rounded-2xl border border-black/5 bg-white p-6 shadow-2xl grid grid-cols-3 gap-6">
                   {/* Waste Water Treatment Column */}
                   <div>
-                    <h4 className="font-display text-[11px] font-bold uppercase tracking-wider text-[var(--color-current)] mb-3 border-b border-black/5 pb-1">
+                    <h3 className="font-display text-[15px] font-extrabold uppercase tracking-wider text-[var(--color-current)] mb-3 border-b border-black/5 pb-1">
                       Waste Water Treatment
-                    </h4>
+                    </h3>
                     <div className="space-y-1">
                       {products.filter(p => p.category === "Waste Water Treatment").map((p) => (
                         <NavLink
@@ -108,26 +108,62 @@ export default function Navbar() {
                     </div>
                   </div>
 
-                  {/* Water Treatment Column */}
+                  {/* Filtration & Ion Exchange Column */}
                   <div>
-                    <h4 className="font-display text-[11px] font-bold uppercase tracking-wider text-[var(--color-current)] mb-3 border-b border-black/5 pb-1">
-                      Water Treatment
-                    </h4>
+                    <h3 className="font-display text-[15px] font-extrabold uppercase tracking-wider text-[var(--color-current)] mb-3 border-b border-black/5 pb-1">
+                      Filtration & Ion Exchange
+                    </h3>
+                    <div className="space-y-2">
+                      {products
+                        .filter(p => p.category === "Water Treatment" && p.subProducts && p.subProducts.length > 0)
+                        .map((p) => (
+                          <div key={p.slug} className="group/item relative space-y-0.5">
+                            <NavLink
+                              to={`/products/${p.slug}`}
+                              className="block rounded-lg px-3 py-1 text-sm font-semibold text-[var(--color-ink)] hover:bg-[var(--color-foam-2)] hover:text-[var(--color-current)] transition-colors"
+                            >
+                              {p.navLabel}
+                            </NavLink>
+                            {p.subProducts && (
+                              <div className="pl-3.5 ml-3 border-l border-black/5 space-y-0.5 max-h-0 overflow-hidden opacity-0 group-hover/item:max-h-56 group-hover/item:opacity-100 group-hover/item:py-1 transition-all duration-300 ease-in-out">
+                                {p.subProducts.map((sub) => (
+                                  <NavLink
+                                    key={sub.slug}
+                                    to={`/products/${p.slug}/${sub.slug}`}
+                                    className="block text-[11px] text-[var(--color-ink)]/60 hover:text-[var(--color-current)] transition-colors py-0.5"
+                                  >
+                                    {sub.title}
+                                  </NavLink>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+
+                  {/* Advanced Purification Column */}
+                  <div>
+                    <h3 className="font-display text-[15px] font-extrabold uppercase tracking-wider text-[var(--color-current)] mb-3 border-b border-black/5 pb-1">
+                      Advanced Purification
+                    </h3>
                     <div className="space-y-1">
-                      {products.filter(p => p.category === "Water Treatment").map((p) => (
-                        <NavLink
-                          key={p.slug}
-                          to={`/products/${p.slug}`}
-                          className="block rounded-lg px-3 py-1.5 text-sm text-[var(--color-ink)] hover:bg-[var(--color-foam-2)] hover:text-[var(--color-current)] transition-colors"
-                        >
-                          {p.navLabel}
-                        </NavLink>
-                      ))}
+                      {products
+                        .filter(p => p.category === "Water Treatment" && (!p.subProducts || p.subProducts.length === 0))
+                        .map((p) => (
+                          <NavLink
+                            key={p.slug}
+                            to={`/products/${p.slug}`}
+                            className="block rounded-lg px-3 py-1.5 text-sm text-[var(--color-ink)] hover:bg-[var(--color-foam-2)] hover:text-[var(--color-current)] transition-colors"
+                          >
+                            {p.navLabel}
+                          </NavLink>
+                        ))}
                     </div>
                   </div>
 
                   {/* River Water Cleaning / Footer Link */}
-                  <div className="col-span-2 border-t border-black/5 pt-4 flex items-center justify-between">
+                  <div className="col-span-3 border-t border-black/5 pt-4 flex items-center justify-between">
                     {products.filter(p => p.category === "River Water Cleaning and Rejuvenation").map((p) => (
                       <NavLink
                         key={p.slug}
@@ -310,15 +346,29 @@ export default function Navbar() {
               <div className="px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[var(--color-current)]/75">
                 Water Treatment
               </div>
-              <div className="pl-2 space-y-1">
+              <div className="pl-2 space-y-2">
                 {products.filter(p => p.category === "Water Treatment").map((p) => (
-                  <NavLink
-                    key={p.slug}
-                    to={`/products/${p.slug}`}
-                    className="block rounded-lg px-3 py-1 text-sm text-[var(--color-ink)]/80 hover:bg-[var(--color-foam-2)]"
-                  >
-                    {p.navLabel}
-                  </NavLink>
+                  <div key={p.slug} className="space-y-1">
+                    <NavLink
+                      to={`/products/${p.slug}`}
+                      className="block rounded-lg px-3 py-1 text-sm font-semibold text-[var(--color-ink)]/90 hover:bg-[var(--color-foam-2)]"
+                    >
+                      {p.navLabel}
+                    </NavLink>
+                    {p.subProducts && (
+                      <div className="pl-3.5 ml-3 border-l border-black/5 space-y-0.5">
+                        {p.subProducts.map((sub) => (
+                          <NavLink
+                            key={sub.slug}
+                            to={`/products/${p.slug}/${sub.slug}`}
+                            className="block rounded-lg px-3 py-0.5 text-xs text-[var(--color-ink)]/65 hover:bg-[var(--color-foam-2)]"
+                          >
+                            {sub.title}
+                          </NavLink>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>

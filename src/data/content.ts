@@ -17,6 +17,17 @@ import watersoftener from "../assets/water softerner.webp";
 import filtrationplant from "../assets/filtrationplant.jpeg";
 import cion from "../assets/cion.webp";
 
+export type SubProduct = {
+  slug: string;
+  title: string;
+  tagline: string;
+  intro: string;
+  heroImage: string;
+  process: { title: string; body: string }[];
+  pdfFile: string;
+  pdfSize: string;
+};
+
 export type Product = {
   slug: string;
   navLabel: string;
@@ -31,6 +42,7 @@ export type Product = {
   pdfFile: string;
   pdfSize: string;
   category: "Waste Water Treatment" | "Water Treatment" | "River Water Cleaning and Rejuvenation" | "HVAC & Utilities";
+  subProducts?: SubProduct[];
 };
 
 export type Service = {
@@ -316,6 +328,84 @@ export const products: Product[] = [
     ],
     pdfFile: "Filtration.pdf",
     pdfSize: "2.3 KB",
+    subProducts: [
+      {
+        slug: "multimedia-filters",
+        title: "Multimedia Filters (Sand/Glass Filters)",
+        tagline: "High-Performance Particulate and Turbidity Reduction.",
+        intro: "Using layers of high-grade quartz sand and activated glass media, our multimedia filters remove suspended solids, sediment, and colloidal matter down to 10 microns, protecting downstream processes.",
+        heroImage: filtrationplant,
+        process: [
+          {
+            title: "Pressure Filtration",
+            body: "Feed water flows downward through increasingly fine media layers, trapping particulate matter."
+          },
+          {
+            title: "Media Backwash",
+            body: "Flow is periodically reversed to expand the bed and flush accumulated solids to drain."
+          }
+        ],
+        pdfFile: "Filtration.pdf",
+        pdfSize: "2.3 KB"
+      },
+      {
+        slug: "activated-carbon-filters",
+        title: "Activated Carbon Filters",
+        tagline: "Adsorption Filtration for Chlorine, Taste, and Odor Removal.",
+        intro: "Engineered with premium coconut-shell activated carbon, these filters chemically adsorb chlorine, volatile organic compounds (VOCs), organic color, and off-tastes from utility water streams.",
+        heroImage: filtrationplant,
+        process: [
+          {
+            title: "Adsorption Phase",
+            body: "Organics and chlorine contaminants bind to the carbon's micro-porous surface."
+          },
+          {
+            title: "Scouring & Flush",
+            body: "Air scouring and backwashing loosen sediment and restore performance."
+          }
+        ],
+        pdfFile: "Filtration.pdf",
+        pdfSize: "2.3 KB"
+      },
+      {
+        slug: "ion-removal-filter",
+        title: "Ion Removal Filter",
+        tagline: "Selective Catalytic Reduction of Iron and Heavy Metals.",
+        intro: "Utilizing catalytic and selective adsorption media, these units oxidation-precipitate and filter out dissolved iron, manganese, and trace heavy metals from raw ground water.",
+        heroImage: filtrationplant,
+        process: [
+          {
+            title: "Catalytic Oxidation",
+            body: "Dissolved metals are oxidized on the media surface, transforming into filterable solids."
+          },
+          {
+            title: "Backwash Cycle",
+            body: "Precipitated metal flocs are backwashed out of the filter bed."
+          }
+        ],
+        pdfFile: "Filtration.pdf",
+        pdfSize: "2.3 KB"
+      },
+      {
+        slug: "cartridge-filter",
+        title: "Cartridge Filter",
+        tagline: "Precision Micro-Filtration and Guard Barriers.",
+        intro: "Featuring wound or pleated micro-fiber cartridge elements, our cartridge filters act as the final physical guard barrier (1-5 microns) to protect high-pressure RO membranes.",
+        heroImage: filtrationplant,
+        process: [
+          {
+            title: "Guard Filtration",
+            body: "Water is forced through the fine fiber matrix, capturing remaining microscopic particles."
+          },
+          {
+            title: "Cartridge Replacement",
+            body: "Elements are replaced once differential pressure limits are reached."
+          }
+        ],
+        pdfFile: "Filtration.pdf",
+        pdfSize: "2.3 KB"
+      }
+    ]
   },
   {
     slug: "reverse-osmosis-plant",
@@ -358,6 +448,65 @@ export const products: Product[] = [
     ],
     pdfFile: "RO.pdf",
     pdfSize: "2.2 KB",
+    subProducts: [
+      {
+        slug: "brackish-water-ro",
+        title: "Brackish Water RO",
+        tagline: "High-Efficiency Dissolved Solids Reduction for Groundwater.",
+        intro: "Designed for borehole water with moderate salinity, our brackish water RO systems remove up to 99% of dissolved minerals, fluorides, and salts using low-energy membranes.",
+        heroImage: Ro,
+        process: [
+          {
+            title: "High-Pressure Feed",
+            body: "Feed water is pumped through brackish RO membranes at moderate pressures."
+          },
+          {
+            title: "Salt Rejection",
+            body: "Concentrated brine is rejected while high-purity permeate water is collected."
+          }
+        ],
+        pdfFile: "RO.pdf",
+        pdfSize: "2.2 KB"
+      },
+      {
+        slug: "saline-water-ro",
+        title: "Saline Water RO",
+        tagline: "Heavy-Duty Desalination for Seawater & High TDS Sources.",
+        intro: "Engineered for seawater or high-mineral industrial loops, these high-pressure desalination systems utilize robust corrosion-resistant materials and energy-recovery devices.",
+        heroImage: Ro,
+        process: [
+          {
+            title: "Desalination",
+            body: "Feedwater passes through seawater membranes under high pressure to overcome osmotic pressure."
+          },
+          {
+            title: "Energy Recovery",
+            body: "High-pressure reject brine transfers energy to the inlet stream, reducing power usage."
+          }
+        ],
+        pdfFile: "RO.pdf",
+        pdfSize: "2.2 KB"
+      },
+      {
+        slug: "ro-for-farming-industries",
+        title: "RO for Farming & Industries",
+        tagline: "Large-Scale Process Water and Irrigation Purifiers.",
+        intro: "Customized RO plants providing high-volume, reliable water streams for agricultural irrigation, hydroponics, boiler feedwater, and industrial manufacturing lines.",
+        heroImage: Ro,
+        process: [
+          {
+            title: "Scaled Filtration",
+            body: "Multi-stage membrane assemblies treat high volumes of raw water."
+          },
+          {
+            title: "Permeate Buffering",
+            body: "Product water is sent to storage buffers with automated level controls."
+          }
+        ],
+        pdfFile: "RO.pdf",
+        pdfSize: "2.2 KB"
+      }
+    ]
   },
   {
     slug: "ultrafiltration-plant",
@@ -444,46 +593,105 @@ export const products: Product[] = [
     pdfSize: "2.3 MB",
   },
   {
-    slug: "softeners",
-    navLabel: "Softeners",
-    title: "Water Softener & Ion-Exchange Systems",
-    tagline: "High-Capacity Hardness Removal and Scaling Prevention.",
+    slug: "ion-exchange-units",
+    navLabel: "Ion Exchange Units",
+    title: "Ion Exchange Units",
+    tagline: "High-Capacity Hardness Removal, Demineralization, and Selective Ion Exchange.",
     heroImage: watersoftener,
     category: "Water Treatment",
     intro:
-      "Allianz Utilities Water Softeners use premium strong-acid cation exchange resin to replace calcium and magnesium with sodium ions, preventing scale buildup. The system treats raw water with inlet hardness up to 1,000 mg/L as CaCO3, yielding output hardness typically <5 mg/L as CaCO3. Engineered for 10-40 BV/h service flow and 0.75-1.5 m resin bed depth, the units feature automated backwash, brine draw, and rinse cycles using sodium chloride regenerant.",
+      "Our Ion Exchange Units utilize premium selective resins to target and remove specific dissolved ions from raw water. From water softening and full demineralization (deionization) to specialized fluoride removal, these systems prevent scale buildup, reduce conductivity, and ensure utility and process water meets strict standards.",
     highlights: [
-      "High-exchange capacity strong-acid cation resin bed",
-      "Treats inlet hardness up to 1,000 mg/L as CaCO3 down to <5 mg/L",
-      "Service flow rate of 10-40 BV/h with 0.75-1.5 m bed depth",
-      "Automated regeneration cycles based on volume, leakage, or time",
+      "High-exchange capacity selective resin beds for target ion removal",
+      "Integrated softening, demineralization, and fluoride removal configurations",
+      "Optimized service flow rates with automated regenerant dosing cycles",
+      "Automated valve control triggering backwash and regeneration phases",
     ],
     process: [
       {
-        title: "Ion Exchange",
-        body: "Hard water passes through the strong-acid cation resin bed, replacing hardness ions with sodium ions.",
+        title: "Ion Exchange Service",
+        body: "Raw feedwater passes through the resin bed where target ions (such as calcium, magnesium, or heavy metals) are exchanged for counter-ions.",
       },
       {
         title: "Backwashing",
-        body: "Water flow is reversed for 10-20 minutes to expand the resin bed and flush out accumulated particulates.",
+        body: "The flow is reversed to fluidize and clean the resin bed, flushing out accumulated particulates and preventing compaction.",
       },
       {
-        title: "Brine Draw & Rinse",
-        body: "Sodium chloride brine is drawn (20-60 minutes) to regenerate the resin, followed by a slow rinse (20-60 minutes).",
+        title: "Regeneration",
+        body: "A chemical regenerant (brine, acid, or caustic) is introduced to strip target ions and restore resin capacity.",
       },
       {
-        title: "Fast Rinse & Return",
-        body: "A fast rinse (10-30 minutes) washes out residual salt, packs the bed, and returns the system to active service.",
+        title: "Rinsing & Return",
+        body: "Slow and fast rinses remove residual regenerant chemicals before the unit returns to active service.",
       },
     ],
     applications: [
       "Boiler feedwater pre-treatment",
       "Cooling tower makeup loops",
-      "Commercial laundry facilities",
-      "Residential estates with hard borehole water",
+      "Commercial laundry and hospitality facilities",
+      "High-purity industrial process water",
     ],
     pdfFile: "Softeners.pdf",
     pdfSize: "2.4 KB",
+    subProducts: [
+      {
+        slug: "softeners",
+        title: "Softeners",
+        tagline: "Cation Exchange Hardness Removal.",
+        intro: "Utilizing premium strong-acid cation exchange resin, our water softeners swap calcium and magnesium hardness ions with sodium ions, completely preventing scale buildup.",
+        heroImage: watersoftener,
+        process: [
+          {
+            title: "Hardness Exchange",
+            body: "Hard water passes through the cation resin bed, capturing calcium/magnesium."
+          },
+          {
+            title: "Brine Regeneration",
+            body: "A sodium chloride solution flushes the resin, restoring its capacity."
+          }
+        ],
+        pdfFile: "Softeners.pdf",
+        pdfSize: "2.4 KB"
+      },
+      {
+        slug: "demineralization-plant",
+        title: "Demineralization Plant",
+        tagline: "Cation-Anion Exchange for Ultra-Pure Water.",
+        intro: "Features dual-bed or mixed-bed deionizers containing cation and anion resins to remove all dissolved mineral salts, yielding high-purity water with low electrical conductivity.",
+        heroImage: watersoftener,
+        process: [
+          {
+            title: "Cation & Anion Exchange",
+            body: "Water passes through cation and anion resin beds, removing all dissolved salts."
+          },
+          {
+            title: "Acid/Alkali Regeneration",
+            body: "Resins are regenerated using hydrochloric acid and sodium hydroxide."
+          }
+        ],
+        pdfFile: "Softeners.pdf",
+        pdfSize: "2.4 KB"
+      },
+      {
+        slug: "fluoride-reversed-units",
+        title: "Fluoride Removal Units",
+        tagline: "Targeted Adsorption for Safe Drinking Water.",
+        intro: "Designed to reduce excessive fluoride concentrations in borehole water to safe potable limits using highly selective activated alumina or specialty ion-exchange resins.",
+        heroImage: watersoftener,
+        process: [
+          {
+            title: "Selective Adsorption",
+            body: "Fluoride ions are selectively adsorbed onto the media bed."
+          },
+          {
+            title: "Acid/Alum Regeneration",
+            body: "The bed is regenerated using alum or mild acid washes to restore capacity."
+          }
+        ],
+        pdfFile: "Softeners.pdf",
+        pdfSize: "2.4 KB"
+      }
+    ]
   },
   {
     slug: "c-mem-zero",
@@ -605,6 +813,68 @@ export const products: Product[] = [
     ],
     pdfFile: "lamella-clarifiers-datasheet.pdf",
     pdfSize: "1.5 MB",
+    subProducts: [
+      {
+        slug: "lamella",
+        title: "Lamella",
+        tagline: "Inclined Plate High-Rate Sedimentation.",
+        intro: "Uses packs of inclined plates to drastically increase the effective settling area in a compact footprint, allowing high-rate gravity separation of flocs.",
+        heroImage: clarifiers,
+        process: [
+          {
+            title: "Inclined Settling",
+            body: "Water flows upward through plate channels; solids slide down the plates into the sludge hopper."
+          }
+        ],
+        pdfFile: "lamella-clarifiers-datasheet.pdf",
+        pdfSize: "1.5 MB"
+      },
+      {
+        slug: "high-rate-solid",
+        title: "High-Rate Solid",
+        tagline: "Sludge Blanket Contact Clarifier.",
+        intro: "Combines rapid chemical mixing, flocculation, and a dynamic sludge blanket to accelerate floc aggregation and achieve high-velocity settling.",
+        heroImage: clarifiers,
+        process: [
+          {
+            title: "Sludge Blanket Passage",
+            body: "Water rises through an active suspended sludge bed, filtering out fine particles."
+          }
+        ],
+        pdfFile: "lamella-clarifiers-datasheet.pdf",
+        pdfSize: "1.5 MB"
+      },
+      {
+        slug: "contact",
+        title: "Contact",
+        tagline: "Mechanical Flocculator-Clarifier.",
+        intro: "Features mechanical draft-tube mixers to recirculate pre-formed chemical sludges, promoting rapid floc growth and high-efficiency primary settling.",
+        heroImage: clarifiers,
+        process: [
+          {
+            title: "Recycle Aggregation",
+            body: "Recirculated solids act as nuclei, accelerating the growth of heavy settleable flocs."
+          }
+        ],
+        pdfFile: "lamella-clarifiers-datasheet.pdf",
+        pdfSize: "1.5 MB"
+      },
+      {
+        slug: "secondary",
+        title: "Secondary",
+        tagline: "Wastewater Biomass Separation.",
+        intro: "Specifically engineered settling basins designed to separate active biological solids and activated sludge from the treated effluent in sewage treatment systems.",
+        heroImage: clarifiers,
+        process: [
+          {
+            title: "Sludge Separation",
+            body: "Activated biomass settles out by gravity, leaving clear clarified wastewater to overflow."
+          }
+        ],
+        pdfFile: "lamella-clarifiers-datasheet.pdf",
+        pdfSize: "1.5 MB"
+      }
+    ]
   },
   {
     slug: "c-ion",

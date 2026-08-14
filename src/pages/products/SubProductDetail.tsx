@@ -1,46 +1,34 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Navigate, NavLink, useParams } from "react-router-dom";
-import { ArrowUpRight, Check, FileText, Download, ExternalLink } from "lucide-react";
+import { ArrowUpRight, FileText, Download, ExternalLink } from "lucide-react";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 import ContourDivider from "../../components/ContourDivider";
 import { products } from "../../data/content";
 
-export default function ProductDetail() {
-  const { slug } = useParams();
-  const product = products.find((p) => p.slug === slug);
+export default function SubProductDetail() {
+  const { slug, subSlug } = useParams();
+  const parentProduct = products.find((p) => p.slug === slug);
+  const subProduct = parentProduct?.subProducts?.find((s) => s.slug === subSlug);
 
-  if (!product) return <Navigate to="/products" replace />;
+  if (!parentProduct || !subProduct) return <Navigate to="/products" replace />;
 
   const [activeTab, setActiveTab] = useState<"overview" | "documents">("overview");
 
-  useEffect(() => {
-    if (window.location.hash) {
-      const id = window.location.hash.substring(1);
-      const element = document.getElementById(id);
-      if (element) {
-        const t = setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth", block: "center" });
-        }, 150);
-        return () => clearTimeout(t);
-      }
-    }
-  }, [slug, activeTab]);
-
-  const others = products.filter((p) => p.slug !== product.slug).slice(0, 3);
+  const others = products.filter((p) => p.slug !== parentProduct.slug).slice(0, 3);
 
   return (
     <div>
       <PageHero
-        eyebrow="Products"
-        heading={product.title}
-        body={product.tagline}
-        image={product.heroImage}
+        eyebrow={`${parentProduct.navLabel} • Sub-Product`}
+        heading={subProduct.title}
+        body={subProduct.tagline}
+        image={subProduct.heroImage || parentProduct.heroImage}
       />
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
         <h1 className="mb-8 font-display text-4xl font-extrabold uppercase tracking-tight text-[var(--color-secondary)] md:text-5xl">
-          {product.title}
+          {subProduct.title}
         </h1>
         <div className="grid gap-14 md:grid-cols-[1.2fr_1fr]">
           <div>
@@ -71,10 +59,10 @@ export default function ProductDetail() {
             {/* Tab: Overview */}
             {activeTab === "overview" && (
               <div className="animate-fade-in">
-                <SectionHeading eyebrow="Overview" heading="Technology." body={product.intro} />
+                <SectionHeading eyebrow="Overview" heading="Specialized System." body={subProduct.intro} />
 
                 <div className="mt-12 space-y-8">
-                  {product.process.map((step, i) => (
+                  {subProduct.process.map((step, i) => (
                     <div key={step.title} className="flex gap-5">
                       <span className="font-mono text-sm text-[var(--color-current)]">
                         {String(i + 1).padStart(2, "0")}
@@ -90,47 +78,6 @@ export default function ProductDetail() {
                     </div>
                   ))}
                 </div>
-
-                {product.subProducts && product.subProducts.length > 0 && (
-                  <div className="mt-16 border-t border-black/5 pt-12">
-                    <h1 className="font-display text-3xl md:text-5xl font-extrabold uppercase tracking-tight text-[var(--color-secondary)] mb-4">
-                      Available Sub-Products & Specialized Systems
-                    </h1>
-                    <p className="text-sm text-[var(--color-ink)]/65 mb-8">
-                      Explore the specialized systems and sub-categories engineered under the {product.navLabel} product line.
-                    </p>
-                    <div className="grid gap-6 sm:grid-cols-2">
-                      {product.subProducts.map((sub) => (
-                        <NavLink
-                          key={sub.slug}
-                          to={`/products/${product.slug}/${sub.slug}`}
-                          className="group/card relative p-6 rounded-2xl border border-black/5 bg-white shadow-sm hover:shadow-xl hover:border-[var(--color-current)]/30 transition-all duration-300 flex flex-col justify-between"
-                        >
-                          <div>
-                            <div className="w-8 h-8 rounded-xl bg-[var(--color-foam-2)] group-hover/card:bg-[var(--color-current)]/10 transition-colors flex items-center justify-center text-[var(--color-current)] font-bold text-sm mb-4">
-                              {sub.title.charAt(0)}
-                            </div>
-                            <h4 className="font-display text-lg font-bold text-[var(--color-deepwater)] group-hover/card:text-[var(--color-current)] transition-colors">
-                              {sub.title}
-                            </h4>
-                            <p className="mt-2 text-sm leading-relaxed text-black/75">
-                              {sub.intro}
-                            </p>
-                            <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--color-current)] opacity-0 group-hover/card:opacity-100 transition-opacity">
-                              View details <ArrowUpRight size={14} />
-                            </span>
-                          </div>
-                        </NavLink>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {product.specNote && (
-                  <div className="mt-10 rounded-xl border border-[var(--color-current)]/20 bg-[var(--color-foam-2)] p-5 font-mono text-xs leading-relaxed text-[var(--color-current)]">
-                    {product.specNote}
-                  </div>
-                )}
               </div>
             )}
 
@@ -139,10 +86,10 @@ export default function ProductDetail() {
               <div className="space-y-8 animate-fade-in">
                 <div>
                   <h3 className="font-display text-2xl font-bold text-[var(--color-deepwater)] mb-2">
-                    Official Product Datasheets
+                    Technical Specifications
                   </h3>
                   <p className="text-sm text-[var(--color-ink)]/60 mb-6">
-                    Download or view the official technical specifications and layouts for {product.title}.
+                    Download or view the official technical layout and product specifications for {subProduct.title}.
                   </p>
 
                   <div className="rounded-xl border border-black/5 bg-white p-5 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -152,16 +99,16 @@ export default function ProductDetail() {
                       </div>
                       <div>
                         <h4 className="font-bold text-sm text-[var(--color-deepwater)] break-all">
-                          {product.pdfFile}
+                          {subProduct.pdfFile}
                         </h4>
                         <p className="text-xs text-[var(--color-ink)]/55 font-mono mt-0.5">
-                          PDF Document • {product.pdfSize}
+                          PDF Document • {subProduct.pdfSize}
                         </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2 self-end sm:self-auto">
                       <a
-                        href={`/pdfs/${product.pdfFile}`}
+                        href={`/pdfs/${subProduct.pdfFile}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 text-[var(--color-current)] hover:bg-[var(--color-foam)] rounded-lg transition-colors"
@@ -170,7 +117,7 @@ export default function ProductDetail() {
                         <ExternalLink size={18} />
                       </a>
                       <a
-                        href={`/pdfs/${product.pdfFile}`}
+                        href={`/pdfs/${subProduct.pdfFile}`}
                         download
                         className="flex items-center gap-1.5 rounded-full bg-[var(--color-current)] px-4 py-2 text-xs font-bold text-white transition-all hover:bg-[var(--color-current-2)]"
                       >
@@ -179,37 +126,25 @@ export default function ProductDetail() {
                     </div>
                   </div>
                 </div>
-
-                
               </div>
             )}
           </div>
 
           <aside className="space-y-8">
             <div className="rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
-              <p className="eyebrow text-[var(--color-current)]">Key Features</p>
-              <ul className="mt-4 space-y-3">
-                {product.highlights.map((h) => (
-                  <li key={h} className="flex gap-2.5 text-sm leading-relaxed text-black">
-                    <Check size={16} className="mt-0.5 shrink-0 text-[var(--color-leaf-2)]" />
-                    {h}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
-              <p className="eyebrow text-[var(--color-current)]">Applications</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {product.applications.map((a) => (
-                  <span
-                    key={a}
-                    className="rounded-full bg-[var(--color-foam-2)] px-3 py-1.5 text-xs font-medium text-[var(--color-deepwater)]"
-                  >
-                    {a}
-                  </span>
-                ))}
-              </div>
+              <p className="eyebrow text-[var(--color-current)] mb-3">Parent Solution</p>
+              <h4 className="font-display font-bold text-[var(--color-deepwater)] text-base">
+                {parentProduct.title}
+              </h4>
+              <p className="text-xs text-[var(--color-ink)]/65 mt-1 leading-relaxed">
+                This specialized system is part of our comprehensive {parentProduct.navLabel} product line.
+              </p>
+              <NavLink
+                to={`/products/${parentProduct.slug}`}
+                className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--color-current)] hover:underline"
+              >
+                View full product line &rarr;
+              </NavLink>
             </div>
 
             <div className="rounded-2xl bg-[var(--color-deepwater)] p-6">
