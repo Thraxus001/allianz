@@ -15,7 +15,7 @@ import zeroliquid  from "../assets/zeroliquid.webp";
 import effluenttreatment from "../assets/effluenttreatment.webp";
 import watersoftener from "../assets/water softerner.webp";
 import filtrationplant from "../assets/filtrationplant.jpeg";
-import cion from "../assets/cion.jpeg";
+import cion from "../assets/cion.webp";
 
 export type Product = {
   slug: string;
@@ -889,6 +889,18 @@ export const heroSlides = [
     body: "Timed SBR cycles combining biological aeration and clarification in a single compact basin.",
   },
   {
+    image: mbbr,
+    //eyebrow: "Aqua RO",
+    heading: "Moving Bed Biofilm Reactor",
+    body: "Biokleen MBBR uses floating carriers to grow microorganisms, boosting wastewater treatment efficiency in compact tanks.",
+  },
+   {
+    image: Ro,
+    //eyebrow: "Aqua RO",
+    heading: "Advanced Reverse Osmosis",
+    body: "Aqua Clean RO delivers high-efficiency brackish water purification, removing salts and contaminants for reliable industrial and healthcare use.",
+  },
+  {
     image: maintennance,
     eyebrow: "Support & AMC",
     heading: "Reliable Support.\nPredictable Performance.",
@@ -933,6 +945,12 @@ export const technologies = [
     subtitle: " Advanced Reverse Osmosis",
     image: Ro,
     slug: "reverse-osmosis-plant",
+  },
+  {
+    name: "Biokleen MBBR",
+    subtitle: "Moving Bed Biofilm Reactor",
+    image: mbbr,
+    slug: "biokleen-mbbr",
   },
   {
     name: "CTECH SBR",
