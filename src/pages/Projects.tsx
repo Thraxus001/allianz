@@ -41,7 +41,7 @@ const projectsList = [
     capacity: "20,000 LPH RO & 10,000 KLD MBR",
     metricLabel: "System Capacity",
     metricValue: "20k LPH & 300 KLD",
-    description: "Design, installation, and ongoing Operation & Maintenance (O&M) services for the 20,000 LPH Reverse Osmosis drinking water system and a 10,000 KLD MBR wastewater reclamation facility.",
+    description: "Design, installation, and ongoing Operation & Maintenance (O&M) services for the 20,000 LPH Reverse Osmosis drinking water system and a 300 KLD MBR wastewater reclamation facility.",
     image: sabisLogo
   },
   {
