@@ -16,7 +16,7 @@ import uonImg from "../assets/projects/uon.jpeg";
 import konzaImg from "../assets/projects/konza.jpeg";
 import vipingoImg from "../assets/projects/vipingo.jpeg";
 import dolphinImg from "../assets/projects/dolphin.jpeg";
-import kaistImg from "../assets/projects/kaist.jpeg";
+import kaistImg from "../assets/projects/kaistkonza.jpeg";
 import epzaImg from "../assets/projects/epza.jpeg";
 import leather from "../assets/projects/kenya industrial leather.jpeg";
 
