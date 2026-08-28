@@ -4,25 +4,25 @@ import SectionHeading from "../components/SectionHeading";
 import HeroCarousel from "../components/ProjectsCarousel";
 
 // Local image assets
-import tworiversLogo from "../assets/tworivers_logo.jpeg";
-import sabisLogo from "../assets/sabis.jpeg";
-import biovaxLogo from "../assets/biovax_logo.webp";
-import weetabixLogo from "../assets/weetabix_logo.jpeg";
-import lifecareLogo from "../assets/lifecare.jpg";
-import bbsMallLogo from "../assets/bbslogo.jpg";
-import ciataMallLogo from "../assets/ciatalogo.jpg";
-import rosslynLogo from "../assets/rosslyn_logo.png";
-import uonLogo from "../assets/uon_logo.jpeg";
-import konzaLogo from "../assets/Konza.jpg";
-import vipingoLogo from "../assets/vipingo.png";
-import dolphineLogo from "../assets/dolhin logo.png";
-import kaist from "../assets/kaist.png";
-import kldc from "../assets/kldc.jpg";
-import epz from "../assets/epz.jpg";
+import tworiversImg from "../assets/projects/tworivers.jpeg";
+import sabisImg from "../assets/projects/sabis.jpeg";
+import biovaxImg from "../assets/projects/biovax.jpeg";
+import weetabixImg from "../assets/projects/weetabix.jpeg";
+import lifecareImg from "../assets/projects/lifecare.jpeg";
+import bbsImg from "../assets/projects/bbs.jpeg";
+import ciataImg from "../assets/projects/ciata.jpeg";
+import rosslynImg from "../assets/projects/reselyn.jpeg";
+import uonImg from "../assets/projects/uon.jpeg";
+import konzaImg from "../assets/projects/konza.jpeg";
+import vipingoImg from "../assets/projects/vipingo.jpeg";
+import dolphinImg from "../assets/projects/dolphin.jpeg";
+import kaistImg from "../assets/projects/kaist.jpeg";
+import epzaImg from "../assets/projects/epza.jpeg";
+import leather from "../assets/projects/kenya industrial leather.jpeg";
 
 // Implemented Projects List
 const projectsList = [
- {
+  {
     title: "Central Utility O&M & Water Testing Lab",
     client: "Two Rivers Mall",
     category: "Operation & Maintenance",
@@ -32,7 +32,7 @@ const projectsList = [
     metricLabel: "Daily Flow Managed",
     metricValue: "3,500 m³/day",
     description: "Operations and maintenance (O&M) for a 2,000 CMD brackish water Reverse Osmosis plant, a 1,500 m³/day MBBR Sewage Treatment Plant, and an on-site water quality laboratory.",
-    image: tworiversLogo
+    image: tworiversImg
   },
   {
     title: "Installation & Ongoing O&M, RO & MBR Systems",
@@ -44,7 +44,7 @@ const projectsList = [
     metricLabel: "System Capacity",
     metricValue: "20k LPH RO & 300 KLD MBR",
     description: "Design, installation, and ongoing Operation & Maintenance (O&M) services for the 20,000 LPH Reverse Osmosis drinking water system and a 300 KLD MBR wastewater reclamation facility.",
-    image: sabisLogo
+    image: sabisImg
   },
   {
     title: "C-MEM MBR, Aquaclean RO",
@@ -56,7 +56,7 @@ const projectsList = [
     metricLabel: "Pharmaceutical Water/WW",
     metricValue: "80 KLD / 6k LPH",
     description: "Engineering and installation of an 80 KLD biological C-MEM MBR effluent plant alongside a 6,000 LPH RO Aquaclean system for pharmaceutical-grade processing.",
-    image: biovaxLogo
+    image: biovaxImg
   },
   {
     title: "C-MEM Wastewater Recycling System",
@@ -68,7 +68,7 @@ const projectsList = [
     metricLabel: "Factory Recycling ETP",
     metricValue: "20 KLD",
     description: "Implementation of a 20 KLD C-MEM biological membrane bioreactor system for cereal processing plant effluent, enabling complete factory wash water recycling.",
-    image: weetabixLogo
+    image: weetabixImg
   },
   {
     title: "HVAC Services, Aquaclean RO & Wastewater Plant",
@@ -80,7 +80,7 @@ const projectsList = [
     metricLabel: "Utility Flow Rate",
     metricValue: "13,000 LPH",
     description: "Turnkey HVAC installation along with a 5,000 LPH Reverse Osmosis water treatment plant and an 8,000 LPH commercial wastewater processing facility.",
-    image: bbsMallLogo
+    image: bbsImg
   },
   {
     title: "Reverse Osmosis System",
@@ -92,7 +92,7 @@ const projectsList = [
     metricLabel: "RO Water Supply",
     metricValue: "20,000 LPH",
     description: "Design, installation, and commissioning of a commercial 20,000 LPH Reverse Osmosis plant delivering clean potable water for tenant and retail operations.",
-    image: ciataMallLogo
+    image: ciataImg
   },
   {
     title: "Wastewater Treatment MBR Plant",
@@ -104,7 +104,7 @@ const projectsList = [
     metricLabel: "Campus STP Output",
     metricValue: "150 KLD",
     description: "Deployment of a 150 KLD MBR biological sewage treatment plant servicing campus facilities to ensure full environmental compliance and irrigation reuse.",
-    image: rosslynLogo
+    image: rosslynImg
   },
   {
     title: "Installation & Ongoing O&M, MBR System",
@@ -116,7 +116,7 @@ const projectsList = [
     metricLabel: "Revised STP Output",
     metricValue: "150 KLD",
     description: "Engineering and installation of a revised 150 KLD MBR wastewater treatment system to handle campus effluent, along with ongoing Operation & Maintenance (O&M) services.",
-    image: uonLogo
+    image: uonImg
   },
   {
     title: "Wastewater Lagoon System & Open University STP",
@@ -128,7 +128,7 @@ const projectsList = [
     metricLabel: "Open University STP",
     metricValue: "600 KLD",
     description: "Large-scale wastewater lagoon system engineering combined with a dedicated 250 KLD sewage treatment plant for Kenya Open University.",
-    image: konzaLogo
+    image: konzaImg
   },
   {
     title: "Seawater Desalination Plant",
@@ -140,7 +140,7 @@ const projectsList = [
     metricLabel: "Desalination Output",
     metricValue: "1,500 CMD",
     description: "Construction and commissioning of a 1,500 CMD coastal seawater desalination plant supplying fresh water for community developments.",
-    image: vipingoLogo
+    image: vipingoImg
   },
   {
     title: "Medical Grade Dialysis RO System O&M",
@@ -152,7 +152,7 @@ const projectsList = [
     metricLabel: "Dialysis RO Water",
     metricValue: "Medical Grade",
     description: "Specialized operations and maintenance of ultra-pure Reverse Osmosis water treatment systems critical for clinical hemodialysis therapy.",
-    image: lifecareLogo
+    image: lifecareImg
   },
   {
     title: "Aqua Clean RO & BioKleen MBBR Systems",
@@ -164,7 +164,7 @@ const projectsList = [
     metricLabel: "RO & MBBR Capacity",
     metricValue: "15k CMD & 250 CMD",
     description: "Engineering and installation of a 15,000 m³/day Aqua Clean Reverse Osmosis desalination system and a 250 m³/day BioKleen MBBR sewage treatment plant for sustainable water self-sufficiency (Ongoing).",
-    image: dolphineLogo
+    image: dolphinImg
   },
   {
     title: "Effluent Treatment Plant (MBBR)",
@@ -176,7 +176,7 @@ const projectsList = [
     metricLabel: "ETP Capacity",
     metricValue: "250 KLD",
     description: "Design, construction, and commissioning of a 250 KLD biological Moving Bed Biofilm Reactor (MBBR) Effluent Treatment Plant (ETP) for campus wastewater reclamation.",
-    image: kaist
+    image: kaistImg
   },
   {
     title: "Effluent Treatment Plant (ETP)",
@@ -188,7 +188,7 @@ const projectsList = [
     metricLabel: "ETP Capacity",
     metricValue: "2.5 MLD",
     description: "Design and construction of a 2.5 MLD biological Effluent Treatment Plant (ETP) to treat and reclaim industrial wastewater from leather processing operations.",
-    image: kldc
+    image: leather
   },
   {
     title: "Common Effluent Treatment Plant (CETP)",
@@ -200,7 +200,7 @@ const projectsList = [
     metricLabel: "Shared CETP Capacity",
     metricValue: "10 MLD",
     description: "Engineering a massive 10 MLD Common Effluent Treatment Plant (CETP) shared with Kenya Industrial Leather Park to process combined industrial discharges.",
-    image: epz
+    image: epzaImg
   }
 ];
 
