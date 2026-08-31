@@ -11,7 +11,7 @@ import weetabixImg from "../assets/projects/weetabix.jpeg";
 import lifecareImg from "../assets/projects/lifecare.jpeg";
 import bbsImg from "../assets/projects/bbs.jpeg";
 import ciataImg from "../assets/projects/ciata.jpeg";
-import rosslynImg from "../assets/projects/reselyn.jpeg";
+import rosslynImg from "../assets/projects/roselyn.jpeg";
 import uonImg from "../assets/projects/uon.jpeg";
 import konzaImg from "../assets/projects/konza.jpeg";
 import vipingoImg from "../assets/projects/vipingo.jpeg";
