@@ -75,9 +75,9 @@ const projectsList = [
     category: "HVAC & Utilities",
     location: "Eastleigh, Nairobi, Kenya",
     year: "2026",
-    capacity: "5,000 LPH RO & 8,000 LPH Wastewater",
+    capacity: "5,000 LPH RO & 8,000 LPH",
     metricLabel: "Utility Flow Rate",
-    metricValue: "13,000 LPH",
+    metricValue: "HVAC & RO 5,000LPH",
     description: "Turnkey HVAC installation along with a 5,000 LPH Reverse Osmosis water treatment plant and an 8,000 LPH commercial wastewater processing facility.",
     image: bbsImg
   },
