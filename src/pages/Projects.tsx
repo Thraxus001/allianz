@@ -17,8 +17,7 @@ import konzaImg from "../assets/projects/konza.jpeg";
 import vipingoImg from "../assets/projects/vipingo.jpeg";
 import dolphinImg from "../assets/projects/dolphin.jpeg";
 import kaistImg from "../assets/projects/kaistkonza.jpeg";
-import epzaImg from "../assets/projects/epza.jpeg";
-import leather from "../assets/projects/kenya industrial leather.jpeg";
+import epzLeatherImg from "../assets/projects/industrialleather.jpeg";
 
 // Implemented Projects List
 const projectsList = [
@@ -179,28 +178,16 @@ const projectsList = [
     image: kaistImg
   },
   {
-    title: "Effluent Treatment Plant (ETP)",
-    client: "Kenya Industrial Leather Park",
-    category: "Wastewater Treatment",
-    location: "Athi River, Kenya",
-    year: "2026",
-    capacity: "2.5 MLD ETP",
-    metricLabel: "ETP Capacity",
-    metricValue: "2.5 MLD",
-    description: "Design and construction of a 2.5 MLD biological Effluent Treatment Plant (ETP) to treat and reclaim industrial wastewater from leather processing operations.",
-    image: leather
-  },
-  {
     title: "Common Effluent Treatment Plant (CETP)",
-    client: "EPZ Athi River",
+    client: "Kenya Industrial Leather Park- EPZA",
     category: "Wastewater Treatment",
     location: "Athi River, Kenya",
     year: "Ongoing",
-    capacity: "10 MLD CETP",
+    capacity: "10 MLD CETP & 2.5 MLD ETP",
     metricLabel: "Shared CETP Capacity",
     metricValue: "10 MLD",
-    description: "Engineering a massive 10 MLD Common Effluent Treatment Plant (CETP) shared with Kenya Industrial Leather Park to process combined industrial discharges.",
-    image: epzaImg
+    description: "Turnkey design, engineering, and construction of a 10 MLD Common Effluent Treatment Plant (CETP) integrating a dedicated 2.5 MLD biological Effluent Treatment Plant (ETP) to treat, process, and reclaim combined industrial and leather processing wastewater discharges.",
+    image: epzLeatherImg
   }
 ];
 
