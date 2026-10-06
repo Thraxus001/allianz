@@ -107,6 +107,11 @@ export default function Footer() {
                   Careers
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/news-and-updates" className="text-[var(--color-foam)]/80 hover:text-[var(--color-secondary)]">
+                  News & Updates
+                </NavLink>
+              </li>
             </ul>
           </div>
 

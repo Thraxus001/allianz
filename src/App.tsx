@@ -15,6 +15,8 @@ import ServiceDetail from "./pages/products/ServiceDetail";
 import FAQs from "./pages/FAQs";
 import Clients from "./pages/Clients";
 import Projects from "./pages/Projects";
+import NewsAndUpdates from "./pages/NewsAndUpdates";
+import WhatsAppWidget from "./components/WhatsAppWidget";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -55,10 +57,14 @@ export default function App() {
             <Route path="/clients" element={<Clients />} />
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/news-and-updates" element={<NewsAndUpdates />} />
+            <Route path="/news" element={<NewsAndUpdates />} />
+            <Route path="/updates" element={<NewsAndUpdates />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />
+        <WhatsAppWidget />
       </div>
     </BrowserRouter>
   );

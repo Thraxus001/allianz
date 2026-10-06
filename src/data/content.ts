@@ -1185,6 +1185,7 @@ export const navLinks = [
   { label: "Services", to: "/services" },
   { label: "FAQs", to: "/faqs" },
   { label: "Careers", to: "/careers" },
+  { label: "News & Updates", to: "/news-and-updates" },
   { label: "Contact Us", to: "/contact" },
 ];
 

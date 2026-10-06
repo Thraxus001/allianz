@@ -272,6 +272,17 @@ export default function Navbar() {
           >
             Careers
           </NavLink>
+
+          <NavLink
+            to="/news-and-updates"
+            className={({ isActive }) =>
+              `${linkBase} ${scrolled ? "text-[var(--color-ink)]" : "text-white"} ${
+                isActive ? "text-[var(--color-current)]" : ""
+              }`
+            }
+          >
+            News & Updates
+          </NavLink>
           <NavLink
             to="/contact"
             className="rounded-full bg-[var(--color-current)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-current-2)]"
@@ -431,6 +442,9 @@ export default function Navbar() {
           </NavLink>
           <NavLink to="/careers" className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-foam-2)]">
             Careers
+          </NavLink>
+          <NavLink to="/news-and-updates" className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-foam-2)]">
+            News & Updates
           </NavLink>
           <NavLink
             to="/contact"
