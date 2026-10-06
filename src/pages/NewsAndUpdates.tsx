@@ -2,9 +2,6 @@ import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
   Play,
-  Pause,
-  Volume2,
-  VolumeX,
   MapPin,
   Gauge,
   Calendar,
@@ -29,7 +26,7 @@ import {
 export default function NewsAndUpdates() {
   const [activeTab, setActiveTab] = useState<"all" | "sites" | "videos" | "news">("all");
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+  const isMuted = false;
   const [selectedVideoModal, setSelectedVideoModal] = useState<VideoShowcase | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -44,11 +41,11 @@ export default function NewsAndUpdates() {
     }
   };
 
-  const toggleMute = () => {
-    if (!videoRef.current) return;
-    videoRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
-  };
+  // const toggleMute = () => {
+  //   if (!videoRef.current) return;
+  //   videoRef.current.muted = !isMuted;
+  //   setIsMuted(!isMuted);
+  // };
 
   const defaultVideo = videoShowcases.find((v) => v.isFeatured) || videoShowcases[0];
   const [activeVideo, setActiveVideo] = useState<VideoShowcase>(defaultVideo);

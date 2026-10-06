@@ -131,7 +131,7 @@ export default function WhatsAppWidget() {
         {isOpen ? (
           <X size={24} className="-rotate-90 transition-transform" />
         ) : (
-          <FaWhatsapp size={30} className="text-white drop-shadow-sm" />
+          <FaWhatsapp size={30} />
         )}
 
         {/* Pulsing notification badge */}
