@@ -1,17 +1,20 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ArrowUpRight, Check, Droplets, Flame, Wind } from "lucide-react";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 import ContourDivider from "../../components/ContourDivider";
 import { services } from "../../data/content";
+import firefightingImg from "../../assets/firefighting.webp";
+import plumbingImg from "../../assets/plumbing.webp";
+import hvacImg from "../../assets/hvac.webp";
 
 type TabId = "plumbing" | "fire" | "hvac";
 
-const tabs: { id: TabId; label: string; icon: typeof Droplets }[] = [
-  { id: "plumbing", label: "Plumbing & Drainage", icon: Droplets },
-  { id: "fire", label: "Fire Protection", icon: Flame },
-  { id: "hvac", label: "HVAC", icon: Wind },
+const tabs: { id: TabId; label: string; icon: typeof Droplets; image: string; tag: string }[] = [
+  { id: "plumbing", label: "Plumbing & Drainage", icon: Droplets, image: plumbingImg, tag: "SERVICE 01" },
+  { id: "fire", label: "Fire Protection", icon: Flame, image: firefightingImg, tag: "SERVICE 02" },
+  { id: "hvac", label: "HVAC", icon: Wind, image: hvacImg, tag: "SERVICE 03" },
 ];
 
 const plumbingScope = [
@@ -110,6 +113,44 @@ export default function PlumbingFireHVACDetail() {
             <p className="mt-6 font-mono text-xs uppercase tracking-widest text-[var(--color-current)]">
               Design · Supply · Install · Maintain
             </p>
+
+            {/* Visual 3-pillar preview cards */}
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => {
+                    setActiveTab(tab.id);
+                    const el = document.getElementById("services-catalogue");
+                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className={`group relative flex flex-col overflow-hidden rounded-2xl border text-left cursor-pointer transition-all hover:-translate-y-1 hover:shadow-md ${
+                    activeTab === tab.id
+                      ? "border-[var(--color-current)] bg-white ring-2 ring-[var(--color-current)]/20 shadow-sm"
+                      : "border-black/5 bg-white shadow-sm"
+                  }`}
+                >
+                  <div className="relative h-28 overflow-hidden">
+                    <img
+                      src={tab.image}
+                      alt={tab.label}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <span className="absolute left-2.5 top-2.5 rounded-full bg-black/60 backdrop-blur-sm px-2 py-0.5 font-mono text-[10px] font-semibold text-white">
+                      {tab.tag}
+                    </span>
+                  </div>
+                  <div className="p-3 flex items-center justify-between">
+                    <h4 className="font-display text-xs font-bold text-[var(--color-deepwater)] group-hover:text-[var(--color-current)] transition-colors">
+                      {tab.label}
+                    </h4>
+                    <ArrowUpRight size={13} className="text-[var(--color-current)] shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
 
           <aside className="space-y-6">
@@ -158,22 +199,27 @@ export default function PlumbingFireHVACDetail() {
       <ContourDivider from="var(--color-foam)" to="var(--color-foam-2)" />
 
       {/* Sub-service tabs */}
-      <section className="bg-[var(--color-foam-2)] py-20 md:py-24">
+      <section id="services-catalogue" className="bg-[var(--color-foam-2)] py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <SectionHeading eyebrow="Services Catalogue" heading="Building services in detail." />
 
           <div className="mt-10 flex flex-wrap gap-3">
-            {tabs.map(({ id, label, icon: Icon }) => (
+            {tabs.map(({ id, label, icon: Icon, image }) => (
               <button
                 key={id}
                 onClick={() => setActiveTab(id)}
-                className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all cursor-pointer ${
+                className={`inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-semibold transition-all cursor-pointer ${
                   activeTab === id
-                    ? "bg-[var(--color-deepwater)] text-white shadow-md"
+                    ? "bg-[var(--color-deepwater)] text-white shadow-md ring-2 ring-[var(--color-deepwater)]/20"
                     : "bg-white text-[var(--color-deepwater)] border border-black/5 hover:border-[var(--color-current)]/30"
                 }`}
               >
-                <Icon size={15} />
+                <img
+                  src={image}
+                  alt={label}
+                  className="h-5 w-5 rounded-full object-cover border border-white/40"
+                />
+                <Icon size={14} className={activeTab === id ? "text-[var(--color-leaf)]" : "text-[var(--color-current)]"} />
                 {label}
               </button>
             ))}
@@ -182,6 +228,37 @@ export default function PlumbingFireHVACDetail() {
           {/* PLUMBING TAB */}
           {activeTab === "plumbing" && (
             <div className="mt-10 space-y-14">
+              {/* Featured Plumbing Banner */}
+              <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm grid md:grid-cols-12 gap-0">
+                <div className="md:col-span-5 relative h-64 md:h-auto overflow-hidden">
+                  <img
+                    src={plumbingImg}
+                    alt="Plumbing systems and pipework installation"
+                    className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                  <span className="absolute left-4 top-4 rounded-full bg-white/95 backdrop-blur-sm px-3 py-1 font-mono text-xs font-bold text-[var(--color-current)] shadow-sm">
+                    SERVICE 01
+                  </span>
+                </div>
+                <div className="md:col-span-7 p-6 md:p-8 flex flex-col justify-center">
+                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-[var(--color-leaf-2)]">
+                    Plumbing & Drainage
+                  </span>
+                  <h3 className="mt-2 font-display text-2xl md:text-3xl font-bold text-[var(--color-deepwater)]">
+                    Plumbing systems & sanitary installations
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-black">
+                    Reliable water at the right pressure and temperature at every outlet, with hygienic storage, high-durability pipework sized for your building's real demand, and drainage that never backs up.
+                  </p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    <span className="rounded-full bg-[var(--color-foam-2)] px-3 py-1 text-xs font-medium text-[var(--color-deepwater)]">Cold & Hot Water</span>
+                    <span className="rounded-full bg-[var(--color-foam-2)] px-3 py-1 text-xs font-medium text-[var(--color-deepwater)]">Booster & Transfer Sets</span>
+                    <span className="rounded-full bg-[var(--color-foam-2)] px-3 py-1 text-xs font-medium text-[var(--color-deepwater)]">Rainwater Harvesting</span>
+                    <span className="rounded-full bg-[var(--color-foam-2)] px-3 py-1 text-xs font-medium text-[var(--color-deepwater)]">Sanitary Fixtures</span>
+                  </div>
+                </div>
+              </div>
+
               <div>
                 <h3 className="font-display text-2xl font-bold text-[var(--color-deepwater)]">Plumbing systems</h3>
                 <p className="mt-2 text-sm leading-relaxed text-black">
@@ -264,6 +341,37 @@ export default function PlumbingFireHVACDetail() {
           {/* FIRE TAB */}
           {activeTab === "fire" && (
             <div className="mt-10 space-y-14">
+              {/* Featured Fire Protection Banner */}
+              <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm grid md:grid-cols-12 gap-0">
+                <div className="md:col-span-5 relative h-64 md:h-auto overflow-hidden">
+                  <img
+                    src={firefightingImg}
+                    alt="Fire protection, detection and suppression systems"
+                    className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                  <span className="absolute left-4 top-4 rounded-full bg-white/95 backdrop-blur-sm px-3 py-1 font-mono text-xs font-bold text-[var(--color-current)] shadow-sm">
+                    SERVICE 02
+                  </span>
+                </div>
+                <div className="md:col-span-7 p-6 md:p-8 flex flex-col justify-center">
+                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-[var(--color-leaf-2)]">
+                    Life Safety & Fire Protection
+                  </span>
+                  <h3 className="mt-2 font-display text-2xl md:text-3xl font-bold text-[var(--color-deepwater)]">
+                    Fire protection & suppression systems
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-black">
+                    Protect people, property and business continuity with systems designed to NFPA and BS EN standards, complete with detection, pump sets, alarms, and local fire brigade approval.
+                  </p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    <span className="rounded-full bg-[var(--color-foam-2)] px-3 py-1 text-xs font-medium text-[var(--color-deepwater)]">Wet-Pipe Sprinklers</span>
+                    <span className="rounded-full bg-[var(--color-foam-2)] px-3 py-1 text-xs font-medium text-[var(--color-deepwater)]">Hydrants & Hose Reels</span>
+                    <span className="rounded-full bg-[var(--color-foam-2)] px-3 py-1 text-xs font-medium text-[var(--color-deepwater)]">Clean-Agent Gas (FM-200)</span>
+                    <span className="rounded-full bg-[var(--color-foam-2)] px-3 py-1 text-xs font-medium text-[var(--color-deepwater)]">NFPA 20 Fire Pumps</span>
+                  </div>
+                </div>
+              </div>
+
               <div>
                 <h3 className="font-display text-2xl font-bold text-[var(--color-deepwater)]">Fire suppression systems</h3>
                 <p className="mt-2 text-sm leading-relaxed text-black">
@@ -342,6 +450,37 @@ export default function PlumbingFireHVACDetail() {
           {/* HVAC TAB */}
           {activeTab === "hvac" && (
             <div className="mt-10 space-y-14">
+              {/* Featured HVAC Banner */}
+              <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm grid md:grid-cols-12 gap-0">
+                <div className="md:col-span-5 relative h-64 md:h-auto overflow-hidden">
+                  <img
+                    src={hvacImg}
+                    alt="HVAC ductwork, air handling units and mechanical cooling systems"
+                    className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                  <span className="absolute left-4 top-4 rounded-full bg-white/95 backdrop-blur-sm px-3 py-1 font-mono text-xs font-bold text-[var(--color-current)] shadow-sm">
+                    SERVICE 03
+                  </span>
+                </div>
+                <div className="md:col-span-7 p-6 md:p-8 flex flex-col justify-center">
+                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-[var(--color-leaf-2)]">
+                    Climate Control & Ventilation
+                  </span>
+                  <h3 className="mt-2 font-display text-2xl md:text-3xl font-bold text-[var(--color-deepwater)]">
+                    Air conditioning & ventilation systems
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-black">
+                    Comfortable, energy-efficient cooling and fresh air ventilation tailored for commercial buildings, healthcare, and industrial spaces, integrated with smart BMS controls.
+                  </p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    <span className="rounded-full bg-[var(--color-foam-2)] px-3 py-1 text-xs font-medium text-[var(--color-deepwater)]">VRF / VRV Multi-Split</span>
+                    <span className="rounded-full bg-[var(--color-foam-2)] px-3 py-1 text-xs font-medium text-[var(--color-deepwater)]">Air & Water Chillers</span>
+                    <span className="rounded-full bg-[var(--color-foam-2)] px-3 py-1 text-xs font-medium text-[var(--color-deepwater)]">SMACNA Ductwork & AHUs</span>
+                    <span className="rounded-full bg-[var(--color-foam-2)] px-3 py-1 text-xs font-medium text-[var(--color-deepwater)]">Smoke Control & BMS</span>
+                  </div>
+                </div>
+              </div>
+
               <div>
                 <h3 className="font-display text-2xl font-bold text-[var(--color-deepwater)]">Air conditioning</h3>
                 <p className="mt-2 text-sm leading-relaxed text-black">
@@ -440,20 +579,9 @@ export default function PlumbingFireHVACDetail() {
       {/* Track Record */}
       <section className="bg-[var(--color-foam)] py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <SectionHeading eyebrow="Track Record" heading="Selected references." body="Hospitals, hotels, malls, schools, industry and national affordable housing projects across Kenya, Tanzania and Rwanda." />
+          <SectionHeading eyebrow="" heading="Selected references." />
 
-          <div className="mt-10 flex flex-wrap gap-6">
-            {[
-              { num: "9+", label: "HVAC projects" },
-              { num: "6+", label: "Plumbing & firefighting projects" },
-              { num: "3", label: "Countries: Kenya, Tanzania, Rwanda" },
-            ].map((s) => (
-              <div key={s.label} className="rounded-2xl border border-black/5 bg-white px-6 py-4 shadow-sm">
-                <p className="font-display text-3xl font-bold text-[var(--color-deepwater)]">{s.num}</p>
-                <p className="mt-1 text-xs text-black">{s.label}</p>
-              </div>
-            ))}
-          </div>
+          
 
           <div className="mt-14 space-y-14">
             {service.trackRecord?.map((group) => (
