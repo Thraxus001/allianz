@@ -12,6 +12,7 @@ import ProductDetail from "./pages/products/ProductDetail";
 import SubProductDetail from "./pages/products/SubProductDetail";
 import ServicesIndex from "./pages/products/ServicesIndex";
 import ServiceDetail from "./pages/products/ServiceDetail";
+import PlumbingFireHVACDetail from "./pages/products/PlumbingFireHVACDetail";
 import FAQs from "./pages/FAQs";
 import Clients from "./pages/Clients";
 import Projects from "./pages/Projects";
@@ -52,6 +53,7 @@ export default function App() {
             <Route path="/products/:slug" element={<ProductDetail />} />
             <Route path="/products/:slug/:subSlug" element={<SubProductDetail />} />
             <Route path="/services" element={<ServicesIndex />} />
+            <Route path="/services/plumbing-firefighting-hvac" element={<PlumbingFireHVACDetail />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/clients" element={<Clients />} />

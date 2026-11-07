@@ -16,6 +16,7 @@ import effluenttreatment from "../assets/effluenttreatment.webp";
 import watersoftener from "../assets/water softerner.webp";
 import filtrationplant from "../assets/filtrationplant.jpeg";
 import cion from "../assets/cion.webp";
+import centralHvac from "../assets/Central HVAC.avif";
 
 export type SubProduct = {
   slug: string;
@@ -55,6 +56,20 @@ export type Service = {
   highlights: string[];
   process: { title: string; body: string }[];
   applications: string[];
+  // Optional rich fields for Plumbing, Firefighting & HVAC service
+  category?: string;
+  pipeTable?: { material: string; use: string }[];
+  suppressionTable?: { system: string; how: string; use: string }[];
+  hvacTable?: { system: string; capacity: string; bestFor: string }[];
+  standards?: { area: string; standards: string }[];
+  trackRecord?: {
+    category: string;
+    projects: { client: string; scope: string; country: string; year: string }[];
+  }[];
+  turnkeySteps?: { num: string; title: string; body: string }[];
+  boosterSetFeatures?: string[];
+  energySavings?: string[];
+  alarmActions?: string[];
 };
 
 export const products: Product[] = [
@@ -1135,6 +1150,183 @@ export const services: Service[] = [
       "Universities",
       "Processing Industries",
       "Residential estates",
+    ],
+  },
+  {
+    slug: "plumbing-firefighting-hvac",
+    navLabel: "Plumbing, Firefighting & HVAC",
+    title: "Plumbing, Firefighting & HVAC",
+    tagline: "Design, supply, installation and maintenance of building services for commercial, industrial, institutional and residential projects.",
+    heroImage: centralHvac,
+    category: "Building Services",
+    intro:
+      "Water, fire safety and comfort cooling share the same ceilings, shafts and plant rooms. Allianz Utilities designs and builds all three together, so services fit first time, testing is coordinated and you have one team accountable from drawings to handover and beyond.",
+    highlights: [
+      "One contractor for every building service — plumbing, fire and HVAC",
+      "Design, supply, installation and maintenance under one contract",
+      "MEP coordination and clash-free shop drawings",
+      "Turnkey delivery from site survey to fire brigade handover",
+      "Planned maintenance and annual fire certification contracts",
+      "Serving commercial, industrial, institutional and residential projects",
+    ],
+    process: [
+      {
+        title: "Site Survey & Brief",
+        body: "Review of drawings, building use and your requirements to establish the full scope of building services needed.",
+      },
+      {
+        title: "Design & Coordination",
+        body: "Calculations, MEP drawings, shop drawings and clash checks across plumbing, fire and HVAC disciplines.",
+      },
+      {
+        title: "Supply",
+        body: "Pumps, pipes, fire equipment, AC units and controls sourced from approved brands and delivered to site.",
+      },
+      {
+        title: "Installation",
+        body: "Plumbing, fire and HVAC works executed by our own supervised installation teams.",
+      },
+      {
+        title: "Testing & Commissioning",
+        body: "Pressure tests, air balancing, fire brigade inspection and full handover documentation.",
+      },
+      {
+        title: "Maintenance Contracts",
+        body: "Planned maintenance, breakdown call-outs and annual fire certification to keep your building services in peak condition.",
+      },
+    ],
+    applications: [
+      "Offices & commercial",
+      "Hotels & resorts",
+      "Hospitals",
+      "Schools & universities",
+      "Apartments & estates",
+      "Shopping malls",
+      "Factories & warehouses",
+      "Data centres",
+    ],
+    pipeTable: [
+      { material: "PPR", use: "Hot and cold water distribution inside buildings" },
+      { material: "HDPE", use: "External water mains and buried pipework" },
+      { material: "UPVC", use: "Soil, waste, vent and rainwater pipes" },
+      { material: "Galvanised steel", use: "Exposed mains, plant rooms and pump headers" },
+      { material: "Copper", use: "Hospitals, high-temperature lines and premium finishes" },
+    ],
+    suppressionTable: [
+      {
+        system: "Wet-pipe sprinklers",
+        how: "Heads open only where heat reaches them, controlling a fire at its source",
+        use: "Offices, hotels, malls, warehouses",
+      },
+      {
+        system: "Dry-pipe and preaction",
+        how: "Pipes hold air until a valve opens, so no water sits over sensitive areas",
+        use: "Cold stores, archives, data halls",
+      },
+      {
+        system: "Hydrants and hose reels",
+        how: "Ready water for occupants and the fire brigade, inside and around the site",
+        use: "All buildings and industrial sites",
+      },
+      {
+        system: "Deluge and water spray",
+        how: "All nozzles discharge together to cool and contain high-hazard equipment",
+        use: "Transformers, fuel tanks",
+      },
+      {
+        system: "Foam systems",
+        how: "Foam blanket smothers burning liquids",
+        use: "Fuel depots, generator rooms",
+      },
+      {
+        system: "Clean-agent gas",
+        how: "FM-200 or Novec 1230 puts out fire with no water damage",
+        use: "Server and control rooms",
+      },
+      {
+        system: "Kitchen wet-chemical",
+        how: "Automatic discharge over cooking oil fires in hoods and ducts",
+        use: "Hotel and restaurant kitchens",
+      },
+    ],
+    hvacTable: [
+      { system: "Split and multi-split", capacity: "2.5–7 kW per unit", bestFor: "Small offices, homes, single rooms" },
+      { system: "Ducted and packaged", capacity: "7–50 kW", bestFor: "Open-plan offices, shops, halls" },
+      { system: "VRF/VRV", capacity: "20–150 kW per system", bestFor: "Offices, hotels and apartments with many zones" },
+      { system: "Air-cooled chillers", capacity: "100 kW–2 MW", bestFor: "Malls, hospitals, large office blocks" },
+      { system: "Water-cooled chillers", capacity: "1 MW and above", bestFor: "Campuses, large hotels, industry" },
+      { system: "Precision cooling", capacity: "10–100 kW", bestFor: "Server rooms and data centres" },
+    ],
+    standards: [
+      {
+        area: "Plumbing",
+        standards: "BS EN 806 (water supply), BS EN 12056 (drainage), local building code and water utility rules",
+      },
+      {
+        area: "Fire protection",
+        standards: "NFPA 13, 14, 20 and 72 · BS EN 12845 · national fire safety regulations and fire brigade approval",
+      },
+      {
+        area: "HVAC",
+        standards: "ASHRAE 62.1 and 90.1 · CIBSE guides · SMACNA ductwork standards",
+      },
+    ],
+    trackRecord: [
+      {
+        category: "HVAC",
+        projects: [
+          { client: "Business Bay Square Mall", scope: "HVAC and mechanical works", country: "Kenya", year: "2023" },
+          { client: "Ole Sereni Hotel, Nairobi", scope: "HVAC", country: "Kenya", year: "2020" },
+          { client: "AAA Growers", scope: "HVAC", country: "Kenya", year: "2019" },
+          { client: "Aga Khan Hospital", scope: "HVAC", country: "Tanzania", year: "2018" },
+          { client: "UN Arusha", scope: "HVAC", country: "Tanzania", year: "2018" },
+          { client: "Acacia Hotel, Kigali", scope: "HVAC", country: "Rwanda", year: "2018" },
+          { client: "ASL, Muthithi Road", scope: "HVAC", country: "Kenya", year: "2018" },
+          { client: "Premier Academy, Nairobi", scope: "HVAC", country: "Kenya", year: "2018" },
+          { client: "Marriott Hotel, Kigali", scope: "HVAC", country: "Rwanda", year: "2017" },
+        ],
+      },
+      {
+        category: "Plumbing & Firefighting",
+        projects: [
+          { client: "Biovax Kenya Limited", scope: "Plumbing and firefighting", country: "Kenya", year: "2025" },
+          { client: "Lavasa Construction — Mugogo Affordable Housing Project", scope: "Plumbing and firefighting", country: "Kenya", year: "Ongoing" },
+          { client: "Lavasa Construction — Ntimaru Affordable Housing Project", scope: "Plumbing and firefighting", country: "Kenya", year: "Ongoing" },
+          { client: "Ellys Engineering — Turkana Affordable Housing Project", scope: "Plumbing and firefighting", country: "Kenya", year: "Ongoing" },
+          { client: "Ellys Engineering — Awendo Affordable Housing, Migori", scope: "Plumbing and firefighting", country: "Kenya", year: "Ongoing" },
+          { client: "Ellys Engineering — Awendo Posta Affordable Housing, Migori", scope: "Plumbing and firefighting", country: "Kenya", year: "Ongoing" },
+        ],
+      },
+    ],
+    turnkeySteps: [
+      { num: "01", title: "Site survey & brief", body: "Review of drawings, building use and your requirements." },
+      { num: "02", title: "Design & coordination", body: "Calculations, MEP drawings, shop drawings and clash checks." },
+      { num: "03", title: "Supply", body: "Pumps, pipes, fire equipment, AC units and controls from approved brands." },
+      { num: "04", title: "Installation", body: "Plumbing, fire and HVAC works by our own supervised teams." },
+      { num: "05", title: "Testing & commissioning", body: "Pressure tests, air balancing, fire brigade inspection and handover files." },
+      { num: "06", title: "Maintenance contracts", body: "Planned maintenance, breakdown call-outs and annual fire certification." },
+    ],
+    boosterSetFeatures: [
+      "Duty and standby pumps, auto-rotation",
+      "Variable-speed drive control",
+      "Pressure vessel and transducer",
+      "Dry-run and over-pressure protection",
+      "Isolating and non-return valves",
+      "Pre-wired, tested control panel",
+    ],
+    energySavings: [
+      "Variable-speed fans and pumps",
+      "CO₂-controlled fresh air",
+      "Heat recovery on exhaust air",
+      "Time and occupancy scheduling via BMS",
+    ],
+    alarmActions: [
+      "Send lifts to the ground floor",
+      "Close fire and smoke dampers",
+      "Release fire doors and access control",
+      "Shut down air handling units",
+      "Start smoke extract and stair pressurisation",
+      "Signal the BMS and alert remote monitoring",
     ],
   },
 ];
